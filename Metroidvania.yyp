@@ -48,7 +48,6 @@
     {"id":{"name":"spr_player_hit","path":"sprites/spr_player_hit/spr_player_hit.yy",},},
     {"id":{"name":"spr_player_idle","path":"sprites/spr_player_idle/spr_player_idle.yy",},},
     {"id":{"name":"spr_player_jump","path":"sprites/spr_player_jump/spr_player_jump.yy",},},
-    {"id":{"name":"spr_player_maskCollide","path":"sprites/spr_player_maskCollide/spr_player_maskCollide.yy",},},
     {"id":{"name":"spr_player_run","path":"sprites/spr_player_run/spr_player_run.yy",},},
     {"id":{"name":"spr_player_wallJump","path":"sprites/spr_player_wallJump/spr_player_wallJump.yy",},},
     {"id":{"name":"spr_tilemap","path":"sprites/spr_tilemap/spr_tilemap.yy",},},

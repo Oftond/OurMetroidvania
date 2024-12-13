@@ -9,7 +9,7 @@ if (is_death)
 var _dir = (keyboard_check(vk_right) || keyboard_check(ord("D"))) - (keyboard_check(vk_left)|| keyboard_check(ord("A")));
 var _jump_key_pressed = keyboard_check_pressed(vk_up) || keyboard_check_pressed(vk_space);
 var _jump_key_hold = keyboard_check(vk_up) || keyboard_check(vk_space);
-is_graunded = ((place_meeting(x, y + 1, obj_game_manager.collision_tilemap)));
+is_graunded = (place_meeting(x, y + 1, obj_game_manager.collision_tilemap));
 on_wall = place_meeting(x - 1, y, obj_game_manager.collision_tilemap) - place_meeting(x + 1, y, obj_game_manager.collision_tilemap);
 move_locked_time = max(move_locked_time - 1, 0);
 

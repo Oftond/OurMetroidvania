@@ -20,4 +20,4 @@ is_knockback = false;
 time_to_knockback = 15;
 spd_of_knockback = 10;
 sprite_hit = spr_player_hit;
-mask_index = spr_player_maskCollide;
+mask_index = sprite_index;
