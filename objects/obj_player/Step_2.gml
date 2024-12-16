@@ -40,6 +40,11 @@ switch (state)
 		}
 	break;
 	
+	case STATES.DASH:
+		sprite_index = spr_player_doubleJump;
+		image_speed = 1;
+	break;
+	
 	case STATES.ATTACK:
 		if (combo == 1)
 		{

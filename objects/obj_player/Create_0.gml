@@ -1,4 +1,8 @@
 event_inherited();
+is_dashing = false;
+timer_to_dash = 0;
+time_dash = 20;
+can_dash = true;
 do_attack = false
 combo = 0;
 max_combo = 5;
@@ -41,6 +45,14 @@ sword =
 }
 
 skills = new Skills(self);
+
+change_state = function(_state)
+{
+	if (state != STATES.ATTACK && state != STATES.DASH)
+		state = _state;
+	else if (state == STATES.DASH && timer_to_dash == 0)
+		state = _state;
+}
 
 get_damage = function(_enemy)
 {

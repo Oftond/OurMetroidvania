@@ -9,5 +9,5 @@ enum STATES
 	HIT,
 	WALK,
 	FALL,
-	DOUBLE_JUMP
+	DOUBLE_JUMP,
 }

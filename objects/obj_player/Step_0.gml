@@ -15,6 +15,11 @@ if (experience >= exp_to_level)
 
 if (wait_to_attack > 0)
 	wait_to_attack--;
+	
+if (timer_to_dash > 0)
+	timer_to_dash--;
+else if (timer_to_dash == 0)
+	is_dashing = false;
 
 var _dir = keyboard_check(vk_right) - keyboard_check(vk_left);
 var _jump_key_pressed = keyboard_check_pressed(ord("Z"));
@@ -22,12 +27,21 @@ var _jump_key_hold = keyboard_check(ord("Z"));
 var _attack = keyboard_check_pressed(ord("X"));
 var _dash = keyboard_check_pressed(ord("C"));
 var _heal = keyboard_check_pressed(ord("A"));
-is_graunded = (place_meeting(x, y + 1, obj_game_manager.collision_tilemap));
+is_graunded = place_meeting(x, y + 1, obj_game_manager.collision_tilemap);
 on_wall = place_meeting(x - 1, y, obj_game_manager.collision_tilemap) - place_meeting(x + 1, y, obj_game_manager.collision_tilemap);
 move_locked_time = max(move_locked_time - 1, 0);
 
 if (!is_knockback)
 {
+	if (_dash && timer_to_dash <= 0 && !is_dashing && can_dash)
+	{
+		timer_to_dash = time_dash;
+		is_dashing = true;
+		can_dash = false;
+		change_state(STATES.DASH);
+		move_x = (move_spd * 2 * sign(image_xscale));
+	}
+	
 	if (_attack && wait_to_attack <= 0)
 	{
 		if (image_index >= image_number - 3 && combo > 0 && combo < max_combo && !do_attack)
@@ -37,21 +51,21 @@ if (!is_knockback)
 		}
 		else if (combo == 0)
 			combo = clamp(combo + 1, 1, max_combo);
-		state = STATES.ATTACK;
+		change_state(STATES.ATTACK);
 	}
 	if (is_graunded)
 	{
+		can_dash = true;
 		current_jumps = 0;
-		if (move_x != 0 && _dir != 0 && state != STATES.ATTACK)
-			state = STATES.WALK;
-		else if (state != STATES.ATTACK)
-			state = STATES.IDLE;
+		if (move_x != 0 && _dir != 0)
+			change_state(STATES.WALK);
+		else
+			change_state(STATES.IDLE);
 	}
 	else if (move_y >= 0 && on_wall != 0)
 	{
 		current_jumps = 0;
-		if (state != STATES.ATTACK)
-			state = STATES.WALL_JUMP;
+		change_state(STATES.WALL_JUMP);
 	}
 	else
 	{
@@ -59,7 +73,7 @@ if (!is_knockback)
 			current_jumps = 1;
 	}
 	
-	if (move_locked_time <= 0)
+	if (move_locked_time <= 0 && !is_dashing)
 	{
 		if (_dir != 0)
 			image_xscale = sign(_dir);
@@ -69,17 +83,16 @@ if (!is_knockback)
 		{
 			current_jumps++;
 			jump_timer = jump_hold_time;
-			if (!is_graunded && state != STATES.ATTACK)
+			if (!is_graunded)
 			{
-				state = STATES.DOUBLE_JUMP;
+				change_state(STATES.DOUBLE_JUMP);
 				image_index = 0;
 			}
 			if (on_wall != 0 && !is_graunded && move_y >= 0)
 			{
 				move_x = on_wall * move_wall_spd;
 				move_locked_time = move_locked_max_time;
-				if (state != STATES.ATTACK)
-					state = STATES.JUMP;
+				change_state(STATES.JUMP);
 			}
 		}
 	}
@@ -87,7 +100,7 @@ if (!is_knockback)
 	if (!_jump_key_hold)
 		jump_timer = 0;
 		
-	if (jump_timer > 0)
+	if (jump_timer > 0 && !is_dashing)
 	{
 		move_y = -round((jump_spd / max(current_jumps, 1)));
 		jump_timer--;
@@ -96,26 +109,28 @@ if (!is_knockback)
 
 if (move_y < 0 && !is_graunded)
 {
-	if (!is_knockback && state != STATES.DOUBLE_JUMP && state != STATES.ATTACK)
-		state = STATES.JUMP;
+	if (!is_knockback && state != STATES.DOUBLE_JUMP)
+		change_state(STATES.JUMP);
 	if (on_wall != 0)
+	{
 		move_y = min(move_y + 1, 3);
-	else
+	}
+	else if (!is_dashing)
 		move_y += grav;
 }
 else if (move_y >= 0 && !is_graunded)
 {
 	if (!is_knockback)
 	{
-		if (on_wall == 0 && state != STATES.ATTACK)
-			state = STATES.FALL;
+		if (on_wall == 0)
+			change_state(STATES.FALL);
 	}
 	if (on_wall != 0)
 	{
 		move_y = min(move_y + 1, 3);
 		image_xscale = sign(-on_wall);
 	}
-	else
+	else if (!is_dashing)
 	{
 		move_y += grav;
 	}
@@ -145,7 +160,8 @@ else if (state == STATES.ATTACK && combo >= max_combo)
 	move_x = 0;
 
 x += move_x;
-y += move_y;
+if (!is_dashing)
+	y += move_y;
 
 if (sprite_index == sprite_attack_1)
 {
@@ -161,3 +177,5 @@ else if (sprite_index == sprite_attack_3)
 }
 
 event_inherited();
+
+show_debug_message(timer_to_dash)
