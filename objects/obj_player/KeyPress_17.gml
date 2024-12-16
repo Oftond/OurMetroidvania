@@ -1,0 +1,1 @@
+skills.try_add_skill(global.Fair);

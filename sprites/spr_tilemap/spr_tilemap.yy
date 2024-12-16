@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":4,
   "parent":{
-    "name":"World",
-    "path":"folders/Sprites/World.yy",
+    "name":"Maps surface",
+    "path":"folders/Sprites/World/Maps surface.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

@@ -1,7 +1,6 @@
 max_hp = 3
 current_hp = max_hp;
-damage = 1;
-move_spd = 4;
+move_spd = 8;
 jump_spd = 12;
 grav = 1;
 max_jumps = 2;
@@ -14,7 +13,7 @@ state = STATES.IDLE;
 is_graunded = true;
 is_death = false;
 flash = false;
-max_flashing = 60;
+max_flashing = 80;
 flashing = 0;
 is_knockback = false;
 time_to_knockback = 15;
