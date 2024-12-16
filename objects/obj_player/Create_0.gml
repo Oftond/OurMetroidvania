@@ -1,8 +1,9 @@
 event_inherited();
 is_dashing = false;
 timer_to_dash = 0;
-time_dash = 20;
+time_dash = 15;
 can_dash = true;
+dash_spd = 10;
 do_attack = false
 combo = 0;
 max_combo = 5;
@@ -18,6 +19,7 @@ current_level = 0;
 exp_to_level = 40;
 max_mana = 10;
 current_mana = max_mana;
+sprite_idle = spr_player_idle;
 sprite_attack_1 = spr_player_attack_1;
 sprite_attack_2 = spr_player_attack_2;
 sprite_attack_3 = spr_player_attack_3;

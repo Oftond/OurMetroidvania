@@ -3,37 +3,65 @@ event_inherited();
 switch (state)
 {
 	case STATES.IDLE:
-		sprite_index = spr_player_idle;
+		if (sprite_index != sprite_idle)
+		{
+			image_index = 0;
+			sprite_index = sprite_idle;
+		}
 		image_speed = 1;
 	break;
 	
 	case STATES.JUMP:
-		sprite_index = spr_player_jump;
+		if (sprite_index != spr_player_jump)
+		{
+			image_index = 0;
+			sprite_index = spr_player_jump;
+		}
 		image_speed = 1;
 	break;
 	
 	case STATES.DOUBLE_JUMP:
-		sprite_index = spr_player_doubleJump;
+		if (sprite_index != spr_player_doubleJump)
+		{
+			image_index = 0;
+			sprite_index = spr_player_doubleJump;
+		}
 		image_speed = 1;
 	break;
 	
 	case STATES.FALL:
-		sprite_index = spr_player_fall;
+		if (sprite_index != spr_player_fall)
+		{
+			image_index = 0;
+			sprite_index = spr_player_fall;
+		}
 		image_speed = 1;
 	break;
 	
 	case STATES.WALK:
-		sprite_index = spr_player_run;
+		if (sprite_index != spr_player_run)
+		{
+			image_index = 0;
+			sprite_index = spr_player_run;
+		}
 		image_speed = 1;
 	break;
 	
 	case STATES.WALL_JUMP:
-		sprite_index = spr_player_wallJump;
+		if (sprite_index != spr_player_wallJump)
+		{
+			image_index = 0;
+			sprite_index = spr_player_wallJump;
+		}
 		image_speed = 1;
 	break;
 	
 	case STATES.HIT:
-		sprite_index = sprite_hit;
+		if (sprite_index != sprite_hit)
+		{
+			image_index = 0;
+			sprite_index = sprite_hit;
+		}
 		if (image_index == sprite_get_number(sprite_index) - 1)
 		{
 			image_speed = 0;
@@ -41,7 +69,17 @@ switch (state)
 	break;
 	
 	case STATES.DASH:
-		sprite_index = spr_player_doubleJump;
+		if (sprite_index != spr_player_doubleJump)
+		{
+			image_index = 0;
+			sprite_index = spr_player_doubleJump;
+		}
+		with (instance_create_depth(x, y, depth + 1, obj_player_dasTail))
+		{
+			sprite_index = other.sprite_index;
+			image_blend = c_white;
+			image_alpha = 0.5;
+		}
 		image_speed = 1;
 	break;
 	

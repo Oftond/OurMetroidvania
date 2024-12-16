@@ -1,4 +1,4 @@
-mask_index = spr_player_idle;
+mask_index = spr_player_idleSword;
 
 if (is_death)
 {
@@ -26,10 +26,14 @@ var _jump_key_pressed = keyboard_check_pressed(ord("Z"));
 var _jump_key_hold = keyboard_check(ord("Z"));
 var _attack = keyboard_check_pressed(ord("X"));
 var _dash = keyboard_check_pressed(ord("C"));
+var _open_inventory = keyboard_check_pressed(ord("A"))
 var _heal = keyboard_check_pressed(ord("A"));
 is_graunded = place_meeting(x, y + 1, obj_game_manager.collision_tilemap);
 on_wall = place_meeting(x - 1, y, obj_game_manager.collision_tilemap) - place_meeting(x + 1, y, obj_game_manager.collision_tilemap);
 move_locked_time = max(move_locked_time - 1, 0);
+
+if (is_dashing)
+	move_x += 2 * sign(image_xscale);
 
 if (!is_knockback)
 {
@@ -39,7 +43,7 @@ if (!is_knockback)
 		is_dashing = true;
 		can_dash = false;
 		change_state(STATES.DASH);
-		move_x = (move_spd * 2 * sign(image_xscale));
+		move_x = (dash_spd * sign(image_xscale));
 	}
 	
 	if (_attack && wait_to_attack <= 0)
@@ -100,14 +104,16 @@ if (!is_knockback)
 	if (!_jump_key_hold)
 		jump_timer = 0;
 		
-	if (jump_timer > 0 && !is_dashing)
+	if (jump_timer > 0)
 	{
 		move_y = -round((jump_spd / max(current_jumps, 1)));
 		jump_timer--;
 	}
 }
 
-if (move_y < 0 && !is_graunded)
+if (is_dashing)
+	move_y = 0;
+else if (move_y < 0 && !is_graunded)
 {
 	if (!is_knockback && state != STATES.DOUBLE_JUMP)
 		change_state(STATES.JUMP);
@@ -115,7 +121,7 @@ if (move_y < 0 && !is_graunded)
 	{
 		move_y = min(move_y + 1, 3);
 	}
-	else if (!is_dashing)
+	else
 		move_y += grav;
 }
 else if (move_y >= 0 && !is_graunded)
@@ -130,7 +136,7 @@ else if (move_y >= 0 && !is_graunded)
 		move_y = min(move_y + 1, 3);
 		image_xscale = sign(-on_wall);
 	}
-	else if (!is_dashing)
+	else
 	{
 		move_y += grav;
 	}
@@ -160,8 +166,7 @@ else if (state == STATES.ATTACK && combo >= max_combo)
 	move_x = 0;
 
 x += move_x;
-if (!is_dashing)
-	y += move_y;
+y += move_y;
 
 if (sprite_index == sprite_attack_1)
 {
@@ -177,5 +182,3 @@ else if (sprite_index == sprite_attack_3)
 }
 
 event_inherited();
-
-show_debug_message(timer_to_dash)
