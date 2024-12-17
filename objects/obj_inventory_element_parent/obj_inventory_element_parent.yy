@@ -1,15 +1,13 @@
 {
   "$GMObject":"",
-  "%Name":"obj_player_dasTail",
-  "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":7,"eventType":7,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-  ],
+  "%Name":"obj_inventory_element_parent",
+  "eventList":[],
   "managed":true,
-  "name":"obj_player_dasTail",
+  "name":"obj_inventory_element_parent",
   "overriddenProperties":[],
   "parent":{
-    "name":"Characters",
-    "path":"folders/Objects/Characters.yy",
+    "name":"Inventory",
+    "path":"folders/Objects/Inventory.yy",
   },
   "parentObjectId":null,
   "persistent":false,

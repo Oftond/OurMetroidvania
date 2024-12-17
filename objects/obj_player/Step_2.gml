@@ -74,11 +74,12 @@ switch (state)
 			image_index = 0;
 			sprite_index = spr_player_doubleJump;
 		}
-		with (instance_create_depth(x, y, depth + 1, obj_player_dasTail))
+		with (instance_create_depth(x, y, depth + 1, obj_player_dashTail))
 		{
 			sprite_index = other.sprite_index;
 			image_blend = c_white;
 			image_alpha = 0.5;
+			image_index = other.image_index;
 		}
 		image_speed = 1;
 	break;
@@ -91,6 +92,11 @@ switch (state)
 				image_index = 0;
 				sprite_index = sprite_attack_1;
 				do_attack = false;
+				with(instance_create_depth(x, y, depth - 1, obj_player_attack_hitBox))
+				{
+					sprite_index = spr_player_maskcollide_attack_1
+					image_index = image_index;
+				}
 			}
 		}
 		image_speed = 1;
@@ -103,6 +109,11 @@ switch (state)
 					image_index = 0;
 					sprite_index = sprite_attack_1;
 					do_attack = false;
+					with(instance_create_depth(x, y, depth - 1, obj_player_attack_hitBox))
+					{
+						sprite_index = spr_player_maskcollide_attack_1
+						image_index = image_index;
+					}
 					exit;
 				}
 			}
@@ -113,6 +124,11 @@ switch (state)
 					image_index = 0;
 					sprite_index = sprite_attack_2;
 					do_attack = false;
+					with(instance_create_depth(x, y, depth - 1, obj_player_attack_hitBox))
+					{
+						sprite_index = spr_player_maskcollide_attack_2
+						image_index = image_index;
+					}
 					exit;
 				}
 			}
@@ -124,6 +140,11 @@ switch (state)
 					sprite_index = sprite_attack_3;
 					do_attack = false;
 					wait_to_attack = wait_time;
+					with(instance_create_depth(x, y, depth - 1, obj_player_attack_hitBox))
+					{
+						sprite_index = spr_player_maskcollide_attack_1
+						image_index = image_index;
+					}
 					exit;
 				}
 			}

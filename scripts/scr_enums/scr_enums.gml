@@ -11,3 +11,5 @@ enum STATES
 	FALL,
 	DOUBLE_JUMP,
 }
+
+global.MainFont = fnt_main;
