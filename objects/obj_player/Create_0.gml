@@ -24,6 +24,7 @@ sprite_idle = spr_player_idle;
 sprite_attack_1 = spr_player_attack_1;
 sprite_attack_2 = spr_player_attack_2;
 sprite_attack_3 = spr_player_attack_3;
+sprite_to_parry = spr_player_parry;
 
 inventory = new Inventory(self);
 
@@ -51,7 +52,7 @@ skills = new Skills(self);
 
 change_state = function(_state)
 {
-	if (state != STATES.ATTACK && state != STATES.DASH)
+	if (state != STATES.ATTACK && state != STATES.DASH && state != STATES.PARRY)
 		state = _state;
 	else if (state == STATES.DASH && timer_to_dash == 0)
 		state = _state;

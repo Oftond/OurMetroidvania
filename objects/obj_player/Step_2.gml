@@ -84,6 +84,21 @@ switch (state)
 		image_speed = 1;
 	break;
 	
+	case STATES.PARRY:
+		image_speed = 1;
+		if (sprite_index != sprite_to_parry)
+		{
+			image_index = 0;
+			sprite_index = sprite_to_parry;
+			if (wait_to_attack <= 0)
+				wait_to_attack = round(wait_time / 2);
+		}
+		if (image_index >= image_number - 1)
+		{
+			state = STATES.IDLE;
+		}
+	break;
+	
 	case STATES.ATTACK:
 		if (combo == 1)
 		{

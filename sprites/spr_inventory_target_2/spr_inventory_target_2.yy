@@ -26,7 +26,7 @@
   "origin":4,
   "parent":{
     "name":"Inventory",
-    "path":"folders/Sprites/Characters/Inventory.yy",
+    "path":"folders/Sprites/Inventory.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

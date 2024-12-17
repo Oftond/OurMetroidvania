@@ -13,7 +13,9 @@
   ],
   "isDnd":false,
   "layers":[
-    {"$GMRAssetLayer":"","%Name":"Assets_1","assets":[],"depth":0,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Assets_1","properties":[],"resourceType":"GMRAssetLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
+    {"$GMRAssetLayer":"","%Name":"Assets_1","assets":[
+        {"$GMRSpriteGraphic":"","%Name":"graphic_4521ECE7","animationSpeed":1.0,"colour":4294967295,"frozen":false,"headPosition":0.0,"ignore":false,"inheritedItemId":null,"inheritItemSettings":false,"name":"graphic_4521ECE7","resourceType":"GMRSpriteGraphic","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"spriteId":{"name":"spr_inventory_target_4","path":"sprites/spr_inventory_target_4/spr_inventory_target_4.yy",},"x":960.0,"y":544.0,},
+      ],"depth":0,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Assets_1","properties":[],"resourceType":"GMRAssetLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRTileLayer":"","%Name":"CollisionTiles","depth":100,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"CollisionTiles","properties":[],"resourceType":"GMRTileLayer","resourceVersion":"2.0","tiles":{"SerialiseHeight":12,"SerialiseWidth":30,"TileCompressedData":[
           -19,-2147483648,3,0,1371,1372,-8,-2147483648,3,1294,1295,0,-16,-2147483648,3,0,1307,1308,-8,-2147483648,
           3,1358,1359,0,-16,-2147483648,3,0,1371,1372,-8,-2147483648,3,1294,1295,0,-16,-2147483648,3,0,1307,1308,

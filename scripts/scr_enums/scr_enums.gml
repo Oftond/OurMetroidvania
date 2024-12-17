@@ -10,6 +10,7 @@ enum STATES
 	WALK,
 	FALL,
 	DOUBLE_JUMP,
+	PARRY
 }
 
 global.MainFont = fnt_main;
