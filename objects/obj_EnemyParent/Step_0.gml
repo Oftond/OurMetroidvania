@@ -76,12 +76,16 @@ if (instance_exists(obj_player))
 	var player=point_distance(x,y,obj_player.x,obj_player.y);
 	if(player<=detection&&state!=STATE.attack)
 	{
-		var attackChoice = irandom(array_length(Attacks)-1);
-		var attacke = Attacks[attackChoice];
-		change_state(STATE.attack);
-		attack=attacke.animation;
-		base_damage=attacke.damage;
-		mask_index=attacke.animation;
+		if(image_index==0)
+		{			
+			var attackChoice = irandom(array_length(Attacks)-1);
+			var attacke = Attacks[attackChoice];
+			change_state(STATE.attack);
+			attack=attacke.animation;
+			base_damage=attacke.damage;
+			mask_index=attacke.animation;
+		}
+		//show_message(attackChoice)
 		if(attack!=move)
 		{
 			move_x=0;			
