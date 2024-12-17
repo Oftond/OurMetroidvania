@@ -3,17 +3,18 @@
   "%Name":"obj_DemonBoss",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
   "name":"obj_DemonBoss",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"Boss",
+    "path":"folders/Objects/Boss.yy",
   },
   "parentObjectId":{
-    "name":"obj_EnemyParent",
-    "path":"objects/obj_EnemyParent/obj_EnemyParent.yy",
+    "name":"obj_BossParent",
+    "path":"objects/obj_BossParent/obj_BossParent.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,
@@ -33,8 +34,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_DemonBoss_Attack",
-    "path":"sprites/spr_DemonBoss_Attack/spr_DemonBoss_Attack.yy",
+    "name":"spr_DemonBoss_idle",
+    "path":"sprites/spr_DemonBoss_idle/spr_DemonBoss_idle.yy",
   },
   "spriteMaskId":null,
   "visible":true,

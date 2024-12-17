@@ -86,4 +86,18 @@ switch (state)
 		sprite_index=fall;
 	}		
 	break;
+	case STATE.dash:	
+	if(sprite_index!=dash)
+	{
+		image_index=0;
+		sprite_index=dash;
+	}		
+	break;
+	case STATE.slide:	
+	if(sprite_index!=slide)
+	{
+		image_index=0;
+		sprite_index=slide;
+	}		
+	break;
 }

@@ -3,7 +3,13 @@ enum STATE
 	move,
 	attack,
 	death,
-	inactive,
+	idle,
 	hit,
 	apear,
+	defence,
+	jump,
+	fall,
+	heal,
+	dash,
+	slide
 }

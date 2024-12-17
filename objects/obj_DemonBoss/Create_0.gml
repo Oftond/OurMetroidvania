@@ -4,7 +4,10 @@
 // Inherit the parent event
 event_inherited();
 
-
-attack=spr_DemonBoss_Attack;
+can_jump=false;
+attack=spr_DemonBoss_Attack_Mask;
 idle=spr_DemonBoss_idle;
-move=spr_DemonBoss_idle
+move=spr_DemonBoss_idle;
+jump=spr_DemonBoss_idle;
+fall=spr_DemonBoss_idle;
+Attacks=[{name:"hit",damage:99,animation:attack}];

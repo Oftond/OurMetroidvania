@@ -1,10 +1,10 @@
 {
   "$GMSprite":"",
   "%Name":"spr_DemonBoss_idle",
-  "bboxMode":0,
+  "bboxMode":2,
   "bbox_bottom":719,
-  "bbox_left":260,
-  "bbox_right":1044,
+  "bbox_left":360,
+  "bbox_right":800,
   "bbox_top":95,
   "collisionKind":1,
   "collisionTolerance":0,
