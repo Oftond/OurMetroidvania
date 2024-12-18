@@ -4,13 +4,6 @@ if (is_death)
 	exit;
 }
 
-if (experience >= exp_to_level)
-{
-	experience -= exp_to_level;
-	current_level++;
-	exp_to_level = exp_to_level * (current_level + 1);
-}
-
 if (wait_to_attack > 0)
 	wait_to_attack--;
 	
@@ -30,11 +23,25 @@ is_graunded = place_meeting(x, y + 1, obj_game_manager.collision_tilemap);
 on_wall = place_meeting(x - 1, y, obj_game_manager.collision_tilemap) - place_meeting(x + 1, y, obj_game_manager.collision_tilemap);
 move_locked_time = max(move_locked_time - 1, 0);
 
-if (_open_inventory && !is_dashing && inventory_id == undefined)
+if (_open_inventory && !is_dashing)
 {
-	inventory_is_open = !inventory_is_open;
+	if (!inventory_is_open && !layer_sequence_exists("GUI", inventory_id))
+	{
+		inventory_is_open = true;
+	}
+	else if (inventory_is_open && inventory_id != undefined && sequence_exists(seq_inventory_open))
+	{
+		if (layer_sequence_is_finished(inventory_id))
+			inventory_is_open = false;
+	}
 	if (inventory_is_open && inventory_id == undefined)
 		inventory_id = layer_sequence_create("GUI", camera_get_view_x(view_camera[0]) + global.CameraWidth / 2, camera_get_view_y(view_camera[0]) + global.CameraHeight / 2, seq_inventory_open);
+	else if (!inventory_is_open && inventory_id != undefined && !layer_sequence_exists("GUI", inventory_id))
+	{
+		var _temp_seq_id = inventory_id;
+		inventory_id = layer_sequence_create("GUI", camera_get_view_x(view_camera[0]) + global.CameraWidth / 2, camera_get_view_y(view_camera[0]) + global.CameraHeight / 2, seq_inventory_close);
+		layer_sequence_destroy(_temp_seq_id);
+	}
 }
 
 if (!inventory_is_open)

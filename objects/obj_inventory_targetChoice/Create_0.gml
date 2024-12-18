@@ -11,3 +11,6 @@ length = 5;
 dir = 1;
 delay_to_move = 0;
 delay_time = 20;
+
+choice_hud = undefined;
+distance_to_hud = 100;

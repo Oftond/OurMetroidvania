@@ -65,7 +65,7 @@
     {"name":"Sparkle","path":"particlelib/Sparkle/Sparkle.yy",},
   ],
   "MetaData":{
-    "IDEVersion":"2024.8.1.171",
+    "IDEVersion":"2024.11.0.179",
   },
   "name":"Metroidvania",
   "resources":[
@@ -79,6 +79,7 @@
     {"id":{"name":"obj_inventory_hud_equip","path":"objects/obj_inventory_hud_equip/obj_inventory_hud_equip.yy",},},
     {"id":{"name":"obj_inventory_hud_equipment","path":"objects/obj_inventory_hud_equipment/obj_inventory_hud_equipment.yy",},},
     {"id":{"name":"obj_inventory_targetChoice","path":"objects/obj_inventory_targetChoice/obj_inventory_targetChoice.yy",},},
+    {"id":{"name":"obj_inventory_tittle_destroy","path":"objects/obj_inventory_tittle_destroy/obj_inventory_tittle_destroy.yy",},},
     {"id":{"name":"obj_inventory_tittle","path":"objects/obj_inventory_tittle/obj_inventory_tittle.yy",},},
     {"id":{"name":"obj_player_attack_hitBox","path":"objects/obj_player_attack_hitBox/obj_player_attack_hitBox.yy",},},
     {"id":{"name":"obj_player_dashTail","path":"objects/obj_player_dashTail/obj_player_dashTail.yy",},},
@@ -194,7 +195,8 @@
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
     {"id":{"name":"scr_enums","path":"scripts/scr_enums/scr_enums.yy",},},
     {"id":{"name":"scr_inventory","path":"scripts/scr_inventory/scr_inventory.yy",},},
-    {"id":{"name":"scr_skills","path":"scripts/scr_skills/scr_skills.yy",},},
+    {"id":{"name":"scr_spells","path":"scripts/scr_spells/scr_spells.yy",},},
+    {"id":{"name":"seq_inventory_close","path":"sequences/seq_inventory_close/seq_inventory_close.yy",},},
     {"id":{"name":"seq_inventory_open","path":"sequences/seq_inventory_open/seq_inventory_open.yy",},},
     {"id":{"name":"Spr_Air_1","path":"sprites/Spr_Air_1/Spr_Air_1.yy",},},
     {"id":{"name":"Spr_Arrow","path":"sprites/Spr_Arrow/Spr_Arrow.yy",},},

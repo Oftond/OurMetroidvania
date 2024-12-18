@@ -16,11 +16,9 @@ move_locked_max_time = 10;
 move_locked_time = 0;
 on_wall = 0;
 moneys = 0;
-experience = 0;
-current_level = 0;
-exp_to_level = 40;
 max_mana = 10;
 current_mana = max_mana;
+spells = new Spells(self);
 sprite_idle = spr_player_idle;
 sprite_attack_1 = spr_player_attack_1;
 sprite_attack_2 = spr_player_attack_2;
@@ -48,8 +46,6 @@ sword =
 		return false;
 	}
 }
-
-skills = new Skills(self);
 
 change_state = function(_state)
 {
