@@ -1,7 +1,7 @@
-draw_sprite(sprite_leftTop, 0, x - distance - move_x, y - distance - move_y);
-draw_sprite(sprite_rightTop, 0, x + distance + move_x, y - distance - move_y);
-draw_sprite(sprite_rightBottom, 0, x + distance + move_x, y + distance + move_y);
-draw_sprite(sprite_leftBottom, 0, x - distance - move_x, y + distance + move_y);
+draw_sprite(sprite_leftTop, 0, x - distance_x - move_x, y - distance_y - move_y);
+draw_sprite(sprite_rightTop, 0, x + distance_x + move_x, y - distance_y - move_y);
+draw_sprite(sprite_rightBottom, 0, x + distance_x + move_x, y + distance_y + move_y);
+draw_sprite(sprite_leftBottom, 0, x - distance_x - move_x, y + distance_y + move_y);
 
 if (delay_to_move <= 0)
 {

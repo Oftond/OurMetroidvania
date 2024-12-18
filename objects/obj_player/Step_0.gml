@@ -30,9 +30,11 @@ is_graunded = place_meeting(x, y + 1, obj_game_manager.collision_tilemap);
 on_wall = place_meeting(x - 1, y, obj_game_manager.collision_tilemap) - place_meeting(x + 1, y, obj_game_manager.collision_tilemap);
 move_locked_time = max(move_locked_time - 1, 0);
 
-if (_open_inventory && !is_dashing)
+if (_open_inventory && !is_dashing && inventory_id == undefined)
 {
 	inventory_is_open = !inventory_is_open;
+	if (inventory_is_open && inventory_id == undefined)
+		inventory_id = layer_sequence_create("GUI", camera_get_view_x(view_camera[0]) + global.CameraWidth / 2, camera_get_view_y(view_camera[0]) + global.CameraHeight / 2, seq_inventory_open);
 }
 
 if (!inventory_is_open)
@@ -50,7 +52,7 @@ if (!inventory_is_open)
 			change_state(STATES.DASH);
 			move_x = (dash_spd * sign(image_xscale));
 		}
-	
+		
 		if (_attack && wait_to_attack <= 0)
 		{
 			if (image_index >= image_number - 3 && combo > 0 && combo < max_combo && !do_attack)

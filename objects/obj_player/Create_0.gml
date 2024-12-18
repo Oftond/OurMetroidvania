@@ -1,5 +1,6 @@
 event_inherited();
 inventory_is_open = false;
+inventory_id = undefined;
 is_dashing = false;
 timer_to_dash = 0;
 time_dash = 15;
