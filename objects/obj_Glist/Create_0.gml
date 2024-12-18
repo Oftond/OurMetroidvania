@@ -4,7 +4,7 @@
 // Inherit the parent event
 event_inherited();
 move_speed=0;
-
+hp=100;
 attack=spr_Glist_RightAttack
 idle=spr_Glist_Idle;
 hit=spr_Glist_Hit;

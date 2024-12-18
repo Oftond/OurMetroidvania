@@ -3,7 +3,7 @@
 
 // Inherit the parent event
 event_inherited();
-
+hp=100;
 attack=spr_JappaHat_Attack;
 idle=spr_JappaHat_Idle;
 hit=spr_JappaHat_Hit;

@@ -3,7 +3,7 @@
 
 // Inherit the parent event
 event_inherited();
-hp=5000;
+hp=15000;
 magic_attack=spr_FinalleBoss_attackMagic;
 air_attack=spr_FinalleBoss_attackAir;
 attack1=spr_FinalleBoss_attackSword1;
@@ -18,7 +18,6 @@ jump=spr_FinalleBoss_jump;
 surf=spr_FinalleBoss_surf;
 heal=spr_FinalleBoss_heal
 fall=spr_FinalleBoss_down;
-can_jump=false;
 
 Attacks=[
 {name:"magic_attack",damage:70,animation:magic_attack},

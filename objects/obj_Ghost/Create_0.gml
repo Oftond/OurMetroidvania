@@ -4,6 +4,7 @@
 // Inherit the parent event
 event_inherited();
 image_speed=1;
+hp=500;
 state=STATE.apear
 apear=spr_Ghost_Apear;
 attack=spr_Ghost_Attack;

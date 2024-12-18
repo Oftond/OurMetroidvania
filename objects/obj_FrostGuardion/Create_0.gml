@@ -3,7 +3,7 @@
 
 // Inherit the parent event
 event_inherited();
-
+hp=2500;
 attack=spr_FrostGuardion_attack;
 death=spr_FrostGuardion_death;
 idle=spr_FrostGuardion_idle;

@@ -12,12 +12,11 @@ GetDamage=function(_character)
 }
 change_state=function(_state)
 {
-	if(state!=STATE.jump)
+	if(state!=STATE.jump && state != STATE.attack)
 		state=_state;
 	else if(_state==STATE.fall)
 		state=_state;
 }
-can_jump=true;
 move_x=0;
 move_y=0;
 jump_speed=25;
@@ -26,7 +25,11 @@ move_speed=2;
 dir=1;
 onGround=true;
 want_to_jump=false;
-
+timeDelay=60;
+attackDelay=timeDelay;
+want_to_go=true;
+shouldAttack=true;
+chooseSelected=false;
 state=STATE.idle;
 
 attack=spr_Batman_Attack;
@@ -38,6 +41,8 @@ jump=spr_Batman_fly;
 fall=spr_Batman_fly;
 dash=spr_Batman_fly;
 slide=spr_Batman_fly;
+can_jump=true;
+playerDetected=false;
 
 mask_index=sprite_index;
 

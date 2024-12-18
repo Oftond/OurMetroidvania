@@ -3,7 +3,7 @@
 
 // Inherit the parent event
 event_inherited();
-
+hp=2500;
 attack2=spr_Mecha_attack2;
 attack=spr_Mecha_attack;
 attack3=spr_Mecha_attack3;

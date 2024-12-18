@@ -10,7 +10,6 @@ switch (state)
 	}
 	if(image_index>=image_number-1)
 	{
-		image_index=0;
 		state=STATE.idle;
 	}
 	break;
@@ -36,7 +35,7 @@ switch (state)
 	{
 		image_index=0;
 		sprite_index=idle;
-	}		
+	}	
 	break;
 	
 	case STATE.move:
@@ -44,7 +43,7 @@ switch (state)
 	{
 		image_index=0;
 		sprite_index=move;
-	}		
+	}
 	break;
 	
 	case STATE.apear:	

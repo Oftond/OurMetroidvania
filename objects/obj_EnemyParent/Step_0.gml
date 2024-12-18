@@ -59,7 +59,6 @@ if(onGround)
 	}
 	else if(state!=STATE.attack && onGround)
 	{
-		show_debug_message(state)
 		change_state(STATE.idle);
 	}
 }
@@ -74,29 +73,15 @@ else if(move_y<0&&!onGround)
 if (instance_exists(obj_player))
 {
 	var player=point_distance(x,y,obj_player.x,obj_player.y);
-	if(player<=detection&&state!=STATE.attack)
+	if(player<=detection&&!playerDetected)
 	{
-		if(image_index==0)
-		{			
-			var attackChoice = irandom(array_length(Attacks)-1);
-			var attacke = Attacks[attackChoice];
-			change_state(STATE.attack);
-			attack=attacke.animation;
-			base_damage=attacke.damage;
-			mask_index=attacke.animation;
-		}
-		//show_message(attackChoice)
-		if(attack!=move)
-		{
-			move_x=0;			
-		}
-		var locate=sign(x-obj_player.x);
-		image_xscale=locate;
+		playerDetected=true;
+		
 	}
-}
-
+}	
+if(!want_to_go)
+	move_x=0;
 y+=move_y;
 x+=move_x;
 if(move_x!=0)
-	image_xscale=sign(dir);
-
+	passed+=move_x;

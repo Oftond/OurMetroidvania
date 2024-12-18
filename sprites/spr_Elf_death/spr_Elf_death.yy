@@ -43,8 +43,8 @@
   "nineSlice":null,
   "origin":4,
   "parent":{
-    "name":"Elf",
-    "path":"folders/Sprites/Elf.yy",
+    "name":"Other",
+    "path":"folders/Sprites/Elf/Other.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

@@ -3,7 +3,7 @@
 
 // Inherit the parent event
 event_inherited();
-
+hp=50
 attack=spr_Mushroom_attack;
 death=spr_Mushroom_death;
 move=spr_Mushroom_move;

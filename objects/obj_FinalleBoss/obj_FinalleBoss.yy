@@ -33,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_FinalleBoss_walk",
-    "path":"sprites/spr_FinalleBoss_walk/spr_FinalleBoss_walk.yy",
+    "name":"spr_FinalleBoss_idle",
+    "path":"sprites/spr_FinalleBoss_idle/spr_FinalleBoss_idle.yy",
   },
   "spriteMaskId":null,
   "visible":true,
