@@ -18,8 +18,8 @@
   "resourceType":"GMTileSet",
   "resourceVersion":"2.0",
   "spriteId":{
-    "name":"Sprite39",
-    "path":"sprites/Sprite39/Sprite39.yy",
+    "name":"spr_dungeon",
+    "path":"sprites/spr_dungeon/spr_dungeon.yy",
   },
   "spriteNoExport":false,
   "textureGroupId":{

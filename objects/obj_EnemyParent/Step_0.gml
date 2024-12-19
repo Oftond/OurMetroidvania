@@ -83,5 +83,3 @@ if(!want_to_go)
 	move_x=0;
 y+=move_y;
 x+=move_x;
-if(move_x!=0)
-	passed+=move_x;

@@ -28,8 +28,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_JappaHat_Idle",
-    "path":"sprites/spr_JappaHat_Idle/spr_JappaHat_Idle.yy",
+    "name":"Sprite131",
+    "path":"sprites/Sprite131/Sprite131.yy",
   },
   "spriteMaskId":null,
   "visible":true,
