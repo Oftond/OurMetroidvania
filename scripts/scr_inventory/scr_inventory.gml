@@ -7,12 +7,10 @@ function Inventory(_player) constructor
 	equip_amulets = [];
 	cells_equip_amulets = 3;
 	
-	is_amulet_index = function(_index)
+	is_amulet_index = function(_where, _index)
 	{
-		if (_index >= 0 && _index < array_length(amulets))
-		{
+		if (_index >= 0 && _index < array_length(_where))
 			return true;
-		}
 		return false;
 	}
 	
@@ -21,9 +19,18 @@ function Inventory(_player) constructor
 		array_push(amulets, _amulet);
 	}
 	
-	equip_emulet = function(_amulet)
+	equip_emulet = function(_index)
 	{
-		
+		amulets[_index].property(player);
+		array_push(equip_amulets, amulets[_index]);
+		amulets[_index].equip();
+	}
+	
+	unequip_emulet = function(_where, _index)
+	{
+		amulets[_index].equip();
+		array_delete(_where, _index, 1);
+		amulets[_index].disable_property(player);
 	}
 	
 	add_item = function(_item)
@@ -35,11 +42,6 @@ function Inventory(_player) constructor
 		}
 		else
 			return false;
-	}
-	
-	remove = function(_index)
-	{
-		array_delete(items, _index, 1);
 	}
 	
 	buy_item = function(_item)

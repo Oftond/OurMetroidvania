@@ -1,0 +1,1 @@
+show_message("УРОН: " + string(sword.damage));
