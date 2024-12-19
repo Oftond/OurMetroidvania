@@ -14,3 +14,5 @@ delay_time = 20;
 
 choice_hud = undefined;
 distance_to_hud = 100;
+
+state = STATESTARGET.EQUIP;

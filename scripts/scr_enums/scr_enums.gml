@@ -13,4 +13,10 @@ enum STATES
 	PARRY
 }
 
+enum STATESTARGET
+{
+	EQUIP,
+	EQUIPMENT
+}
+
 global.MainFont = fnt_main;

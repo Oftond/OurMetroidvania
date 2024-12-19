@@ -2,11 +2,39 @@ function Inventory(_player) constructor
 {
 	player = _player;
 	max_items = 10;
-	items = array_create(max_items);
+	items = [];
+	amulets = [];
+	equip_amulets = [];
+	cells_equip_amulets = 3;
 	
-	add = function(_item)
+	is_amulet_index = function(_index)
 	{
-		array_push(items, _item);
+		if (_index >= 0 && _index < array_length(amulets))
+		{
+			return true;
+		}
+		return false;
+	}
+	
+	add_amulet = function(_amulet)
+	{
+		array_push(amulets, _amulet);
+	}
+	
+	equip_emulet = function(_amulet)
+	{
+		
+	}
+	
+	add_item = function(_item)
+	{
+		if (array_length(items) < max_items)
+		{
+			array_push(items, _item);
+			return true;
+		}
+		else
+			return false;
 	}
 	
 	remove = function(_index)
@@ -14,7 +42,7 @@ function Inventory(_player) constructor
 		array_delete(items, _index, 1);
 	}
 	
-	buy = function(_item)
+	buy_item = function(_item)
 	{
 		if (player.moneys >= _item.price)
 		{

@@ -1,0 +1,1 @@
+inventory.add_amulet(new AmuletFlashing());

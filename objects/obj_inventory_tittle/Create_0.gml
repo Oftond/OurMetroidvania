@@ -1,4 +1,4 @@
-count_equip = 3;
+count_equip = obj_player.inventory.cells_equip_amulets;
 count_equipment = 18;
 distance = 20;
 distance_to_strings = 0;

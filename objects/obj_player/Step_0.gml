@@ -25,22 +25,23 @@ move_locked_time = max(move_locked_time - 1, 0);
 
 if (_open_inventory && !is_dashing)
 {
-	if (!inventory_is_open && !layer_sequence_exists("GUI", inventory_id))
-	{
+	if (!inventory_is_open && inventory_id == undefined)
 		inventory_is_open = true;
-	}
-	else if (inventory_is_open && inventory_id != undefined && sequence_exists(seq_inventory_open))
+	else if (inventory_is_open && inventory_id != undefined)
 	{
 		if (layer_sequence_is_finished(inventory_id))
 			inventory_is_open = false;
 	}
 	if (inventory_is_open && inventory_id == undefined)
 		inventory_id = layer_sequence_create("GUI", camera_get_view_x(view_camera[0]) + global.CameraWidth / 2, camera_get_view_y(view_camera[0]) + global.CameraHeight / 2, seq_inventory_open);
-	else if (!inventory_is_open && inventory_id != undefined && !layer_sequence_exists("GUI", inventory_id))
+	else if (!inventory_is_open && inventory_id != undefined)
 	{
-		var _temp_seq_id = inventory_id;
-		inventory_id = layer_sequence_create("GUI", camera_get_view_x(view_camera[0]) + global.CameraWidth / 2, camera_get_view_y(view_camera[0]) + global.CameraHeight / 2, seq_inventory_close);
-		layer_sequence_destroy(_temp_seq_id);
+		if (layer_sequence_get_headdir(inventory_id) != seqdir_left)
+		{
+			layer_sequence_headdir(inventory_id, seqdir_left);
+			layer_sequence_play(inventory_id)
+			instance_destroy(obj_inventory_element_parent);
+		}
 	}
 }
 
