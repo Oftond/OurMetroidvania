@@ -1,6 +1,7 @@
 function AAmulet() constructor
 {
-	name = "Амулет";
+	name = "";
+	description = "";
 	sprite = undefined;
 	is_equipped = false;
 	
@@ -10,7 +11,6 @@ function AAmulet() constructor
 	
 	equip = function()
 	{
-		show_message(12)
 		is_equipped = !is_equipped;
 	}
 }
@@ -18,24 +18,16 @@ function AAmulet() constructor
 function AmuletFlashing() : AAmulet() constructor
 {
 	name = "Амулет причастия";
+	description = "Этот амулет увеличит ваше время неуязвимости после получения урона";
 	sprite = spr_amulet_flashing;
-	
-	equip = function()
-	{
-		is_equipped = !is_equipped;
-	}
 }
 
 function AmuletPowerOfGod() : AAmulet() constructor
 {
 	name = "Амулет божественной силы";
-	sprite = spr_amulet_up_attack;
+	description = "Амулет, увеличивающий вашу силу урона";
+	sprite = spr_amulet_powerOfGod;
 	damage_bonus = 5;
-	
-	equip = function()
-	{
-		is_equipped = !is_equipped;
-	}
 	
 	property = function(_player)
 	{
@@ -45,5 +37,28 @@ function AmuletPowerOfGod() : AAmulet() constructor
 	disable_property = function(_player)
 	{
 		_player.sword.damage -= damage_bonus;
+	}
+}
+
+function AmuletHeavyLunge() : AAmulet() constructor
+{
+	name = "Тяжелый выпад";
+	description = "Амулет увеличит ваше максимальное здоровье";
+	sprite = spr_amulet_heavy_lunge;
+	hp_bonus = 5;
+	
+	equip = function()
+	{
+		is_equipped = !is_equipped;
+	}
+	
+	property = function(_player)
+	{
+		_player.max_hp += hp_bonus;
+	}
+	
+	disable_property = function(_player)
+	{
+		_player.max_hp -= hp_bonus;
 	}
 }

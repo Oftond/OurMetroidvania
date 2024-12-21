@@ -2,9 +2,9 @@
   "$GMSprite":"",
   "%Name":"spr_flameville_layer01",
   "bboxMode":0,
-  "bbox_bottom":121,
+  "bbox_bottom":487,
   "bbox_left":0,
-  "bbox_right":479,
+  "bbox_right":1919,
   "bbox_top":0,
   "collisionKind":1,
   "collisionTolerance":0,
@@ -16,7 +16,7 @@
   ],
   "gridX":0,
   "gridY":0,
-  "height":270,
+  "height":1080,
   "HTile":false,
   "layers":[
     {"$GMImageLayer":"","%Name":"22b6431e-4e12-4351-9eb9-dcef15a36f83","blendMode":0,"displayName":"default","isLocked":false,"name":"22b6431e-4e12-4351-9eb9-dcef15a36f83","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
@@ -86,5 +86,5 @@
   },
   "type":0,
   "VTile":false,
-  "width":480,
+  "width":1920,
 }

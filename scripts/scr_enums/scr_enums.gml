@@ -13,10 +13,22 @@ enum STATES
 	PARRY
 }
 
-enum STATESTARGET
+enum STATESITEMS
 {
-	EQUIP,
-	EQUIPMENT
+	ITEM,
+	AMULET,
+	CELL,
+	HEALTH,
+	MANA
 }
 
-global.MainFont = fnt_main;
+enum LANGUAGES
+{
+	RUS,
+	ENG
+}
+
+global.Headings = fnt_headings;
+global.SubHeadings = fnt_subheadings;
+global.Description = fnt_description;
+global.Language = LANGUAGES.RUS;

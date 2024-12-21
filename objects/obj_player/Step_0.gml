@@ -17,16 +17,19 @@ var _jump_key_pressed = keyboard_check_pressed(ord("Z"));
 var _jump_key_hold = keyboard_check(ord("Z"));
 var _attack = keyboard_check_pressed(ord("X"));
 var _dash = keyboard_check_pressed(ord("C"));
-var _open_inventory = keyboard_check_pressed(ord("A"))
+var _open_inventory = keyboard_check_pressed(vk_tab)
 var _heal = keyboard_check_pressed(ord("A"));
-is_graunded = place_meeting(x, y + 1, obj_game_manager.collision_tilemap);
-on_wall = place_meeting(x - 1, y, obj_game_manager.collision_tilemap) - place_meeting(x + 1, y, obj_game_manager.collision_tilemap);
+is_graunded = place_meeting(x, y + 1, obj_game_manager.collision_wall);
+on_wall = place_meeting(x - 1, y, obj_game_manager.collision_wall) - place_meeting(x + 1, y, obj_game_manager.collision_wall);
 move_locked_time = max(move_locked_time - 1, 0);
 
 if (_open_inventory && !is_dashing)
 {
 	if (!inventory_is_open && inventory_id == undefined)
+	{
 		inventory_is_open = true;
+		change_state(STATES.IDLE);
+	}
 	else if (inventory_is_open && inventory_id != undefined)
 	{
 		if (layer_sequence_is_finished(inventory_id))
@@ -40,16 +43,12 @@ if (_open_inventory && !is_dashing)
 		{
 			layer_sequence_headdir(inventory_id, seqdir_left);
 			layer_sequence_play(inventory_id)
-			instance_destroy(obj_inventory_element_parent);
 		}
 	}
 }
 
 if (!inventory_is_open)
 {
-	if (is_dashing)
-		move_x += 2 * sign(image_xscale);
-
 	if (!is_knockback)
 	{
 		if (_dash && timer_to_dash <= 0 && !is_dashing && can_dash)
@@ -58,7 +57,13 @@ if (!inventory_is_open)
 			is_dashing = true;
 			can_dash = false;
 			change_state(STATES.DASH);
-			move_x = (dash_spd * sign(image_xscale));
+			if (!is_graunded && on_wall != 0)
+			{
+				image_xscale *= -1;
+				move_x = (dash_spd * sign(image_xscale));
+			}
+			else
+				move_x = (dash_spd * sign(image_xscale));
 		}
 		
 		if (_attack && wait_to_attack <= 0)
@@ -166,22 +171,25 @@ if (!inventory_is_open)
 		move_x = 0;
 
 	var _sub_pixel = 0.5;
-	if (place_meeting(x + move_x, y, obj_game_manager.collision_tilemap))
+	if (place_meeting(x + move_x, y, obj_game_manager.collision_wall))
 	{
 		var _pixel_check = _sub_pixel * sign(move_x);
-		while (!place_meeting(x + _pixel_check, y, obj_game_manager.collision_tilemap))
+		while (!place_meeting(x + _pixel_check, y, obj_game_manager.collision_wall))
 			x += _pixel_check;
 		move_x = 0;
 	}
 
-	if (place_meeting(x, y + move_y, obj_game_manager.collision_tilemap))
+	if (place_meeting(x, y + move_y, obj_game_manager.collision_wall))
 	{
 		var _pixel_check = _sub_pixel * sign(move_y);
-		while (!place_meeting(x, y + _pixel_check, obj_game_manager.collision_tilemap))
+		while (!place_meeting(x, y + _pixel_check, obj_game_manager.collision_wall))
 			y += _pixel_check;
 		move_y = 0;
 		jump_timer = 0;
 	}
+	
+	if (move_y > 15)
+		move_y = 15;
 
 	x += move_x;
 	y += move_y;

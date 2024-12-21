@@ -1,0 +1,3 @@
+instance_destroy(obj_inventory_next_page);
+instance_destroy(obj_inventory_previous_page);
+instance_destroy(obj_inventory_targetChoice);
