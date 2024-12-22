@@ -23,7 +23,7 @@ is_graunded = place_meeting(x, y + 1, obj_game_manager.collision_wall);
 on_wall = place_meeting(x - 1, y, obj_game_manager.collision_wall) - place_meeting(x + 1, y, obj_game_manager.collision_wall);
 move_locked_time = max(move_locked_time - 1, 0);
 
-if (_open_inventory && !is_dashing)
+if (_open_inventory && !is_dashing && is_graunded)
 {
 	if (!inventory_is_open && inventory_id == undefined)
 	{

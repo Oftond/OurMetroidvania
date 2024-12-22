@@ -32,8 +32,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_inventory_dark",
-    "path":"sprites/spr_inventory_dark/spr_inventory_dark.yy",
+    "name":"spr_inventory",
+    "path":"sprites/spr_inventory/spr_inventory.yy",
   },
   "spriteMaskId":null,
   "visible":true,

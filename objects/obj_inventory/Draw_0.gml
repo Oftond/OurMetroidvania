@@ -42,3 +42,25 @@ for (var i = 0; i < count_equipment / max_in_row; i++)
 		_index_amulet++;
 	}
 }
+
+if (obj_inventory_targetChoice.page + 1 <= obj_inventory_targetChoice.max_pages)
+	current_phrase_right = phrases[obj_inventory_targetChoice.page + 1];
+else
+	current_phrase_right = phrases[0];
+
+if (obj_inventory_targetChoice.page - 1 >= 0)
+	current_phrase_left = phrases[obj_inventory_targetChoice.page - 1];
+else
+	current_phrase_left = phrases[obj_inventory_targetChoice.max_pages];
+
+draw_sprite(spr_next_page, 0, bbox_right - 100, bbox_top + 70);
+draw_sprite(spr_previous_page, 0, bbox_left + 100, bbox_top + 70);
+draw_sprite(spr_input_keyboard_q, 0, bbox_left + 170, bbox_top + 70);
+draw_sprite(spr_input_keyboard_e, 0, bbox_right - 170, bbox_top + 70);
+
+draw_set_font(global.SubHeadings);
+draw_set_halign(fa_right);
+draw_set_valign(fa_middle);
+draw_text(bbox_right - 220, bbox_top + 70, current_phrase_right);
+draw_set_halign(fa_left);
+draw_text(bbox_left + 220, bbox_top + 70, current_phrase_left);

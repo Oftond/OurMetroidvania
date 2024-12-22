@@ -3,16 +3,30 @@ var _key_left = keyboard_check_pressed(vk_left);
 var _key_up = keyboard_check_pressed(vk_up);
 var _key_down = keyboard_check_pressed(vk_down);
 var _accept = keyboard_check_pressed(vk_enter);
-var _next_page = keyboard_check_pressed(vk_pageup);
-var _prev_page = keyboard_check_pressed(vk_pagedown);
+var _next_page = keyboard_check_pressed(ord("E"));
+var _prev_page = keyboard_check_pressed(ord("Q"));
 
-show_debug_message(page)
-
-if (_next_page)
+if (_next_page && !instance_exists(obj_inventory_dark))
+{
+	selected_index = 0;
 	page++;
-			
-if (_prev_page)
+	with (instance_create_depth(obj_inventory.x, obj_inventory.y, -99999, obj_inventory_dark))
+	{
+		image_xscale = obj_inventory.image_xscale;
+		image_yscale = obj_inventory.image_yscale;
+	}
+}
+
+if (_prev_page && !instance_exists(obj_inventory_dark))
+{
+	selected_index = 0;
 	page--;
+	with (instance_create_depth(obj_inventory.x, obj_inventory.y, -99999, obj_inventory_dark))
+	{
+		image_xscale = obj_inventory.image_xscale;
+		image_yscale = obj_inventory.image_yscale;
+	}
+}
 		
 if (page > max_pages)
 	page = 0;
@@ -38,7 +52,6 @@ switch(page)
 		{
 			distance_x = sprite_get_height(choice_amulet.sprite) - 50;
 			distance_y = sprite_get_width(choice_amulet.sprite) - 50;
-			show_debug_message(distance_x)
 		}
 		else
 		{

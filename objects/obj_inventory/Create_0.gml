@@ -5,6 +5,11 @@ distance_to_strings = 0;
 max_in_row = round(count_equipment / 3);
 inventory_is_end_moving = false;
 
+phrases = ["ЭКИПИРОВКА", "ЗАКЛИНАНИЯ", "КАРТА"];
+
+current_phrase_right = phrases[2];
+current_phrase_left = phrases[1];
+
 instance_create_depth(x, y, -9999, obj_inventory_next_page);
 instance_create_depth(x, y, -9999, obj_inventory_previous_page);
 instance_create_depth(x, y, -9999 ,obj_inventory_targetChoice);

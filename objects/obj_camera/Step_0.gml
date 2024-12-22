@@ -1,3 +1,6 @@
+if (obj_player.inventory_id != undefined)
+	exit;
+
 var _target_x = follow.x - (global.CameraWidth / 2);
 var _target_y = follow.y - (global.CameraHeight / 2);
 

@@ -16,10 +16,10 @@ if (move > spd * 3 || move < -spd * 3)
 	count++;
 }
 
-if (device_mouse_check_button_pressed(0, mb_left) && !is_pressed)
+if (device_mouse_check_button_pressed(0, mb_left) && !is_pressed && !instance_exists(obj_inventory_dark))
 {
-	var _touch_x = device_mouse_x_to_gui(0);
-    var _touch_y = device_mouse_y_to_gui(0);
+	var _touch_x = device_mouse_x(0);
+    var _touch_y = device_mouse_y(0);
 	if (instance_position(_touch_x, _touch_y, obj_inventory_next_page))
 	{
 		is_pressed = true;
