@@ -1,0 +1,1 @@
+spells.add_spell(new FireBall());

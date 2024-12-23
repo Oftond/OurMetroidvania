@@ -1,23 +1,89 @@
 function Spells(_player) constructor
 {
-	spells = [];
-	equip_spell = [];
+	max_number_spells = 8;
+	spells = array_create(max_number_spells, undefined);
 	max_equip_spells = 3;
+	equip_spell = array_create(max_equip_spells, undefined);
 	player = _player;
 	
-	add_skill = function(_spell)
+	add_spell = function(_spell)
 	{
-		array_push(spells, _spell);
-		equip_spell(_spell);
-	}
-	
-	equip_spell = function(spell)
-	{
-		if (array_length(equip_spell) < max_equip_spells)
+		for (var i = 0; i < max_number_spells; i++)
 		{
-			array_push(equip_spell, _spell);
-			return true;
+			if (spells[i] == undefined)
+			{
+				spells[i] = _spell;
+				return true;
+			}
 		}
 		return false;
 	}
+	
+	equip_spell = function(_index)
+	{
+		if (!spells[_index].is_equipped)
+		{
+			for (var i = 0; i < max_equip_spells; i++)
+			{
+				if (equip_spell[i] == undefined)
+				{
+					equip_spell[i] = spells[_index];
+					spells[_index].equip();
+					return true;
+				}
+			}
+		}
+		else
+		{
+			for (var i = 0; i < max_equip_spells; i++)
+			{
+				if (equip_spell[i] == spells[_index])
+				{
+					equip_spell[i].equip();
+					equip_spell[i] = undefined;
+					return true;
+				}
+			}
+		}
+		return false;
+	}
+}
+
+function ASpell() constructor
+{
+	name = "";
+	description = "";
+	icon = undefined;
+	is_equipped = false;
+	
+	cast = function(_player) {}
+	
+	equip = function()
+	{
+		is_equipped = !is_equipped;
+	}
+}
+
+function FireBall() : ASpell() constructor
+{
+	name = "Огненный шар";
+	description = "Создает огненный шар, летящий в сторону ваших недругов.";
+	icon = spr_spell_fireBall_icon;
+	is_equipped = false;
+}
+
+function FireBorn() : ASpell() constructor
+{
+	name = "Адское пламя";
+	description = "Создает на ваших ладонях адское пламя, которое не причинит вам вреда, но испепелит до тла ваших врагов. Оно холодное...";
+	icon = spr_spell_fireBorn_icon;
+	is_equipped = false;
+}
+
+function WindTornado() : ASpell() constructor
+{
+	name = "Торнадо";
+	description = "Призывает торнадо, замедляющее ваших врагов";
+	icon = spr_spell_windTornado_icon;
+	is_equipped = false;
 }

@@ -66,6 +66,14 @@ switch(page)
 	break;
 	
 	case 1:
+		if (_key_right)
+			selected_index++;
+		if (_key_left)
+			selected_index--;
+		if (_key_up)
+			selected_index++;
+		if (_key_down)
+			selected_index--;
 	break;
 	
 	case 2:
