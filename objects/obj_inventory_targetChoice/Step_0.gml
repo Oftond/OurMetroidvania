@@ -67,13 +67,30 @@ switch(page)
 	
 	case 1:
 		if (_key_right)
-			selected_index++;
-		if (_key_left)
 			selected_index--;
+		if (_key_left)
+			selected_index++;
 		if (_key_up)
 			selected_index++;
 		if (_key_down)
 			selected_index--;
+		
+		if (selected_index < 0)
+		{
+			selected_index = obj_player.spells.max_number_spells - 1;
+		}
+		else if (selected_index >= obj_player.spells.max_number_spells)
+			selected_index = 0;
+		
+		choice_spell = obj_player.spells.spells[selected_index];
+		
+		distance_x = sprite_get_width(spr_spellIcon_holder) / 2;
+		distance_y = sprite_get_height(spr_spellIcon_holder) / 2;
+
+		if (_accept && choice_spell != undefined)
+		{
+			obj_player.spells.equip_spell(selected_index);
+		}
 	break;
 	
 	case 2:

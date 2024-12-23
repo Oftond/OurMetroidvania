@@ -1,1 +1,0 @@
-obj_player.change_state(STATES.PARRY);

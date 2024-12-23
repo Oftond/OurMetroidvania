@@ -1,6 +1,6 @@
 if (is_death)
 {
-	sprite_index = spr_player_death;
+	state = STATES.DEATH;
 	exit;
 }
 
@@ -18,7 +18,9 @@ var _jump_key_hold = keyboard_check(ord("Z"));
 var _attack = keyboard_check_pressed(ord("X"));
 var _dash = keyboard_check_pressed(ord("C"));
 var _open_inventory = keyboard_check_pressed(vk_tab)
-var _heal = keyboard_check_pressed(ord("A"));
+var _spell_a = keyboard_check_pressed(ord("A"));
+var _spell_b = keyboard_check_pressed(ord("S"));
+var _spell_c = keyboard_check_pressed(ord("D"));
 is_graunded = place_meeting(x, y + 1, obj_game_manager.collision_wall);
 on_wall = place_meeting(x - 1, y, obj_game_manager.collision_wall) - place_meeting(x + 1, y, obj_game_manager.collision_wall);
 move_locked_time = max(move_locked_time - 1, 0);
@@ -51,6 +53,31 @@ if (!inventory_is_open)
 {
 	if (!is_knockback)
 	{
+		if (_spell_a && state != STATES.ATTACK)
+		{
+			if (spells.equip_spells[0] != undefined)
+			{
+				change_state(STATES.CAST_SPELL);
+				spells.equip_spells[0].cast();
+			}
+		}
+		else if (_spell_b && state != STATES.ATTACK) 
+		{
+			if (spells.equip_spells[1] != undefined)
+			{
+				change_state(STATES.CAST_SPELL);
+				spells.equip_spells[1].cast();
+			}
+		}
+		else if (_spell_c && state != STATES.ATTACK)
+		{
+			if (spells.equip_spells[2] != undefined)
+			{
+				change_state(STATES.CAST_SPELL);
+				spells.equip_spells[2].cast();
+			}
+		}
+		
 		if (_dash && timer_to_dash <= 0 && !is_dashing && can_dash)
 		{
 			timer_to_dash = time_dash;
@@ -134,8 +161,12 @@ if (!inventory_is_open)
 	if (on_wall != 0)
 		can_dash = true;
 
-	if (is_dashing)
+	if (is_dashing || state == STATES.CAST_SPELL)
 		move_y = 0;
+		
+	if (state == STATES.CAST_SPELL)
+		move_x = 0;
+	
 	else if (move_y < 0 && !is_graunded)
 	{
 		if (!is_knockback && state != STATES.DOUBLE_JUMP)

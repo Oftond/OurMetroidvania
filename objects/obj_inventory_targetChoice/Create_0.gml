@@ -13,6 +13,7 @@ delay_to_move = 0;
 delay_time = 20;
 selected_index = 0;
 choice_amulet = undefined;
+choice_spell = undefined;
 
 page = 0;
 max_pages = 2;

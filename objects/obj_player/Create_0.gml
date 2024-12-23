@@ -23,7 +23,6 @@ sprite_idle = spr_player_idle;
 sprite_attack_1 = spr_player_attack_1;
 sprite_attack_2 = spr_player_attack_2;
 sprite_attack_3 = spr_player_attack_3;
-sprite_to_parry = spr_player_parry;
 
 inventory = new Inventory(self);
 
@@ -49,7 +48,7 @@ sword =
 
 change_state = function(_state)
 {
-	if (state != STATES.ATTACK && state != STATES.DASH && state != STATES.PARRY)
+	if (state != STATES.ATTACK && state != STATES.DASH && state != STATES.CAST_SPELL)
 		state = _state;
 	else if (state == STATES.DASH && timer_to_dash == 0)
 		state = _state;
@@ -70,5 +69,10 @@ get_damage = function(_enemy)
 
 attack = function(_enemy)
 {
-	_enemy.get_damage(sword.damage);
+	_enemy.get_damage(sword.damage + get_bonus_damage());
+}
+
+get_bonus_damage = function()
+{
+	return floor((combo - 1) * (sword.current_level * 0.4));
 }

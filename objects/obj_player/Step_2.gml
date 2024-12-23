@@ -84,18 +84,29 @@ switch (state)
 		image_speed = 1;
 	break;
 	
-	case STATES.PARRY:
-		image_speed = 1;
-		if (sprite_index != sprite_to_parry)
+	case STATES.CAST_SPELL:
+		if (sprite_index != spr_player_castSpell)
 		{
 			image_index = 0;
-			sprite_index = sprite_to_parry;
-			if (wait_to_attack <= 0)
-				wait_to_attack = round(wait_time / 2);
+			sprite_index = spr_player_castSpell;
 		}
 		if (image_index >= image_number - 1)
 		{
 			state = STATES.IDLE;
+		}
+		image_speed = 1;
+	break;
+	
+	case STATES.DEATH:
+		if (sprite_index != spr_player_death)
+		{
+			image_index = 0;
+			image_speed = 1;
+			sprite_index = spr_player_death;
+		}
+		if (image_index >= image_number - 1)
+		{
+			image_speed = 0;
 		}
 	break;
 	

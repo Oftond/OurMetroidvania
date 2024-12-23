@@ -49,8 +49,8 @@ else if (obj_inventory_targetChoice.page == 1)
 {
 	var _angle_step = 360 / obj_player.spells.max_number_spells;
 	var _radius = 200;
-	var _center_x = global.CameraWidth / 2;
-	var _center_y = global.CameraHeight / 2;
+	var _center_x = x;
+	var _center_y = y;
 	for (var i = 0; i < obj_player.spells.max_number_spells; i++)
 	{
 		var _angle = i * _angle_step;
@@ -58,13 +58,24 @@ else if (obj_inventory_targetChoice.page == 1)
 		var _y_pos = _center_y + lengthdir_y(_radius, _angle);
 		if (obj_player.spells.spells[i] != undefined)
 		{
-			draw_sprite(spr_spellIcon_holder, 0, _x_pos, _y_pos)
-			draw_sprite(obj_player.spells.spells[i].icon, 0, _x_pos, _y_pos);
+			draw_sprite(spr_spellIcon_holder, 0, _x_pos, _y_pos);
+			if (!obj_player.spells.spells[i].is_equipped)
+				draw_sprite(obj_player.spells.spells[i].icon, 0, _x_pos, _y_pos);
+			else
+				draw_sprite_ext(obj_player.spells.spells[i].icon, 0, _x_pos, _y_pos, 1, 1, 0, c_white, 0.4);
+			draw_sprite(spr_spellIcon_border, 0, _x_pos, _y_pos);
 		}
 		else
 		{
 			draw_sprite(spr_spellIcon_holder, 0, _x_pos, _y_pos)
 		}
+	}
+	
+	if (obj_player.spells.spells[obj_inventory_targetChoice.selected_index] != undefined)
+	{
+		draw_sprite_ext(spr_spellIcon_holder, 0, _center_x, _center_y, 2, 2, 0, c_white, 1);
+		draw_sprite_ext(obj_player.spells.spells[obj_inventory_targetChoice.selected_index].icon, 0, _center_x, _center_y, 2, 2, 0, c_white, 1);
+		draw_sprite_ext(spr_spellIcon_border, 0, _center_x, _center_y, 2, 2, 0, c_white, 1);
 	}
 }
 
