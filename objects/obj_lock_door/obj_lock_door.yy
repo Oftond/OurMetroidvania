@@ -10,8 +10,8 @@
     "path":"folders/Objects/World.yy",
   },
   "parentObjectId":{
-    "name":"obj_wall",
-    "path":"objects/obj_wall/obj_wall.yy",
+    "name":"obj_obstacles",
+    "path":"objects/obj_obstacles/obj_obstacles.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,

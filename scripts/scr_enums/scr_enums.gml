@@ -14,7 +14,7 @@ enum STATES
 	DEATH
 }
 
-enum STATESITEMS
+enum TYPESITEMS
 {
 	ITEM,
 	AMULET,

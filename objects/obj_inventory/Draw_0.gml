@@ -102,6 +102,10 @@ else if (obj_inventory_targetChoice.page == 1)
 		draw_sprite_ext(spr_spellIcon_border, 0, _center_x, _center_y, 2, 2, 0, c_white, 1);
 	}
 }
+else if (obj_inventory_targetChoice.page == 2)
+{
+	minimap_draw();
+}
 
 if (obj_inventory_targetChoice.page + 1 <= obj_inventory_targetChoice.max_pages)
 	current_phrase_right = phrases[obj_inventory_targetChoice.page + 1];

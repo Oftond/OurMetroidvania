@@ -1,3 +1,7 @@
-state = STATESITEMS.AMULET;
+type_item = TYPESITEMS.AMULET;
 
-item = new AmuletFlashing();
+item = undefined;
+
+curve = curv_item_drop;
+curvPosition = 0;
+curvSpeed = 0.02;

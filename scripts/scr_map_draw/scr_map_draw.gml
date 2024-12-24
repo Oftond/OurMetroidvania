@@ -1,4 +1,0 @@
-function map_draw()
-{
-	
-}

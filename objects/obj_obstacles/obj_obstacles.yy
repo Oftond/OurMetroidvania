@@ -1,16 +1,13 @@
 {
   "$GMObject":"",
-  "%Name":"obj_item",
-  "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-  ],
+  "%Name":"obj_obstacles",
+  "eventList":[],
   "managed":true,
-  "name":"obj_item",
+  "name":"obj_obstacles",
   "overriddenProperties":[],
   "parent":{
-    "name":"Inventory",
-    "path":"folders/Objects/Inventory.yy",
+    "name":"World",
+    "path":"folders/Objects/World.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -30,10 +27,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"spr_item",
-    "path":"sprites/spr_item/spr_item.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

@@ -139,7 +139,8 @@ function Heal() : ASpell() constructor
 			if (_player.current_hp > _player.max_hp)
 				_player.current_hp = _player.max_hp;
 			_player.current_mana -= need_mana;
-			part_particles_create(Ps_Increase_Hearts, global.CameraWidth / 2, global.CameraHeight / 2, 1);
+			var _parts = part_system_create_layer("GUI", false, Ps_Increase_Hearts)
+			part_system_position(_parts, _player.x, _player.y - 20);
 		}
 	}
 }

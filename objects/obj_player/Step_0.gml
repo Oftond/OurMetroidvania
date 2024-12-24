@@ -21,7 +21,7 @@ var _open_inventory = keyboard_check_pressed(vk_tab)
 var _spell_a = keyboard_check_pressed(ord("A"));
 var _spell_b = keyboard_check_pressed(ord("S"));
 var _spell_c = keyboard_check_pressed(ord("D"));
-is_graunded = place_meeting(x, y + 1, obj_game_manager.collision_wall);
+is_graunded = place_meeting(x, y + 1, obj_game_manager.collision_wall) || place_meeting(x, y + 1, obj_obstacles);
 on_wall = place_meeting(x - 1, y, obj_game_manager.collision_wall) - place_meeting(x + 1, y, obj_game_manager.collision_wall);
 move_locked_time = max(move_locked_time - 1, 0);
 
@@ -217,6 +217,23 @@ if (!inventory_is_open)
 	{
 		var _pixel_check = _sub_pixel * sign(move_y);
 		while (!place_meeting(x, y + _pixel_check, obj_game_manager.collision_wall))
+			y += _pixel_check;
+		move_y = 0;
+		jump_timer = 0;
+	}
+	
+	if (place_meeting(x + move_x, y, obj_obstacles))
+	{
+		var _pixel_check = _sub_pixel * sign(move_x);
+		while (!place_meeting(x + _pixel_check, y, obj_obstacles))
+			x += _pixel_check;
+		move_x = 0;
+	}
+
+	if (place_meeting(x, y + move_y, obj_obstacles))
+	{
+		var _pixel_check = _sub_pixel * sign(move_y);
+		while (!place_meeting(x, y + _pixel_check, obj_obstacles))
 			y += _pixel_check;
 		move_y = 0;
 		jump_timer = 0;
