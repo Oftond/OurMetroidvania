@@ -34,8 +34,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_FrostGuardion_attack",
-    "path":"sprites/spr_FrostGuardion_attack/spr_FrostGuardion_attack.yy",
+    "name":"spr_FrostGuardion_attack_mask",
+    "path":"sprites/spr_FrostGuardion_attack_mask/spr_FrostGuardion_attack_mask.yy",
   },
   "spriteMaskId":null,
   "visible":true,

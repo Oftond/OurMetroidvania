@@ -4,7 +4,7 @@
 // Inherit the parent event
 event_inherited();
 hp=2500;
-attack=spr_FrostGuardion_attack;
+attack=spr_FrostGuardion_attack_mask;
 death=spr_FrostGuardion_death;
 idle=spr_FrostGuardion_idle;
 hit=spr_FrostGuardion_hit;

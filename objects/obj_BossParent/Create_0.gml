@@ -53,11 +53,10 @@ battleWithPlayer=function()
 		case STATE.attack:
 			stamina -= 10;
 			var attackChoice = irandom(array_length(Attacks)-1);
-			var attacke = Attacks[attackChoice];
+			current_attack = Attacks[attackChoice];
 			change_state(STATE.attack);
-			attack=attacke.animation;
-			base_damage=attacke.damage;
-			mask_index=attacke.animation;
+			attack=current_attack.animation;
+			base_damage=current_attack.damage;
 			want_to_go=false;
 		break;
 		

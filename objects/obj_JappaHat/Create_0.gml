@@ -10,5 +10,5 @@ hit=spr_JappaHat_Hit;
 move=spr_JappaHat_Move;
 jump=spr_JappaHat_Move;
 fall=spr_JappaHat_Move;
-
+death=spr_death;
 Attacks=[{name:"hit",damage:7,animation:attack}];

@@ -7,11 +7,17 @@ switch (state)
 	{
 		image_index=0;
 		sprite_index=attack;
+		with(instance_create_depth(x,y,depth-1,obj_attack_hitbox))
+		{
+			sprite_index=self.current_attack.animation;
+			image_index=self.image_index;
+		}
 	}
 	if(image_index>=image_number-1)
 	{
 		state=STATE.idle;
 	}
+	
 	break;
 	
 	case STATE.death:
@@ -19,6 +25,7 @@ switch (state)
 	{
 		image_index=0;
 		sprite_index=death;
+		
 	}			
 	break;
 	

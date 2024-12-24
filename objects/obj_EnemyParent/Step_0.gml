@@ -1,5 +1,10 @@
 /// @description Вставьте описание здесь
 // Вы можете записать свой код в этом редакторе
+if(hp<=0)
+{
+	state=STATE.death;
+	instance_destroy(self);
+}
 mask_index=idle;
 if(want_to_jump&&can_jump)
 {

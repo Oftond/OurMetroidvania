@@ -1,5 +1,9 @@
 /// @description Вставьте описание здесь
 // Вы можете записать свой код в этом редакторе
+if(hp<=0)
+{
+	instance_destroy(self)
+}
 if (!playerDetected)
 {
 	event_inherited();
@@ -44,5 +48,4 @@ else
 		passed+=move_x;
 	
 }
-show_debug_message(shouldAttack)
 passed+=abs(move_x);

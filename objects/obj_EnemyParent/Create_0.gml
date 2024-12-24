@@ -3,6 +3,7 @@
 cd=2;
 detection=500;
 hp=5;
+max_hp=5;
 base_damage=1
 GetDamage=function(_character)
 {
@@ -31,9 +32,10 @@ want_to_go=true;
 shouldAttack=true;
 chooseSelected=false;
 state=STATE.idle;
+current_attack=undefined;
 
 attack=spr_Batman_Attack;
-death=spr_Bataman_death;
+death=spr_death;
 idle=spr_Batman_fly;
 hit=spr_Batman_Hit;
 move=spr_Batman_fly;
@@ -46,6 +48,8 @@ playerDetected=false;
 
 mask_index=sprite_index;
 
-Attacks=[{name:"hit",damage:2,animation:attack}];
+
+
+Attacks=[{name:"hit",damage:2,animation:attack,attack_hitbox:spr_Batman_Attack_Mask}];
 
 Moves=[{name:"walk",animation:move}];

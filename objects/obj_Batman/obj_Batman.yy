@@ -33,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_Bataman_death",
-    "path":"sprites/spr_Bataman_death/spr_Bataman_death.yy",
+    "name":"spr_Batman_fly",
+    "path":"sprites/spr_Batman_fly/spr_Batman_fly.yy",
   },
   "spriteMaskId":null,
   "visible":true,

@@ -9,6 +9,11 @@ switch (state)
 	{
 		image_index=0;
 		sprite_index=attack;
+		with(instance_create_depth(x,y,depth-1,obj_attack_hitbox))
+		{
+			sprite_index=other.current_attack.attack_hitbox;
+			image_index=self.image_index;
+		}
 	}
 	if(image_index>=image_number-1)
 	{

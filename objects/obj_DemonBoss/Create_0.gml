@@ -4,10 +4,12 @@
 // Inherit the parent event
 event_inherited();
 hp=5000;
+max_hp=5000;
 can_jump=false;
 attack=spr_DemonBoss_Attack_Mask;
 idle=spr_DemonBoss_idle;
 move=spr_DemonBoss_idle;
 jump=spr_DemonBoss_idle;
 fall=spr_DemonBoss_idle;
+death=spr_death2;
 Attacks=[{name:"hit",damage:99,animation:attack}];

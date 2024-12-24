@@ -4,6 +4,7 @@
 // Inherit the parent event
 event_inherited();
 hp=15000;
+max_hp=15000;
 magic_attack=spr_FinalleBoss_attackMagic;
 air_attack=spr_FinalleBoss_attackAir;
 attack1=spr_FinalleBoss_attackSword1;
@@ -20,10 +21,10 @@ heal=spr_FinalleBoss_heal
 fall=spr_FinalleBoss_down;
 
 Attacks=[
-{name:"magic_attack",damage:70,animation:magic_attack},
-{name:"air_attack",damage:70,animation:air_attack},
-{name:"sword_attack1",damage:70,animation:attack1},
-{name:"sword_attack2",damage:70,animation:attack2},
-{name:"sword_attack3",damage:70,animation:attack3}];
+{name:"magic_attack",damage:70,animation:magic_attack,attack_hitbox:spr_FinalleBoss_attackMagic_Mask},
+{name:"air_attack",damage:70,animation:air_attack,attack_hitbox:spr_FinalleBoss_attackAir_Mask},
+{name:"sword_attack1",damage:70,animation:attack1,attack_hitbox:spr_FinalleBoss_attackSword1_mask},
+{name:"sword_attack2",damage:70,animation:attack2,attack_hitbox:spr_FinalleBoss_attackSword2_mask},
+{name:"sword_attack3",damage:70,animation:attack3,attack_hitbox:spr_FinalleBoss_attackSword3_mask}];
 
 Moves=[{name:"walk",animation:move},{name:"surf",animation:surf}];
