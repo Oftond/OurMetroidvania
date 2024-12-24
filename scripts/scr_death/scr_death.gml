@@ -12,7 +12,12 @@ function death()
 	else if (await_to_restart < max_await)
 		await_to_restart++;
 	else if (await_to_restart >= max_await)
+	{
+		alpha_dark = 0;
+		await = 0;
+		await_to_restart = 0;
 		room_restart();
+	}
 	
 	draw_sprite_ext(spr_wall, 0, 0, 0, global.CameraWidth, global.CameraHeight, 0, c_black, alpha_dark);
 }

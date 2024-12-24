@@ -25,7 +25,7 @@ function AmuletFlashing() : AAmulet() constructor
 function AmuletPowerOfGod() : AAmulet() constructor
 {
 	name = "Амулет божественной силы";
-	description = "Амулет, увеличивающий вашу силу урона.";
+	description = "Амулет, увеличивающий вашу силу урона мечом.";
 	sprite = spr_amulet_powerOfGod;
 	damage_bonus = 5;
 	
@@ -49,11 +49,11 @@ function AmuletHeavyLunge() : AAmulet() constructor
 	
 	property = function(_player)
 	{
-		_player.max_hp += hp_bonus;
+		_player.increase_maxHp(hp_bonus);
 	}
 	
 	disable_property = function(_player)
 	{
-		_player.max_hp -= hp_bonus;
+		_player.decrease_maxHp(hp_bonus);
 	}
 }

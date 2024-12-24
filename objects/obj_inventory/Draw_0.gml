@@ -11,6 +11,30 @@ else if (obj_inventory_targetChoice.page == 1)
 else if (obj_inventory_targetChoice.page == 2)
 	draw_text(x, bbox_top + 80, "КАРТА");
 
+var _offset_x_tips = 450;
+if (obj_inventory_targetChoice.page < obj_inventory_targetChoice.max_pages)
+{
+	draw_sprite(spr_input_keyboard_left, 0, x - 10 - sprite_get_width(spr_input_keyboard_down) - _offset_x_tips, bbox_bottom - 80);
+	draw_sprite(spr_input_keyboard_right, 0, x + 10 + sprite_get_width(spr_input_keyboard_down) - _offset_x_tips, bbox_bottom - 80);
+	draw_sprite(spr_input_keyboard_down, 0, x - _offset_x_tips, bbox_bottom - 80);
+	draw_sprite(spr_input_keyboard_up, 0, x - _offset_x_tips, bbox_bottom - 90 - sprite_get_width(spr_input_keyboard_down));
+	draw_set_font(global.Tips);
+	draw_set_halign(fa_left);
+	draw_set_valign(fa_bottom);
+	draw_text(x + 20 + (sprite_get_width(spr_input_keyboard_down) * 2) - _offset_x_tips, bbox_bottom - 80, "- ПЕРЕМЕЩЕНИЕ");
+}
+else
+{
+	draw_sprite(spr_input_keyboard_left, 0, x - 10 - sprite_get_width(spr_input_keyboard_down), bbox_bottom - 100);
+	draw_sprite(spr_input_keyboard_right, 0, x + 10 + sprite_get_width(spr_input_keyboard_down), bbox_bottom - 100);
+	draw_sprite(spr_input_keyboard_down, 0, x, bbox_bottom - 100);
+	draw_sprite(spr_input_keyboard_up, 0, x, bbox_bottom - 110 - sprite_get_width(spr_input_keyboard_down));
+	draw_set_font(global.Tips);
+	draw_set_halign(fa_center);
+	draw_set_valign(fa_middle);
+	draw_text(x, bbox_bottom - 50, "ПЕРЕМЕЩЕНИЕ");
+}
+
 if (obj_inventory_targetChoice.page == 0)
 {
 	for (var i = 0; i < count_equip; i++)

@@ -91,8 +91,11 @@ switch (state)
 			sprite_index = spr_player_castSpell;
 		}
 		if (image_index >= image_number - 1)
-		{
 			state = STATES.IDLE;
+		if (image_index >= 3 && spell_delay <= 0)
+		{
+			spell_delay = max_spell_delay;
+			current_spel_cast.cast(self);
 		}
 		image_speed = 1;
 	break;
@@ -121,7 +124,7 @@ switch (state)
 				with(instance_create_depth(x, y, depth - 1, obj_player_attack_hitBox))
 				{
 					sprite_index = spr_player_maskcollide_attack_1
-					image_index = image_index;
+					image_index = self.image_index;
 				}
 			}
 		}
@@ -138,7 +141,7 @@ switch (state)
 					with(instance_create_depth(x, y, depth - 1, obj_player_attack_hitBox))
 					{
 						sprite_index = spr_player_maskcollide_attack_1
-						image_index = image_index;
+						image_index = self.image_index;
 					}
 					exit;
 				}
@@ -153,7 +156,7 @@ switch (state)
 					with(instance_create_depth(x, y, depth - 1, obj_player_attack_hitBox))
 					{
 						sprite_index = spr_player_maskcollide_attack_2
-						image_index = image_index;
+						image_index = self.image_index;
 					}
 					exit;
 				}
@@ -168,8 +171,8 @@ switch (state)
 					wait_to_attack = wait_time;
 					with(instance_create_depth(x, y, depth - 1, obj_player_attack_hitBox))
 					{
-						sprite_index = spr_player_maskcollide_attack_1
-						image_index = image_index;
+						sprite_index = spr_player_maskcollide_attack_3
+						image_index = self.image_index;
 					}
 					exit;
 				}

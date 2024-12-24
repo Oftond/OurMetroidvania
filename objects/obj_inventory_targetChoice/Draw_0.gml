@@ -8,3 +8,36 @@ if (page != max_pages)
 
 if (choice_amulet != undefined && page == 0)
 	obj_inventory.show_info_item(choice_amulet);
+else if (choice_spell != undefined && page == 1)
+	obj_inventory.show_info_spell(choice_spell);
+	
+draw_set_font(global.Tips);
+draw_set_halign(fa_left);
+draw_set_valign(fa_bottom);
+
+if (page == 0 && choice_amulet != undefined)
+{
+	if (obj_player.inventory.amulets[selected_index].is_equipped)
+	{
+		draw_sprite(spr_input_keyboard_enter, 0, obj_inventory.x + 20 + (sprite_get_width(spr_input_keyboard_right) * 2), obj_inventory.bbox_bottom - 95);
+		draw_text(obj_inventory.x + 50 + sprite_get_width(spr_input_keyboard_enter), obj_inventory.bbox_bottom - 80, "- СНЯТЬ");
+	}
+	else
+	{
+		draw_sprite(spr_input_keyboard_enter, 0, obj_inventory.x + 20 + (sprite_get_width(spr_input_keyboard_right) * 2), obj_inventory.bbox_bottom - 95);
+		draw_text(obj_inventory.x + 50 + sprite_get_width(spr_input_keyboard_enter), obj_inventory.bbox_bottom - 80, "- НАДЕТЬ");
+	}
+}
+else if (page == 1 && choice_spell != undefined)
+{
+	if (obj_player.spells.spells[selected_index].is_equipped)
+	{
+		draw_sprite(spr_input_keyboard_enter, 0, obj_inventory.x + 20 + (sprite_get_width(spr_input_keyboard_right) * 2), obj_inventory.bbox_bottom - 95);
+		draw_text(obj_inventory.x + 50 + sprite_get_width(spr_input_keyboard_enter), obj_inventory.bbox_bottom - 80, "- СНЯТЬ");
+	}
+	else
+	{
+		draw_sprite(spr_input_keyboard_enter, 0, obj_inventory.x + 20 + (sprite_get_width(spr_input_keyboard_right) * 2), obj_inventory.bbox_bottom - 95);
+		draw_text(obj_inventory.x + 50 + sprite_get_width(spr_input_keyboard_enter), obj_inventory.bbox_bottom - 80, "- НАДЕТЬ");
+	}
+}

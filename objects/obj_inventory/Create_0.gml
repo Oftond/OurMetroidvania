@@ -24,3 +24,13 @@ show_info_item = function(_item)
 	draw_set_font(global.Description);
 	draw_text_ext(bbox_right - 300, bbox_top + 100 + (sprite_get_height(_item.sprite) * 4), _item.description, 30, 500)
 }
+
+show_info_spell = function(_spell)
+{
+	draw_set_font(global.SubHeadings);
+	draw_set_halign(fa_center);
+	draw_set_valign(fa_middle);
+	draw_text_ext(bbox_right - 300, bbox_top + 200, _spell.name, 50, 500);
+	draw_set_font(global.Description);
+	draw_text_ext(bbox_right - 300, bbox_top + 100 + (sprite_get_height(_spell.icon) * 4), _spell.description, 30, 500)
+}

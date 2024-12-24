@@ -1,0 +1,4 @@
+function map_draw()
+{
+	
+}

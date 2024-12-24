@@ -32,4 +32,5 @@ enum LANGUAGES
 global.Headings = fnt_headings;
 global.SubHeadings = fnt_subheadings;
 global.Description = fnt_description;
+global.Tips = fnt_tips;
 global.Language = LANGUAGES.RUS;

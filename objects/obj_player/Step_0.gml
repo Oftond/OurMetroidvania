@@ -51,30 +51,33 @@ if (_open_inventory && !is_dashing && is_graunded)
 
 if (!inventory_is_open)
 {
+	if (spell_delay > 0)
+		spell_delay--;
+	
 	if (!is_knockback)
 	{
-		if (_spell_a && state != STATES.ATTACK)
+		if (_spell_a && state != STATES.ATTACK && state != STATES.CAST_SPELL)
 		{
 			if (spells.equip_spells[0] != undefined)
 			{
 				change_state(STATES.CAST_SPELL);
-				spells.equip_spells[0].cast();
+				current_spel_cast = spells.equip_spells[0];
 			}
 		}
-		else if (_spell_b && state != STATES.ATTACK) 
+		else if (_spell_b && state != STATES.ATTACK && state != STATES.CAST_SPELL) 
 		{
 			if (spells.equip_spells[1] != undefined)
 			{
 				change_state(STATES.CAST_SPELL);
-				spells.equip_spells[1].cast();
+				current_spel_cast = spells.equip_spells[1];
 			}
 		}
-		else if (_spell_c && state != STATES.ATTACK)
+		else if (_spell_c && state != STATES.ATTACK && state != STATES.CAST_SPELL)
 		{
 			if (spells.equip_spells[2] != undefined)
 			{
 				change_state(STATES.CAST_SPELL);
-				spells.equip_spells[2].cast();
+				current_spel_cast = spells.equip_spells[2];
 			}
 		}
 		
