@@ -3,7 +3,8 @@
 
 // Inherit the parent event
 event_inherited();
-hp=2500;
+max_hp = 2500;
+current_hp = max_hp;
 attack=spr_FrostGuardion_attack_mask;
 death=spr_FrostGuardion_death;
 idle=spr_FrostGuardion_idle;

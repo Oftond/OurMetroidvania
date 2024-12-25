@@ -1,5 +1,3 @@
-loot=1;
-move_y=0;
-g=1;
+loot = 0;
 
 type = LOOTTYPES.COIN;

@@ -3,7 +3,8 @@
 
 // Inherit the parent event
 event_inherited();
-hp=2500;
+max_hp = 2500;
+current_hp = max_hp;
 attack=spr_DemonSlime_attack;
 death=spr_DemonSlime_death;
 idle=spr_DemonSlime_idle;

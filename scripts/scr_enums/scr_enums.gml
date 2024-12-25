@@ -39,6 +39,12 @@ enum TYPESITEMS
 	MANA
 }
 
+enum LOOTTYPES
+{
+	COIN,
+	MANA
+}
+
 enum LANGUAGES
 {
 	RUS,

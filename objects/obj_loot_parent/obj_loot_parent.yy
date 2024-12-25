@@ -1,13 +1,15 @@
 {
   "$GMObject":"",
-  "%Name":"obj_death2_1",
-  "eventList":[],
+  "%Name":"obj_loot_parent",
+  "eventList":[
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+  ],
   "managed":true,
-  "name":"obj_death2_1",
+  "name":"obj_loot_parent",
   "overriddenProperties":[],
   "parent":{
-    "name":"death",
-    "path":"folders/Objects/Characters/death.yy",
+    "name":"Loot",
+    "path":"folders/Objects/Characters/Loot.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -27,10 +29,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"spr_death",
-    "path":"sprites/spr_death/spr_death.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

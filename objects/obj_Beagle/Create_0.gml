@@ -9,4 +9,5 @@ move=spr_Beagle_move;
 jump=spr_Beagle_move;
 fall=spr_Beagle_move;
 death=spr_death2;
-hp=50;
+max_hp = 50;
+current_hp = max_hp;

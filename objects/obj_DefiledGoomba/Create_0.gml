@@ -1,5 +1,9 @@
 event_inherited();
 
+max_hp = 8;
+current_hp = max_hp;
+
+detection = sprite_get_width(sprite_index);
 attack=spr_DefiledGoomba_attack;
 death=spr_DefiledGoomba_death;
 idle=spr_DefiledGoomba_idle;

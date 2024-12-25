@@ -4,7 +4,8 @@
 // Inherit the parent event
 event_inherited();
 
-hp=500;
+max_hp = 500;
+current_hp = max_hp;
 attack=spr_Ogre_Attack;
 idle=spr_Ogre_idle;
 move=spr_Ogre_move;

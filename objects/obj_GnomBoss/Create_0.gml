@@ -3,8 +3,8 @@
 
 // Inherit the parent event
 event_inherited();
-hp = max_hp;
 max_hp = 2500;
+current_hp = max_hp;
 
 move=spr_Gnom_walk;
 attack1=spr_Gnom_attack;

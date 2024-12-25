@@ -1,6 +1,6 @@
 draw_self();
 
-if (hp < max_hp)
+if (current_hp < max_hp && current_hp > 0)
 {
 	var ofset=10;
 	var pc;
@@ -8,10 +8,10 @@ if (hp < max_hp)
 	var y_pos=bbox_top-ofset;
 	var width=130;
 	var hight=10
-	pc = (hp / max_hp);
-	draw_set_color(c_aqua);
+	pc = (current_hp / max_hp);
+	draw_set_color(c_gray);
 	draw_rectangle(x_pos,y_pos,x_pos+width,y_pos+hight,false);
 	draw_set_color(c_red);
-	if(hp>0)
-		draw_rectangle(x_pos,y_pos,x_pos+width*pc,y_pos+hight,false);
+	draw_rectangle(x_pos,y_pos,x_pos+width*pc,y_pos+hight,false);
+	draw_set_color(c_white);
 }

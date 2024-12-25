@@ -11,7 +11,10 @@
     "name":"Loot",
     "path":"folders/Objects/Characters/Loot.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"obj_loot_parent",
+    "path":"objects/obj_loot_parent/obj_loot_parent.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,

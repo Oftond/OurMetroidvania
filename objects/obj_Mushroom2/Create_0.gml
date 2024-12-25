@@ -1,8 +1,7 @@
-/// @description Вставьте описание здесь
-// Вы можете записать свой код в этом редакторе
-
-// Inherit the parent event
 event_inherited();
+
+max_hp = 5;
+current_hp = max_hp;
 
 attack=spr_Mushroom2_attack;
 death=spr_Mushroom2_death;

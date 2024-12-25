@@ -4,12 +4,19 @@ if(is_death)
 	exit;
 }
 
+if (state == STATE.hit)
+	exit;
+
 if(want_to_jump&&can_jump)
 {
 	move_y=-jump_speed;
 	want_to_jump=false
 }
-move_x=dir*move_speed;
+
+if (x < sprite_get_width(sprite_index) || x > room_width - sprite_get_width(sprite_index))
+	dir *= -1;
+
+move_x = dir*move_speed;
 onGround=place_meeting(x,y+1,obj_game_manager.collision_wall)
 if(onGround)
 {
@@ -84,7 +91,7 @@ if (instance_exists(obj_player))
 }
 
 if(!want_to_go)
-	move_x=0;
+	move_x = 0;
 
 y+=move_y;
 x+=move_x;

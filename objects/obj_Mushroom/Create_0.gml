@@ -4,8 +4,8 @@
 // Inherit the parent event
 event_inherited();
 
-hp = max_hp;
 max_hp = 8;
+current_hp = max_hp;
 
 attack=spr_Mushroom_attack;
 move=spr_Mushroom_move;

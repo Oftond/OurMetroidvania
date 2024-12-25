@@ -3,8 +3,8 @@
 
 // Inherit the parent event
 event_inherited();
-hp=5000;
-max_hp=5000;
+max_hp = 5000;
+current_hp = max_hp;
 can_jump=false;
 attack=spr_DemonBoss_Attack_Mask;
 idle=spr_DemonBoss_idle;

@@ -21,13 +21,13 @@ switch (state)
 	break;
 	
 	case STATE.death:
-	if(sprite_index != death)
-	{
-		image_index = 0;
-		sprite_index = death;
-	}
-	if (image_index >= image_number - 1)
-		instance_destroy(self);
+		if(sprite_index != death)
+		{
+			image_index = 0;
+			sprite_index = death;
+		}
+		if (image_index >= image_number - 1)
+			instance_destroy(self);
 	break;
 	
 	case STATE.hit:
@@ -35,7 +35,9 @@ switch (state)
 	{
 		image_index=0;
 		sprite_index=hit;
-	}		
+	}
+	if (image_index >= image_number - 1)
+		state = STATE.idle;
 	break;
 	
 	case STATE.idle:

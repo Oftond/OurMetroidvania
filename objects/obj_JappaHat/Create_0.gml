@@ -3,7 +3,8 @@
 
 // Inherit the parent event
 event_inherited();
-hp=100;
+max_hp = 100;
+current_hp = max_hp;
 attack=spr_JappaHat_Attack;
 idle=spr_JappaHat_Idle;
 hit=spr_JappaHat_Hit;

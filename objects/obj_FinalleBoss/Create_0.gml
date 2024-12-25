@@ -3,8 +3,8 @@
 
 // Inherit the parent event
 event_inherited();
-hp=15000;
-max_hp=15000;
+max_hp = 15000;
+current_hp = max_hp;
 magic_attack=spr_FinalleBoss_attackMagic;
 air_attack=spr_FinalleBoss_attackAir;
 attack1=spr_FinalleBoss_attackSword1;

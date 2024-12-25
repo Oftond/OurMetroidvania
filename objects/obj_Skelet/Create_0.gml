@@ -3,7 +3,8 @@
 
 // Inherit the parent event
 event_inherited();
-hp=200;
+max_hp = 200;
+current_hp = max_hp;
 attack=spr_Skelet_attack;
 death=spr_Skelet_death;
 idle=spr_Skelet_idle;

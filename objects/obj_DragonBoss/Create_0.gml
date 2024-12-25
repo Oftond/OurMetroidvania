@@ -2,8 +2,8 @@
 // Вы можете записать свой код в этом редакторе
 // Inherit the parent event
 event_inherited();
-hp=5000;
-max_hp=5000;
+max_hp = 5000;
+current_hp = max_hp;
 attackBreathe=spr_DragonBoss_breathAttack_Mask;
 attackTaile=spr_DragonBoss_tailAttack;
 idle=spr_DragonBoss_idle;

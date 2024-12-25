@@ -3,7 +3,8 @@
 
 // Inherit the parent event
 event_inherited();
-hp=300;
+max_hp = 300;
+current_hp = max_hp;
 attack=spr_Toad_Attack;
 idle=spr_Toad_Idle;
 move=spr_Toad_Jump;

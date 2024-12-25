@@ -3,8 +3,8 @@
 
 // Inherit the parent event
 event_inherited();
-hp=5000;
-max_hp=5000;
+max_hp = 5000;
+current_hp = max_hp;
 attack1=spr_Elf_attackArrow;
 attack2=spr_Elf_attackBow1;
 attack3=spr_Elf_attackBow2;
