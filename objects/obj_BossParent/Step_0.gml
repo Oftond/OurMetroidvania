@@ -23,7 +23,7 @@ else
 	}
 	if(attackDelay>0)
 		attackDelay--;
-	var locate=sign(x-obj_player.x);
+	var locate=sign(x-obj_player_.x);
 	if(locate!=0)
 	{
 		image_xscale=-locate;

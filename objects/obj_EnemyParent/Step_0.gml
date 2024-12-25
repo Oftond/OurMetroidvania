@@ -75,9 +75,9 @@ else if(move_y<0&&!onGround)
 {
 	change_state(STATE.jump)
 }
-if (instance_exists(obj_player))
+if (instance_exists(obj_player_))
 {
-	var player=point_distance(x,y,obj_player.x,obj_player.y);
+	var player=point_distance(x,y,obj_player_.x,obj_player_.y);
 	if(player<=detection&&!playerDetected)
 	{
 		playerDetected=true;
