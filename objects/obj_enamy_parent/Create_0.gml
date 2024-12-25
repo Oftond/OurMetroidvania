@@ -48,3 +48,60 @@ playerDetected=false;
 Attacks=[{name:"hit",damage:2,animation:attack,attack_hitbox:spr_Batman_Attack_Mask}];
 
 Moves=[{name:"walk",animation:move}];
+
+battleWithPlayer=function()
+{
+	var ChoseState=-1;
+	if(!shouldAttack)
+	{
+		if(stamina>=10)
+		{				
+			ChoseState=choose(STATE.attack,STATE.idle,STATE.move);
+		}		
+		else
+		{
+			ChoseState=STATE.idle;
+		}
+		chooseSelected=true;		
+	}
+	else
+	{
+		if(stamina>=10)
+		{				
+			ChoseState=STATE.attack;
+		}		
+		else
+		{
+			ChoseState=STATE.idle;
+		}
+		chooseSelected=true;
+	}
+	switch(ChoseState)
+	{
+		case STATE.idle:
+			stamina+=10;
+			if(attackDelay==0)
+			{
+				shouldAttack=false;
+				attackDelay=timeDelay;
+			}
+			state = STATE.idle;
+			want_to_go=false;
+		break;
+		
+		case STATE.attack:
+			stamina -= 10;
+			var attackChoice = irandom(array_length(Attacks)-1);
+			current_attack = Attacks[attackChoice];
+			change_state(STATE.attack);
+			attack=current_attack.animation;
+			base_damage=current_attack.damage;
+			want_to_go=false;
+		break;
+		
+		case STATE.move:
+			state = STATE.move;
+			want_to_go=true;
+		break;
+	}
+}

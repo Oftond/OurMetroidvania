@@ -42,7 +42,6 @@ sword =
 		{
 			damage++;
 			current_level++;
-			self.damage = damage;
 			return true;
 		}
 		return false;

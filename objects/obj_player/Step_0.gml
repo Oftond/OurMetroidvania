@@ -22,7 +22,8 @@ var _spell_a = keyboard_check_pressed(ord("A"));
 var _spell_b = keyboard_check_pressed(ord("S"));
 var _spell_c = keyboard_check_pressed(ord("D"));
 is_graunded = place_meeting(x, y + 1, obj_game_manager.collision_wall) || place_meeting(x, y + 1, obj_obstacles);
-on_wall = place_meeting(x - 1, y, obj_game_manager.collision_wall) - place_meeting(x + 1, y, obj_game_manager.collision_wall);
+on_wall = place_meeting(x - 1, y, obj_game_manager.collision_wall) - 
+place_meeting(x + 1, y, obj_game_manager.collision_wall);
 move_locked_time = max(move_locked_time - 1, 0);
 
 if (_open_inventory && !is_dashing && is_graunded)
