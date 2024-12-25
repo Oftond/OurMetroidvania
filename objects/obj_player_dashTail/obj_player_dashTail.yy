@@ -9,8 +9,8 @@
   "name":"obj_player_dashTail",
   "overriddenProperties":[],
   "parent":{
-    "name":"Characters",
-    "path":"folders/Objects/Characters.yy",
+    "name":"Player",
+    "path":"folders/Objects/Characters/Player.yy",
   },
   "parentObjectId":null,
   "persistent":false,

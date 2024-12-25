@@ -6,8 +6,8 @@
   "name":"obj_enemy_attack_hitBox",
   "overriddenProperties":[],
   "parent":{
-    "name":"Characters",
-    "path":"folders/Objects/Characters.yy",
+    "name":"attack_hitbox",
+    "path":"folders/Objects/attack_hitbox.yy",
   },
   "parentObjectId":null,
   "persistent":false,

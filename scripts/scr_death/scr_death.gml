@@ -1,4 +1,4 @@
-function death()
+function set_death()
 {
 	static alpha_dark = 0;
 	static await = 0;

@@ -1,2 +1,2 @@
 if (is_death)
-	death();
+	set_death();

@@ -8,5 +8,5 @@ if (place_meeting(x, y, obj_item))
 	draw_set_halign(fa_center);
 	draw_text(x - sprite_get_width(spr_input_keyboard_up) - 5, bbox_top - 40, "<");
 	draw_sprite(spr_input_keyboard_up, 0, x, bbox_top - 40);
-		draw_text(x + sprite_get_width(spr_input_keyboard_up) + 5, bbox_top - 40, ">");
+	draw_text(x + sprite_get_width(spr_input_keyboard_up) + 5, bbox_top - 40, ">");
 }

@@ -10,7 +10,6 @@ switch (state)
 		}
 		image_speed = 1;
 	break;
-	
 	case STATES.JUMP:
 		if (sprite_index != spr_player_jump)
 		{
