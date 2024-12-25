@@ -1,7 +1,3 @@
-/// @description Вставьте описание здесь
-// Вы можете записать свой код в этом редакторе
-/// @description Вставьте описание здесь
-// Вы можете записать свой код в этом редакторе
 switch (state)
 {		
 	case STATE.attack:
@@ -9,10 +5,13 @@ switch (state)
 	{
 		image_index=0;
 		sprite_index=attack;
-		with(instance_create_depth(x,y,depth-1,obj_attack_hitbox))
+		with(instance_create_depth(x,y,depth-1,obj_enemy_attack_hitBox))
 		{
-			sprite_index=other.current_attack.attack_hitbox;
-			image_index=self.image_index;
+			sprite_index = other.current_attack.attack_hitbox;
+			image_index = other.image_index;
+			image_xscale = other.image_xscale;
+			base_damage = other.base_damage;
+			this_enemy = other;
 		}
 	}
 	if(image_index>=image_number-1)

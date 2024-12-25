@@ -29,7 +29,7 @@
   "origin":4,
   "parent":{
     "name":"loot",
-    "path":"folders/Sprites/loot.yy",
+    "path":"folders/Sprites/Characters/Enemys/loot.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

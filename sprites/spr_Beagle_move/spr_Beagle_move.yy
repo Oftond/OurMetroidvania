@@ -30,7 +30,7 @@
   "origin":4,
   "parent":{
     "name":"Beagle",
-    "path":"folders/Sprites/Beagle.yy",
+    "path":"folders/Sprites/Characters/Enemys/Beagle.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

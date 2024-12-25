@@ -42,7 +42,7 @@
   "origin":4,
   "parent":{
     "name":"Gnom",
-    "path":"folders/Sprites/Gnom.yy",
+    "path":"folders/Sprites/Characters/Bosses/Gnom.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

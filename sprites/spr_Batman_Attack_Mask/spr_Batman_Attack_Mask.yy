@@ -28,7 +28,7 @@
   "origin":4,
   "parent":{
     "name":"Batman",
-    "path":"folders/Sprites/Batman.yy",
+    "path":"folders/Sprites/Characters/Enemys/Batman.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

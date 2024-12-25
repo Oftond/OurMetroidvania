@@ -52,7 +52,7 @@
   "origin":4,
   "parent":{
     "name":"Mecha",
-    "path":"folders/Sprites/Mecha.yy",
+    "path":"folders/Sprites/Characters/Enemys/Mecha.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

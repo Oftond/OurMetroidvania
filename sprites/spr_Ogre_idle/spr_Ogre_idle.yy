@@ -29,7 +29,7 @@
   "origin":4,
   "parent":{
     "name":"Ogre",
-    "path":"folders/Sprites/Ogre.yy",
+    "path":"folders/Sprites/Characters/Enemys/Ogre.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

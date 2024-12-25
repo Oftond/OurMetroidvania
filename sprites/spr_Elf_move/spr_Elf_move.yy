@@ -35,7 +35,7 @@
   "origin":4,
   "parent":{
     "name":"Other",
-    "path":"folders/Sprites/Elf/Other.yy",
+    "path":"folders/Sprites/Characters/Bosses/Elf/Other.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

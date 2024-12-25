@@ -31,7 +31,7 @@
   "origin":4,
   "parent":{
     "name":"DragonBoss",
-    "path":"folders/Sprites/DragonBoss.yy",
+    "path":"folders/Sprites/Characters/Bosses/DragonBoss.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

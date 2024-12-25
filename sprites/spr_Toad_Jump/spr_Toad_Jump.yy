@@ -29,7 +29,7 @@
   "origin":4,
   "parent":{
     "name":"Toad",
-    "path":"folders/Sprites/Toad.yy",
+    "path":"folders/Sprites/Characters/Enemys/Toad.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

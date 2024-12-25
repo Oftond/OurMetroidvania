@@ -71,7 +71,7 @@ get_damage = function(_enemy)
 
 attack = function(_enemy)
 {
-	_enemy.get_damage(sword.damage + get_bonus_damage());
+	_enemy.GetDamage(sword.damage + get_bonus_damage());
 }
 
 get_bonus_damage = function()

@@ -32,7 +32,7 @@
   "origin":4,
   "parent":{
     "name":"Death",
-    "path":"folders/Sprites/Death.yy",
+    "path":"folders/Sprites/Characters/Enemys/Death.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

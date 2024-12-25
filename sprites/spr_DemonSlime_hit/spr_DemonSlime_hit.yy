@@ -30,7 +30,7 @@
   "origin":4,
   "parent":{
     "name":"DemonSlime",
-    "path":"folders/Sprites/DemonSlime.yy",
+    "path":"folders/Sprites/Characters/Enemys/DemonSlime.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

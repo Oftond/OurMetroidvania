@@ -6,7 +6,7 @@
   "bbox_left":0,
   "bbox_right":739,
   "bbox_top":0,
-  "collisionKind":1,
+  "collisionKind":4,
   "collisionTolerance":0,
   "DynamicTexturePage":false,
   "edgeFiltering":false,
@@ -33,7 +33,7 @@
   "origin":4,
   "parent":{
     "name":"Gnom",
-    "path":"folders/Sprites/Gnom.yy",
+    "path":"folders/Sprites/Characters/Bosses/Gnom.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

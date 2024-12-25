@@ -29,7 +29,7 @@
   "origin":4,
   "parent":{
     "name":"DefiledGoomba",
-    "path":"folders/Sprites/DefiledGoomba.yy",
+    "path":"folders/Sprites/Characters/Enemys/DefiledGoomba.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

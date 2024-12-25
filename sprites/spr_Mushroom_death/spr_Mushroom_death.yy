@@ -31,7 +31,7 @@
   "origin":4,
   "parent":{
     "name":"Mushroom",
-    "path":"folders/Sprites/Mushroom.yy",
+    "path":"folders/Sprites/Characters/Enemys/Mushroom.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

@@ -33,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_Mushroom_attack",
-    "path":"sprites/spr_Mushroom_attack/spr_Mushroom_attack.yy",
+    "name":"spr_Mushroom_move",
+    "path":"sprites/spr_Mushroom_move/spr_Mushroom_move.yy",
   },
   "spriteMaskId":null,
   "visible":true,

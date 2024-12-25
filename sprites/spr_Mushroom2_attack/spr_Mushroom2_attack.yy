@@ -49,7 +49,7 @@
   "origin":4,
   "parent":{
     "name":"Mushroom2",
-    "path":"folders/Sprites/Mushroom2.yy",
+    "path":"folders/Sprites/Characters/Enemys/Mushroom2.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

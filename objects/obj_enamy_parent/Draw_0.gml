@@ -1,4 +1,5 @@
 draw_self();
+
 if (hp < max_hp)
 {
 	var ofset=10;

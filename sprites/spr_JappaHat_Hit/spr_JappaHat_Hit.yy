@@ -28,7 +28,7 @@
   "origin":4,
   "parent":{
     "name":"JappaHat",
-    "path":"folders/Sprites/JappaHat.yy",
+    "path":"folders/Sprites/Characters/Enemys/JappaHat.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

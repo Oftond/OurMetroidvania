@@ -37,7 +37,7 @@
   "origin":4,
   "parent":{
     "name":"Skelet",
-    "path":"folders/Sprites/Skelet.yy",
+    "path":"folders/Sprites/Characters/Enemys/Skelet.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

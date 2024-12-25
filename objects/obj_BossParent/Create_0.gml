@@ -1,15 +1,12 @@
-/// @description Вставьте описание здесь
-// Вы можете записать свой код в этом редакторе
-
-// Inherit the parent event
 event_inherited();
 
-detection=1000;
-passed=0;
-can_jump=true;
-stamina=50;
-maxPass=100;
-maxStamina=50;
+detection=500;
+passed = 0;
+can_jump = true;
+stamina = 50;
+maxPass = 100;
+maxStamina = 50;
+shouldAttack = false;
 battleWithPlayer=function()
 {
 	var ChoseState=-1;

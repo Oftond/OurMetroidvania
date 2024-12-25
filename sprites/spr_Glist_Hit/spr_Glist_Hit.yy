@@ -28,7 +28,7 @@
   "origin":4,
   "parent":{
     "name":"Glist",
-    "path":"folders/Sprites/Glist.yy",
+    "path":"folders/Sprites/Characters/Enemys/Glist.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

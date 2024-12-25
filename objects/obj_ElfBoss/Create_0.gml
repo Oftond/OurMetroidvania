@@ -20,8 +20,9 @@ defence=spr_Elf_defence;
 dash=spr_Elf_dash;
 slide=spr_Elf_slide;
 
-Attacks=[{name:"arrow attack",damage:70,animation:attack1},
-{name:"bow attack",damage:70,animation:attack2},
-{name:"bow attack",damage:70,animation:attack3},
-{name:"bow attack",damage:70,animation:attack4},
-{name:"bow attack",damage:70,animation:attack5}]
+Attacks=[
+{name:"arrow attack",damage:1,animation:attack1},
+{name:"bow attack",damage:1,animation:attack2},
+{name:"bow attack",damage:1,animation:attack3},
+{name:"bow attack",damage:1,animation:attack4},
+{name:"bow attack",damage:1,animation:attack5}];

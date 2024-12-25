@@ -31,7 +31,7 @@
   "origin":4,
   "parent":{
     "name":"DemonBoss",
-    "path":"folders/Sprites/DemonBoss.yy",
+    "path":"folders/Sprites/Characters/Bosses/DemonBoss.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

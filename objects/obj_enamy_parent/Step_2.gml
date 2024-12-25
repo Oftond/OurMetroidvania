@@ -7,7 +7,7 @@ switch (state)
 	{
 		image_index=0;
 		sprite_index=attack;
-		with(instance_create_depth(x,y,depth-1,obj_attack_hitbox))
+		with(instance_create_depth(x,y,depth-1,obj_enemy_attack_hitBox))
 		{
 			sprite_index=self.current_attack.animation;
 			image_index=self.image_index;

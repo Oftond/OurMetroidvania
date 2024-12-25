@@ -41,7 +41,7 @@
   "origin":4,
   "parent":{
     "name":"FinalleBoss",
-    "path":"folders/Sprites/FinalleBoss.yy",
+    "path":"folders/Sprites/Characters/Bosses/FinalleBoss.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

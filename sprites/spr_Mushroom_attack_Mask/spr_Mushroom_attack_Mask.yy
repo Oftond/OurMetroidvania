@@ -6,7 +6,7 @@
   "bbox_left":23,
   "bbox_right":51,
   "bbox_top":11,
-  "collisionKind":1,
+  "collisionKind":4,
   "collisionTolerance":0,
   "DynamicTexturePage":false,
   "edgeFiltering":false,
@@ -31,7 +31,7 @@
   "origin":4,
   "parent":{
     "name":"Mushroom",
-    "path":"folders/Sprites/Mushroom.yy",
+    "path":"folders/Sprites/Characters/Enemys/Mushroom.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

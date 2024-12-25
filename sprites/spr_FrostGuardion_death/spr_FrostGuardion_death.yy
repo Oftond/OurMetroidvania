@@ -41,7 +41,7 @@
   "origin":4,
   "parent":{
     "name":"FrostGuardion",
-    "path":"folders/Sprites/FrostGuardion.yy",
+    "path":"folders/Sprites/Characters/Enemys/FrostGuardion.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

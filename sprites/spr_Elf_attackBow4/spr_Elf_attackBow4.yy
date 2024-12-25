@@ -42,7 +42,7 @@
   "origin":4,
   "parent":{
     "name":"Attacks",
-    "path":"folders/Sprites/Elf/Attacks.yy",
+    "path":"folders/Sprites/Characters/Bosses/Elf/Attacks.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",
