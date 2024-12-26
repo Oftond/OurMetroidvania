@@ -30,11 +30,13 @@ switch (state)
 	break;
 	
 	case STATE.hit:
-	if(sprite_index!=hit)
-	{
-		image_index=0;
-		sprite_index=hit;
-	}		
+		if(sprite_index!=hit)
+		{
+			image_index=0;
+			sprite_index=hit;
+		}
+		if (image_index >= image_number - 1)
+			state = STATES.IDLE;
 	break;
 	
 	case STATE.idle:

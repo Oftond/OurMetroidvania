@@ -7,13 +7,14 @@
   "inheritLayers":false,
   "instanceCreationOrder":[
     {"name":"inst_2316ECDB","path":"rooms/rm_forest/rm_forest.yy",},
-    {"name":"inst_7CEE4EDE","path":"rooms/rm_forest/rm_forest.yy",},
     {"name":"inst_948EFF0","path":"rooms/rm_forest/rm_forest.yy",},
     {"name":"inst_34BADEAB","path":"rooms/rm_forest/rm_forest.yy",},
     {"name":"inst_264E8AAA","path":"rooms/rm_forest/rm_forest.yy",},
     {"name":"inst_2556A62F","path":"rooms/rm_forest/rm_forest.yy",},
     {"name":"inst_4F0EB8F8","path":"rooms/rm_forest/rm_forest.yy",},
     {"name":"inst_5CBB9766","path":"rooms/rm_forest/rm_forest.yy",},
+    {"name":"inst_2ECDD76B","path":"rooms/rm_forest/rm_forest.yy",},
+    {"name":"inst_58F1877","path":"rooms/rm_forest/rm_forest.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -29,11 +30,13 @@
         {"$GMRInstance":"v1","%Name":"inst_5CBB9766","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_5CBB9766","objectId":{"name":"obj_lock_door","path":"objects/obj_lock_door/obj_lock_door.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":4.25,"x":-32.0,"y":544.0,},
       ],"layers":[],"name":"Walls","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":false,},
     {"$GMRInstanceLayer":"","%Name":"Enemys","depth":300,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
-        {"$GMRInstance":"v1","%Name":"inst_2316ECDB","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_2316ECDB","objectId":{"name":"obj_DefiledGoomba","path":"objects/obj_DefiledGoomba/obj_DefiledGoomba.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":672.0,"y":928.0,},
-        {"$GMRInstance":"v1","%Name":"inst_7CEE4EDE","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_7CEE4EDE","objectId":{"name":"obj_Mushroom2","path":"objects/obj_Mushroom2/obj_Mushroom2.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":3040.0,"y":928.0,},
+        {"$GMRInstance":"v1","%Name":"inst_2316ECDB","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_2316ECDB","objectId":{"name":"obj_DefiledGoomba","path":"objects/obj_DefiledGoomba/obj_DefiledGoomba.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":736.0,"y":608.0,},
         {"$GMRInstance":"v1","%Name":"inst_4F0EB8F8","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_4F0EB8F8","objectId":{"name":"obj_Mushroom2","path":"objects/obj_Mushroom2/obj_Mushroom2.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1504.0,"y":928.0,},
+        {"$GMRInstance":"v1","%Name":"inst_2ECDD76B","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_2ECDD76B","objectId":{"name":"obj_Mushroom2","path":"objects/obj_Mushroom2/obj_Mushroom2.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":2880.0,"y":928.0,},
       ],"layers":[],"name":"Enemys","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
-    {"$GMRInstanceLayer":"","%Name":"Environment","depth":400,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[],"layers":[],"name":"Environment","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
+    {"$GMRInstanceLayer":"","%Name":"Environment","depth":400,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
+        {"$GMRInstance":"v1","%Name":"inst_58F1877","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_58F1877","objectId":{"name":"obj_chest","path":"objects/obj_chest/obj_chest.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":3072.0,"y":960.0,},
+      ],"layers":[],"name":"Environment","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRTileLayer":"","%Name":"CollisionTiles","depth":500,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"CollisionTiles","properties":[],"resourceType":"GMRTileLayer","resourceVersion":"2.0","tiles":{"SerialiseHeight":17,"SerialiseWidth":60,"TileCompressedData":[
           -22,0,-38,-2147483648,-22,0,-38,-2147483648,-22,0,-38,-2147483648,-22,0,-38,-2147483648,-24,0,-36,-2147483648,
           -23,0,-32,-2147483648,-584,0,1,-2147483648,-39,0,-41,-2147483648,

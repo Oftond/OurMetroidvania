@@ -1,9 +1,5 @@
-/// @description Вставьте описание здесь
-// Вы можете записать свой код в этом редакторе
-
-// Inherit the parent event
 event_inherited();
-max_hp = 2500;
+max_hp = 40;
 current_hp = max_hp;
 
 move=spr_Gnom_walk;

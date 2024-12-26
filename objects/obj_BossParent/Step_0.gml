@@ -1,4 +1,4 @@
-if(hp<=0)
+if(current_hp <= 0)
 {
 	instance_destroy(self)
 }

@@ -4,11 +4,11 @@
 // Inherit the parent event
 event_inherited();
 move_speed=0;
-max_hp = 100;
+max_hp = 10;
 current_hp = max_hp;
 attack=spr_Glist_RightAttack
 idle=spr_Glist_Idle;
 hit=spr_Glist_Hit;
 death=spr_death;
 can_jump=false;
-Attacks=[{name:"hit",damage:4,animation:attack}];
+Attacks=[{name:"hit",damage:2,animation:attack}];

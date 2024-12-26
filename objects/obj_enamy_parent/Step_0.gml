@@ -6,6 +6,12 @@ if(is_death)
 
 if (state == STATE.hit)
 	exit;
+	
+if (playerDetected)
+{
+	battleWithPlayer();
+	exit;
+}
 
 if(want_to_jump&&can_jump)
 {
@@ -16,8 +22,8 @@ if(want_to_jump&&can_jump)
 if (x < sprite_get_width(sprite_index) || x > room_width - sprite_get_width(sprite_index))
 	dir *= -1;
 
-move_x = dir*move_speed;
-onGround=place_meeting(x,y+1,obj_game_manager.collision_wall)
+move_x = dir * move_speed;
+onGround = place_meeting(x,y+1,obj_game_manager.collision_wall)
 if(onGround)
 {
 	

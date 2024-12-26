@@ -87,6 +87,8 @@ get_moneys = function(_moneys)
 get_mana = function(_mana)
 {
 	current_mana += _mana;
+	if (current_mana > max_mana)
+		current_mana = max_mana;
 }
 
 increase_maxHp = function(_hp)

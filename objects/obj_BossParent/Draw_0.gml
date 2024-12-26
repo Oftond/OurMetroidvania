@@ -1,17 +1,20 @@
 draw_self();
-var ofset=10;
-var pc;
-var x_pos=camera_get_view_x(view_camera[0]+global.CameraWidth/2);
-var y_pos=camera_get_view_y(view_camera[0]+global.CameraHeight-30);
-var width=130;
-var hight=10
-var health_bar_widt1=400;
-var health_bar_high1=980;
-var health_bar_widt2=1500;
-var health_bar_high2=1000;
-pc = (hp / max_hp);
-draw_set_color(c_aqua);
-draw_rectangle(health_bar_widt1,health_bar_high1,health_bar_widt2+width,health_bar_high2+hight,false);
-draw_set_color(c_red);
-if(hp>0)	
-	draw_rectangle(health_bar_widt1,health_bar_high1,health_bar_widt2+width*pc,health_bar_high2+hight,false);
+if (playerDetected || !playerDetected)
+{
+	var ofset=10;
+	var pc;
+	var x_pos=camera_get_view_x(view_camera[0]) + 30;
+	var x2_pos = x_pos + camera_get_view_width(view_camera[0]) - 90;
+	var y_pos=room_height - 80;
+	var width=500;
+	var hight=10
+	var health_bar_widt1=400;
+	var health_bar_high1=980;
+	var health_bar_widt2=1500;
+	var health_bar_high2=1000;
+	pc = (current_hp / max_hp);
+	draw_set_color(c_gray);
+	draw_rectangle(x_pos,y_pos,x2_pos,y_pos + hight,false);
+	draw_set_color(c_red);
+	draw_rectangle(x_pos,y_pos,x2_pos * pc,y_pos + hight,false);
+}

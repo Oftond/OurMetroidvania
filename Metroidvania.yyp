@@ -651,12 +651,12 @@
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
     {"roomId":{"name":"rm_forest","path":"rooms/rm_forest/rm_forest.yy",},},
+    {"roomId":{"name":"rm_first_boss","path":"rooms/rm_first_boss/rm_first_boss.yy",},},
     {"roomId":{"name":"rm_dungeon","path":"rooms/rm_dungeon/rm_dungeon.yy",},},
     {"roomId":{"name":"rm_level_1","path":"rooms/rm_level_1/rm_level_1.yy",},},
     {"roomId":{"name":"rm_level_2","path":"rooms/rm_level_2/rm_level_2.yy",},},
     {"roomId":{"name":"rm_level_3","path":"rooms/rm_level_3/rm_level_3.yy",},},
     {"roomId":{"name":"rm_menu","path":"rooms/rm_menu/rm_menu.yy",},},
-    {"roomId":{"name":"rm_first_boss","path":"rooms/rm_first_boss/rm_first_boss.yy",},},
     {"roomId":{"name":"rm_forest2","path":"rooms/rm_forest2/rm_forest2.yy",},},
     {"roomId":{"name":"Room5","path":"rooms/Room5/Room5.yy",},},
   ],

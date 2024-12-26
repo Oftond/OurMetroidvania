@@ -30,8 +30,8 @@ level_4 =
 	name : room_get_name(rm_forest),
 	width : 0,
 	height : 0,
-	x : 0,
-	y : 0
+	x : -500,
+	y : -300
 }
 
 level_5 =
@@ -39,8 +39,8 @@ level_5 =
 	name : room_get_name(rm_forest2),
 	width : 0,
 	height : 0,
-	x : 0,
-	y : 0
+	x : 500,
+	y : 500
 }
 
 level_6 =
@@ -48,8 +48,8 @@ level_6 =
 	name : room_get_name(rm_dungeon),
 	width : 0,
 	height : 0,
-	x : 0,
-	y : 0
+	x : 900,
+	y : 400
 }
 
 level_7 =
@@ -57,8 +57,8 @@ level_7 =
 	name : room_get_name(rm_first_boss),
 	width : 0,
 	height : 0,
-	x : 0,
-	y : 0
+	x : 400,
+	y : 700
 }
 
 global.WorldMap = ds_map_create();

@@ -4,5 +4,5 @@
 // Inherit the parent event
 event_inherited();
 can_jump=false
-max_hp = 50;
+max_hp = 8;
 current_hp = max_hp;

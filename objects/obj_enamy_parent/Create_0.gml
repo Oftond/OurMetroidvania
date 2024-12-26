@@ -1,6 +1,6 @@
 event_inherited();
 
-detection = 1000;
+detection = 500;
 base_damage = 1;
 
 GetDamage = function(_damage)
@@ -53,33 +53,15 @@ Moves=[{name:"walk",animation:move}];
 
 battleWithPlayer = function()
 {
-	var ChoseState = -1;
-	ChoseState = choose(STATE.attack, STATE.idle, STATE.move);
-	chooseSelected = true;
-	
-	switch(ChoseState)
+	if (!chooseSelected)
 	{
-		case STATE.idle:
-			if(attackDelay == 0)
-			{
-				attackDelay=timeDelay;
-			}
-			state = STATE.idle;
-			want_to_go = false;
-		break;
-		
-		case STATE.attack:
-			var attackChoice = irandom(array_length(Attacks) - 1);
-			current_attack = Attacks[attackChoice];
-			change_state(STATE.attack);
-			attack=current_attack.animation;
-			base_damage=current_attack.damage;
-			want_to_go=false;
-		break;
-		
-		case STATE.move:
-			state = STATE.move;
-			want_to_go=true;
-		break;
+		chooseSelected = true;
+		change_state(STATE.attack);
+		var attackChoice = irandom(array_length(Attacks) - 1);
+		current_attack = Attacks[attackChoice];
+		change_state(STATE.attack);
+		attack=current_attack.animation;
+		base_damage=current_attack.damage;
+		want_to_go=false;
 	}
 }

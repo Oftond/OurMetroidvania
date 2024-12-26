@@ -1,4 +1,4 @@
-if (this_enemy.state == STATE.hit)
+if (this_enemy.state == STATE.hit || this_enemy.is_death)
 	instance_destroy(self);
 
 if(instance_exists(this_enemy))
