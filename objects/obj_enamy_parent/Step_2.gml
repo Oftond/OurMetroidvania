@@ -9,7 +9,7 @@ switch (state)
 		sprite_index=attack;
 		with(instance_create_depth(x,y,depth-1,obj_enemy_attack_hitBox))
 		{
-			sprite_index=other.current_attack.animation;
+			sprite_index=other.current_attack.attack_hitbox;
 			image_index=other.image_index;
 			image_xscale = other.image_xscale;
 			base_damage = other.base_damage;
@@ -17,7 +17,12 @@ switch (state)
 		}
 	}
 	if(image_index>=image_number-1)
+	{
 		chooseSelected=false
+		state = STATE.idle;
+		attackDelay = timeDelay;
+		current_attack = undefined;
+	}
 	break;
 	
 	case STATE.death:

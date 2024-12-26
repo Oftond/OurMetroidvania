@@ -13,4 +13,19 @@ move=spr_DefiledGoomba_move;
 fall=spr_DefiledGoomba_move;
 can_jump=false;
 
-Attacks=[{name:"hit",damage:1,animation:attack,attack_hitbox:attack_mask}];
+Attacks=[{name:"hit",damage:1,animation:attack, distance_to_attack:sprite_width, attack_hitbox:attack_mask}];
+
+battleWithPlayer = function()
+{
+	if (!chooseSelected)
+	{
+		chooseSelected = true;
+		change_state(STATE.attack);
+		var attackChoice = irandom(array_length(Attacks) - 1);
+		current_attack = Attacks[attackChoice];
+		change_state(STATE.attack);
+		attack=current_attack.animation;
+		base_damage=current_attack.damage;
+		want_to_go=false;
+	}
+}

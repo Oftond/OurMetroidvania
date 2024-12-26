@@ -12,3 +12,5 @@ give_item = function()
 		item = other.item;
 	}
 }
+
+mask_index = sprite_index;

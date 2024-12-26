@@ -1,4 +1,11 @@
 event_inherited();
+
+do_dash = false;
+do_climbing = false;
+max_jumps = 1;
+
+grav = 1;
+current_jumps = 0;
 inventory_is_open = false;
 inventory_id = undefined;
 is_dashing = false;
