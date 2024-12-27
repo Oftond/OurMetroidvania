@@ -334,6 +334,7 @@
     {"id":{"name":"spr_coin","path":"sprites/spr_coin/spr_coin.yy",},},
     {"id":{"name":"Spr_comet_top","path":"sprites/Spr_comet_top/Spr_comet_top.yy",},},
     {"id":{"name":"Spr_Dagger","path":"sprites/Spr_Dagger/Spr_Dagger.yy",},},
+    {"id":{"name":"spr_dark","path":"sprites/spr_dark/spr_dark.yy",},},
     {"id":{"name":"spr_death","path":"sprites/spr_death/spr_death.yy",},},
     {"id":{"name":"spr_death2","path":"sprites/spr_death2/spr_death2.yy",},},
     {"id":{"name":"spr_DefiledGoomba_attack_mask","path":"sprites/spr_DefiledGoomba_attack_mask/spr_DefiledGoomba_attack_mask.yy",},},

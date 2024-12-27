@@ -19,5 +19,5 @@ function set_death()
 		game_restart();
 	}
 	
-	draw_sprite_ext(spr_wall, 0, 0, 0, global.CameraWidth, global.CameraHeight, 0, c_black, alpha_dark);
+	draw_sprite_ext(spr_dark, 0, 0, 0, global.CameraWidth, global.CameraHeight, 0, c_black, alpha_dark);
 }

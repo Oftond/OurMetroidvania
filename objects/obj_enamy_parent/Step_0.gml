@@ -25,9 +25,17 @@ if(is_death)
 	exit;
 }
 
-if (state == STATE.attack && current_attack != undefined)
+if (state == STATE.attack && current_attack != undefined && attackDelay <= 0)
 {
 	current_attack.attack_method();
+	exit;
+}
+
+if (attackDelay > 0)
+{
+	change_state(STATE.idle);
+	want_to_go = false;
+	attackDelay--;
 	exit;
 }
 
@@ -39,7 +47,6 @@ if (instance_exists(obj_player) && playerDetected)
 		playerDetected = false;
 		want_to_go = true;
 		chooseSelected = false;
-		attackDelay = 0;
 		current_attack = undefined;
 	}
 }

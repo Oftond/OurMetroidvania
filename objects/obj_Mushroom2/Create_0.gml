@@ -2,6 +2,8 @@ event_inherited();
 
 count_coin_drop = 2;
 
+timeDelay = 30;
+
 HitAttack = function()
 {
 	if (current_attack == undefined || state == STATE.attack)

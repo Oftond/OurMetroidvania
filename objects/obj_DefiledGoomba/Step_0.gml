@@ -1,3 +1,10 @@
 event_inherited();
 
-image_xscale=-sign(dir);
+restrictMovement();
+
+if (state != STATE.attack)
+{
+	image_xscale=-sign(dir);
+	if (attackDelay <= 0 && !stop)
+		Rise();
+}

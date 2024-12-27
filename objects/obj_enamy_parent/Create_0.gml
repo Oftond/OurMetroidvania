@@ -58,6 +58,13 @@ Move = function()
 	if(!want_to_go)
 		return;
 	move_x = dir * move_speed;
+	
+	if (place_empty(x + move_x + 25, y + 1, obj_game_manager.collision_wall) && can_jump)
+	{
+		go_delay = timeDelay;
+		stop = true;
+	}
+	
 	onGround = place_meeting(x,y+1,obj_game_manager.collision_wall);
 	if(onGround)
 	{
@@ -102,6 +109,7 @@ Move = function()
 		go_delay = timeDelay;
 		stop = true;
 	}
+	
 	if(onGround)
 	{
 		if(move_x!=0&&state!=STATE.attack)
@@ -143,12 +151,6 @@ battleWithPlayer = function()
 		base_damage=current_attack.damage;
 		want_to_go=false;
 		current_attack.attack_method();
-	}
-	else if (attackDelay > 0)
-	{
-		change_state(STATE.idle);
-		want_to_go = false;
-		attackDelay--;
 	}
 	else if (chooseSelected && attackDelay <= 0 && current_attack != undefined)
 		current_attack.attack_method();

@@ -219,14 +219,11 @@ if (!inventory_is_open)
 
 	if (place_meeting(x, y + move_y, obj_game_manager.collision_wall))
 	{
-		if (check_collision(move_x, move_y))
-		{
-			var _pixel_check = _sub_pixel * sign(move_y);
-			while (!place_meeting(x, y + _pixel_check, obj_game_manager.collision_wall))
-				y += _pixel_check;
-			move_y = 0;
-			jump_timer = 0;
-		}
+		var _pixel_check = _sub_pixel * sign(move_y);
+		while (!place_meeting(x, y + _pixel_check, obj_game_manager.collision_wall))
+			y += _pixel_check;
+		move_y = 0;
+		jump_timer = 0;
 	}
 	
 	if (place_meeting(x + move_x, y, obj_obstacles))
@@ -239,14 +236,11 @@ if (!inventory_is_open)
 
 	if (place_meeting(x, y + move_y, obj_obstacles))
 	{
-		if (check_collision(move_x, move_y))
-		{
-			var _pixel_check = _sub_pixel * sign(move_y);
-			while (!place_meeting(x, y + _pixel_check, obj_obstacles))
-				y += _pixel_check;
-			move_y = 0;
-			jump_timer = 0;
-		}
+		var _pixel_check = _sub_pixel * sign(move_y);
+		while (!place_meeting(x, y + _pixel_check, obj_obstacles))
+			y += _pixel_check;
+		move_y = 0;
+		jump_timer = 0;
 	}
 	
 	if (move_y > 15)

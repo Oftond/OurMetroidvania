@@ -9,7 +9,7 @@
     {"name":"inst_264E8AAA","path":"rooms/rm_forest/rm_forest.yy",},
     {"name":"inst_2556A62F","path":"rooms/rm_forest/rm_forest.yy",},
     {"name":"inst_948EFF0","path":"rooms/rm_forest/rm_forest.yy",},
-    {"name":"inst_496ED867","path":"rooms/rm_forest/rm_forest.yy",},
+    {"name":"inst_3913AC67","path":"rooms/rm_forest/rm_forest.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -20,7 +20,7 @@
         {"$GMRInstance":"v1","%Name":"inst_2556A62F","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_2556A62F","objectId":{"name":"obj_door_into_room","path":"objects/obj_door_into_room/obj_door_into_room.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":17.0,"x":3857.0,"y":544.0,},
       ],"layers":[],"name":"Doors","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRInstanceLayer":"","%Name":"Enemys","depth":200,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
-        {"$GMRInstance":"v1","%Name":"inst_496ED867","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_496ED867","objectId":{"name":"obj_DefiledGoomba","path":"objects/obj_DefiledGoomba/obj_DefiledGoomba.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":480.0,"y":544.0,},
+        {"$GMRInstance":"v1","%Name":"inst_3913AC67","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_3913AC67","objectId":{"name":"obj_Skelet","path":"objects/obj_Skelet/obj_Skelet.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":544.0,"y":768.0,},
       ],"layers":[],"name":"Enemys","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRInstanceLayer":"","%Name":"Player","depth":300,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"$GMRInstance":"v1","%Name":"inst_948EFF0","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_948EFF0","objectId":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":288.0,"y":832.0,},

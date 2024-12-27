@@ -1,8 +1,8 @@
 event_inherited();
 
-do_dash = true;
-do_climbing = true;
-max_jumps = 2;
+do_dash = false;
+do_climbing = false;
+max_jumps = 1;
 
 grav = 1;
 current_jumps = 0;
