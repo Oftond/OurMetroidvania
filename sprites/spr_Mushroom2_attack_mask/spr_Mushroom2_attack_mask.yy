@@ -3,9 +3,9 @@
   "%Name":"spr_Mushroom2_attack_mask",
   "bboxMode":0,
   "bbox_bottom":127,
-  "bbox_left":6,
+  "bbox_left":0,
   "bbox_right":147,
-  "bbox_top":42,
+  "bbox_top":0,
   "collisionKind":4,
   "collisionTolerance":0,
   "DynamicTexturePage":false,
@@ -36,6 +36,11 @@
     {"$GMSpriteFrame":"","%Name":"83139730-2a73-4182-af0c-bb8c9a93fd1a","name":"83139730-2a73-4182-af0c-bb8c9a93fd1a","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
     {"$GMSpriteFrame":"","%Name":"b1f2f11f-d411-4fcf-8c02-412a221695d1","name":"b1f2f11f-d411-4fcf-8c02-412a221695d1","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
     {"$GMSpriteFrame":"","%Name":"1a15a6ee-1e70-42be-8d1e-d30e37642f01","name":"1a15a6ee-1e70-42be-8d1e-d30e37642f01","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"26294367-3e7f-4a2d-b0ce-32d6929861cb","name":"26294367-3e7f-4a2d-b0ce-32d6929861cb","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"263b72e6-9e47-47e9-af46-af2fd1de2aeb","name":"263b72e6-9e47-47e9-af46-af2fd1de2aeb","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"114da28f-30a9-4d05-8669-2212d75a49de","name":"114da28f-30a9-4d05-8669-2212d75a49de","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"41733c9b-0c32-46c1-9790-ad3a161ca218","name":"41733c9b-0c32-46c1-9790-ad3a161ca218","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"5e786b2c-f4af-4f05-92bc-cdeec098caea","name":"5e786b2c-f4af-4f05-92bc-cdeec098caea","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
@@ -72,7 +77,7 @@
     },
     "eventStubScript":null,
     "eventToFunction":{},
-    "length":24.0,
+    "length":29.0,
     "lockOrigin":false,
     "moments":{
       "$KeyframeStore<MomentsEventKeyframe>":"",
@@ -163,6 +168,21 @@
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
                 "0":{"$SpriteFrameKeyframe":"","Id":{"name":"1a15a6ee-1e70-42be-8d1e-d30e37642f01","path":"sprites/spr_Mushroom2_attack_mask/spr_Mushroom2_attack_mask.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"7683a063-b930-4f32-9487-cb33b1e36a45","IsCreationKey":false,"Key":23.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"26294367-3e7f-4a2d-b0ce-32d6929861cb","path":"sprites/spr_Mushroom2_attack_mask/spr_Mushroom2_attack_mask.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"466b2ecd-b765-4161-b3f4-b568f5983851","IsCreationKey":false,"Key":24.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"263b72e6-9e47-47e9-af46-af2fd1de2aeb","path":"sprites/spr_Mushroom2_attack_mask/spr_Mushroom2_attack_mask.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"b60123a7-b311-4f30-a125-6a552ae47e26","IsCreationKey":false,"Key":25.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"114da28f-30a9-4d05-8669-2212d75a49de","path":"sprites/spr_Mushroom2_attack_mask/spr_Mushroom2_attack_mask.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"4871c853-3a2a-412d-a084-dd5205fc5a2e","IsCreationKey":false,"Key":26.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"41733c9b-0c32-46c1-9790-ad3a161ca218","path":"sprites/spr_Mushroom2_attack_mask/spr_Mushroom2_attack_mask.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"8ac1ab06-e0f3-43d0-b04b-8c3dae8423e9","IsCreationKey":false,"Key":27.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"5e786b2c-f4af-4f05-92bc-cdeec098caea","path":"sprites/spr_Mushroom2_attack_mask/spr_Mushroom2_attack_mask.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"73067996-7a8e-407f-99a8-005455d3b111","IsCreationKey":false,"Key":28.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,

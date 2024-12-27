@@ -1,8 +1,10 @@
 event_inherited();
 
+count_coin_drop = 2;
+
 HitAttack = function()
 {
-	if (current_attack == undefined)
+	if (current_attack == undefined || state == STATE.attack)
 		return;
 	
 	var player_distance = point_distance(x,y,obj_player.x,obj_player.y);
@@ -10,6 +12,13 @@ HitAttack = function()
 	{
 		want_to_go = true;
 		Move();
+		if (sign(obj_player.x - x) != 0)
+			dir = sign(obj_player.x - x);
+	}
+	else
+	{
+		change_state(STATE.attack);
+		want_to_go = false;
 	}
 }
 
@@ -25,4 +34,4 @@ jump=spr_Mushroom2_idle;
 fall=spr_Mushroom2_idle;
 attack_mask = spr_Mushroom2_attack_mask;
 
-Attacks=[{name:"hit",damage:1,animation:attack, distance_to_attack:(sprite_width / 2) + 10, attack_hitbox:attack_mask, attack_method:HitAttack}];
+Attacks=[{name:"hit",damage:1,animation:attack, distance_to_attack:(sprite_width / 2) + 20, attack_hitbox:attack_mask, attack_method:HitAttack}];

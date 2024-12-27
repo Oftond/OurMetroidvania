@@ -1,20 +1,19 @@
 event_inherited();
 
-detection = 500;
+detection = 200;
 base_damage = 1;
+count_coin_drop = 1;
 
 GetDamage = function(_damage)
 {
 	current_hp -= _damage;
 	if(current_hp < 0)
 		current_hp = 0;
-	else if (current_hp > 0)
-		change_state(STATE.hit);
 }
 
 change_state = function(_state)
 {
-	if(state != STATE.jump && state != STATE.hit)
+	if(state != STATE.jump)
 		state = _state;
 	else if(_state == STATE.fall)
 		state = _state;
@@ -59,12 +58,12 @@ Move = function()
 	if(!want_to_go)
 		return;
 	move_x = dir * move_speed;
-	onGround = place_meeting(x,y+1,obj_game_manager.collision_wall)
+	onGround = place_meeting(x,y+1,obj_game_manager.collision_wall);
 	if(onGround)
 	{
 		if(move_x!=0)
 		{		
-			change_state(STATE.move);		
+			change_state(STATE.move);
 		}
 		else
 		{
@@ -94,13 +93,14 @@ Move = function()
 		move_y=0;
 	}
 
-	if (place_meeting(x+move_x,y,obj_game_manager.collision_wall))
+	if (place_meeting(x+move_x,y,obj_game_manager.collision_wall) && !stop)
 	{
 		var pixel_check=sub_pixel* sign(move_x);
 		while(!place_meeting(x+pixel_check,y,obj_game_manager.collision_wall))
 			x+=pixel_check
 		move_x=0;
-		dir*=-1;
+		go_delay = timeDelay;
+		stop = true;
 	}
 	if(onGround)
 	{
@@ -132,12 +132,13 @@ Moves=[{name:"walk",animation:move,move_method:Move}];
 
 battleWithPlayer = function()
 {
+	if (state == STATE.attack)
+		return;
 	if (!chooseSelected && attackDelay <= 0)
 	{
 		chooseSelected = true;
 		var attackChoice = irandom(array_length(Attacks) - 1);
 		current_attack = Attacks[attackChoice];
-		change_state(STATE.attack);
 		attack=current_attack.animation;
 		base_damage=current_attack.damage;
 		want_to_go=false;

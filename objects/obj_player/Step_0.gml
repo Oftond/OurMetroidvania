@@ -26,6 +26,7 @@ if (do_climbing)
 	on_wall = place_meeting(x - 1, y, obj_game_manager.collision_wall) - place_meeting(x + 1, y, obj_game_manager.collision_wall);
 else
 	on_wall = 0;
+	
 move_locked_time = max(move_locked_time - 1, 0);
 
 if (_open_inventory && !is_dashing && is_graunded)
@@ -218,11 +219,14 @@ if (!inventory_is_open)
 
 	if (place_meeting(x, y + move_y, obj_game_manager.collision_wall))
 	{
-		var _pixel_check = _sub_pixel * sign(move_y);
-		while (!place_meeting(x, y + _pixel_check, obj_game_manager.collision_wall))
-			y += _pixel_check;
-		move_y = 0;
-		jump_timer = 0;
+		if (check_collision(move_x, move_y))
+		{
+			var _pixel_check = _sub_pixel * sign(move_y);
+			while (!place_meeting(x, y + _pixel_check, obj_game_manager.collision_wall))
+				y += _pixel_check;
+			move_y = 0;
+			jump_timer = 0;
+		}
 	}
 	
 	if (place_meeting(x + move_x, y, obj_obstacles))
@@ -235,11 +239,14 @@ if (!inventory_is_open)
 
 	if (place_meeting(x, y + move_y, obj_obstacles))
 	{
-		var _pixel_check = _sub_pixel * sign(move_y);
-		while (!place_meeting(x, y + _pixel_check, obj_obstacles))
-			y += _pixel_check;
-		move_y = 0;
-		jump_timer = 0;
+		if (check_collision(move_x, move_y))
+		{
+			var _pixel_check = _sub_pixel * sign(move_y);
+			while (!place_meeting(x, y + _pixel_check, obj_obstacles))
+				y += _pixel_check;
+			move_y = 0;
+			jump_timer = 0;
+		}
 	}
 	
 	if (move_y > 15)

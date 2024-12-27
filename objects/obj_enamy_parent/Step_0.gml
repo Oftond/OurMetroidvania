@@ -1,5 +1,10 @@
-if (flashing > 0)
+if (flashing > 0 && !is_death)
+{
 	flashing--;
+	image_blend = c_maroon;
+}
+else if (image_blend != c_white)
+	image_blend = c_white;
 
 if (go_delay > 0)
 {
@@ -8,9 +13,10 @@ if (go_delay > 0)
 	if (go_delay <= 0)
 		dir *= -1;
 }
-else if (!want_to_go)
+else if (!want_to_go && stop)
 {
 	want_to_go = true;
+	stop = false;
 }
 
 if(is_death)
@@ -19,9 +25,12 @@ if(is_death)
 	exit;
 }
 
-if (state == STATE.hit)
+if (state == STATE.attack && current_attack != undefined)
+{
+	current_attack.attack_method();
 	exit;
-	
+}
+
 if (instance_exists(obj_player) && playerDetected)
 {
 	var player = point_distance(x,y,obj_player.x,obj_player.y);
@@ -63,9 +72,6 @@ if ((x <= sprite_get_width(sprite_index) || x >= room_width - sprite_get_width(s
 	go_delay = timeDelay;
 	stop = true;
 }
-
-if (move_x > 0 && stop)
-	stop = false;
 	
 if (stop)
 	change_state(STATE.idle);

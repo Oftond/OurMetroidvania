@@ -35,16 +35,6 @@ switch (state)
 			instance_destroy(self);
 	break;
 	
-	case STATE.hit:
-	if(sprite_index!=hit)
-	{
-		image_index=0;
-		sprite_index=hit;
-	}
-	if (image_index >= image_number - 1)
-		state = STATE.idle;
-	break;
-	
 	case STATE.idle:
 	if(sprite_index!=idle)
 	{

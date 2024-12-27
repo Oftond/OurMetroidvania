@@ -1,8 +1,8 @@
 event_inherited();
 
-do_dash = false;
-do_climbing = false;
-max_jumps = 1;
+do_dash = true;
+do_climbing = true;
+max_jumps = 2;
 
 grav = 1;
 current_jumps = 0;
@@ -66,8 +66,8 @@ change_state = function(_state)
 get_damage = function(_enemy)
 {
 	var _x_sign = sign(x - _enemy.x);
-	move_x = _x_sign * 15;
-	move_y = -jump_spd * 2;
+	move_x = _x_sign * 12;
+	move_y = -jump_spd;
 	current_hp -= _enemy.base_damage;
 	flashing = max_flashing;
 	is_knockback = true;

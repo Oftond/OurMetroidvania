@@ -1,3 +1,4 @@
 event_inherited();
 
-image_xscale=-sign(dir);
+if (state != STATE.attack)
+	image_xscale=-sign(dir);
