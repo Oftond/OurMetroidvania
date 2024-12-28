@@ -1,9 +1,12 @@
+//Враг готов
+
 event_inherited();
 
 count_coin_drop = 2;
 
 timeDelay = 30;
 
+//Метод, выполняющий всю логику конкретной атаки врага
 HitAttack = function()
 {
 	if (current_attack == undefined || state == STATE.attack)

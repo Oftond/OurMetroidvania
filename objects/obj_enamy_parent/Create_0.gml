@@ -2,7 +2,12 @@ event_inherited();
 
 detection = 200;
 base_damage = 1;
+
+//Количество выпадаемыхс врага монет
 count_coin_drop = 1;
+
+//Количество выпадаемой врага маны
+count_mana_drop = 1;
 
 GetDamage = function(_damage)
 {
@@ -27,11 +32,21 @@ move_speed = 2;
 dir = choose(-1, 1);
 onGround = true;
 want_to_jump = false;
+
+//Время всей задержки (атаки и передвижения)
 timeDelay = 60;
+
+//Задержка после атаки
 attackDelay = 0;
+
 want_to_go = true;
+
+//Задержка после разворота, перед тем, как пойти в
+//другую сторону
 go_delay = 0;
+
 stop = false;
+
 chooseSelected = false;
 current_attack = undefined;
 
@@ -48,21 +63,37 @@ attack_mask = spr_Batman_Attack_Mask;
 can_jump=true;
 playerDetected=false;
 
+//Метод, выполняющий всю логику конкретной атаки врага
+//В этом методе должно быть прописана вся логика одной
+//конкретной атаки врага
+//Для каждой отдельной атаки, у врага должно быть по методу
+//(разумеется с разными названиями), если у врага несколько
+//атак. Если атака одна, то только один метод.
 HitAttack = function()
 {
 	show_message("Атакуем!")
 }
 
+//Вся логика передвижения, включая проверки на столкновения.
+//Если враг имеет несколько способов перемещения, то и таких
+//методов у него должно быть несколько, каждый из которых
+//по своему передвигает врага.
+//Он метод можно переопределить в наследниках, если это
+//необходимо (если изменяется логика передвижения данного
+//метода или он плохо работает в каком то из наследников)
 Move = function()
 {
 	if(!want_to_go)
 		return;
 	move_x = dir * move_speed;
 	
-	if (place_empty(x + move_x + 25, y + 1, obj_game_manager.collision_wall) && can_jump)
+	//Проверка на пустое место, чтобы он не упал, а развернулся
+	//и пошел в другую сторону
+	if (place_empty(x + move_x + (25 * sign(move_x)), y + 50, obj_game_manager.collision_wall) && can_jump)
 	{
 		go_delay = timeDelay;
 		stop = true;
+		move_x = 0;
 	}
 	
 	onGround = place_meeting(x,y+1,obj_game_manager.collision_wall);
@@ -134,12 +165,24 @@ Move = function()
 	x += move_x;
 }
 
+//Массив атак, имеющий структуры всех атак врага.
+//В структуре одной атаки должно быть ее имя, наносимый урон,
+//анимация, distance_to_attack - дистанция, на которой враг
+//сможет попасть по игроку данной атакой, attack_hitbox - хитбокс
+//удара для данной атаки, attack_method - метод, выполняющий всю
+//логику атаки данной атакой
 Attacks=[{name:"hit",damage:2,animation:attack, distance_to_attack:sprite_width, attack_hitbox:attack_mask, attack_method:HitAttack}];
 
+//Все для передвижения врага
 Moves=[{name:"walk",animation:move,move_method:Move}];
 
+//Метод не изменять и не переопределять.
+//Он вызывается в момент атаки игрока и вызывает нужный метод
+//для атаки игрока
 battleWithPlayer = function()
 {
+	if (stop)
+		change_state(STATE.idle);
 	if (state == STATE.attack)
 		return;
 	if (!chooseSelected && attackDelay <= 0)
@@ -154,4 +197,26 @@ battleWithPlayer = function()
 	}
 	else if (chooseSelected && attackDelay <= 0 && current_attack != undefined)
 		current_attack.attack_method();
+}
+
+//Метод, отображающий здоровье врага
+//Переопределять только при крайней необходимости (например,
+//в родителе босса)
+drawHp = function()
+{
+	if (current_hp < max_hp && current_hp > 0)
+	{
+		var ofset=30;
+		var pc;
+		var x_pos=x-60;
+		var y_pos=bbox_top-ofset;
+		var width=130;
+		var hight=10
+		pc = (current_hp / max_hp);
+		draw_set_color(c_gray);
+		draw_rectangle(x_pos,y_pos,x_pos+width,y_pos+hight,false);
+		draw_set_color(c_red);
+		draw_rectangle(x_pos,y_pos,x_pos+width*pc,y_pos+hight,false);
+		draw_set_color(c_white);
+	}
 }

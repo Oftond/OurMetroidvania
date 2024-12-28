@@ -21,7 +21,7 @@ else if (!want_to_go && stop)
 
 if(is_death)
 {
-	state = STATE.death;
+	change_state(STATE.death);
 	exit;
 }
 
@@ -72,6 +72,7 @@ if (instance_exists(obj_player))
 	}
 }
 
+//Вызывается метод передвижения
 Move();
 
 if ((x <= sprite_get_width(sprite_index) || x >= room_width - sprite_get_width(sprite_index)) && !stop)

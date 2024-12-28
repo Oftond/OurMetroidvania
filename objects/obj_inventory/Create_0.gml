@@ -10,9 +10,9 @@ phrases = ["ЭКИПИРОВКА", "ЗАКЛИНАНИЯ", "КАРТА"];
 current_phrase_right = phrases[2];
 current_phrase_left = phrases[1];
 
-instance_create_depth(x, y, -9999, obj_inventory_next_page);
-instance_create_depth(x, y, -9999, obj_inventory_previous_page);
-instance_create_depth(x, y, -9999 ,obj_inventory_targetChoice);
+instance_create_depth(x - 99, y - 99, -9999, obj_inventory_next_page);
+instance_create_depth(x - 99, y - 99, -9999, obj_inventory_previous_page);
+instance_create_depth(x - 99, y - 99, -9999 ,obj_inventory_targetChoice);
 
 show_info_item = function(_item)
 {
