@@ -54,27 +54,6 @@ function PhraseAdd(_phrase)
 {
 	DialogueSettingsDefault()
 	phrases[page_qty] = _phrase;
-	
-	if (argument_count > 1)
-	{
-		switch(argument[1])
-		{
-			case CharactersName.sardar:
-				face_sprite[page_qty] = spr_face_sardar_0;
-				snd[page_qty] = snd_sardar_voice;
-			break;
-			
-			case CharactersName.protagonist:
-				face_sprite[page_qty] = spr_face_protagonist_0;
-				snd[page_qty] = snd_protagonist_voice;
-			break;
-			
-			case CharactersName.protagonist_smile:
-				face_sprite[page_qty] = spr_face_protagonist_smile_0;
-				snd[page_qty] = snd_protagonist_voice;
-			break;
-		}
-	}
 	page_qty++;
 }
 
@@ -86,7 +65,7 @@ function DialogueSettingsDefault()
 	line_break_default[page_qty] = 0;
 	face_sprite[page_qty] = noone
 	phrase_shift[page_qty] = 0
-	snd[page_qty] = snd_type_voice;
+	snd[page_qty] = noone;
 	
 	for (var i  = 0; i < 400; i ++)
 	{
@@ -162,19 +141,17 @@ function PhraseSet(_character_name, _situation)
 			switch(_situation)
 			{
 				case Situations.place_1:
-					PhraseAdd("Здравствуй! Я в порядке, а ты как?", CharactersName.sardar);
-					PhraseAdd("Я тоже в нормале. Рад, что ты цел.", CharactersName.protagonist);
-					PhraseAdd("А ты просто отдыхал или что?", CharactersName.sardar);
-					ChoiceSet("Были дела", Situations.answer_1, CharactersName.sardar);
-					ChoiceSet("Да на днях я посуду разбил", Situations.answer_2, CharactersName.sardar);
+					PhraseAdd("Здравствуй! Я в порядке, а ты как? Пвавлоарыд ывлаы ывлоарылвоа орло оро о орл выа!!");
+					PhraseAdd("Я тоже в нормале. Рад, что ты цел.");
+					PhraseAdd("А ты просто отдыхал или что?");
 				break;
 				case Situations.answer_1:
-					PhraseAdd("Я не люблю отвлекаться от своих дел.", CharactersName.protagonist);
-					PhraseAdd("А ты вообще тупой!", CharactersName.protagonist);
+					PhraseAdd("Я не люблю отвлекаться от своих дел.");
+					PhraseAdd("А ты вообще тупой!");
 				break;
 				case Situations.answer_2:
-					PhraseAdd("Я не очень-то аккуратен, и поэтому, разбил свою новую посуду...", CharactersName.protagonist_smile);
-					PhraseAdd("Как и ты, я часто хожу в магазин с посудой, чтобы, ну, ты знаешь...", CharactersName.protagonist);
+					PhraseAdd("Я не очень-то аккуратен, и поэтому, разбил свою новую посуду...");
+					PhraseAdd("Как и ты, я часто хожу в магазин с посудой, чтобы, ну, ты знаешь...");
 				break;
 			}
 			

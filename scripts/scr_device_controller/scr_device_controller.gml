@@ -39,7 +39,7 @@ InputBind(global.keyboard, Input.right, vk_right);
 InputBind(global.keyboard, Input.left, vk_left);
 InputBind(global.keyboard, Input.inventory, "Z");
 InputBind(global.keyboard, Input.back, vk_shift);
-InputBind(global.keyboard, Input.fullscreen, vk_f4);
+InputBind(global.keyboard, Input.fullscreen, vk_f5);
 InputBind(global.keyboard, Input.menu, vk_escape);
 
 InputBind(global.gamepad, Input.accept, gp_face1);
@@ -49,7 +49,7 @@ InputBind(global.gamepad, Input.right, gp_padr);
 InputBind(global.gamepad, Input.left, gp_padl);
 InputBind(global.gamepad, Input.inventory, gp_face4);
 InputBind(global.gamepad, Input.back, gp_face2);
-InputBind(global.gamepad, Input.fullscreen, vk_f4);
+InputBind(global.gamepad, Input.fullscreen, vk_f5);
 InputBind(global.gamepad, Input.menu, gp_start);
 #endregion
 

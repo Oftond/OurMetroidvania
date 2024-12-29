@@ -4,6 +4,9 @@ if (is_death)
 	exit;
 }
 
+if (instance_exists(obj_textbox))
+	exit;
+
 if (wait_to_attack > 0)
 	wait_to_attack--;
 	

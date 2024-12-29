@@ -1,4 +1,4 @@
-if (obj_player.inventory_id != undefined)
+if (obj_player.inventory_id != undefined || instance_exists(obj_textbox))
 	exit;
 
 var _target_x = follow.x - (global.CameraWidth / 2);

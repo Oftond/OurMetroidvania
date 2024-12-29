@@ -1,12 +1,12 @@
 depth = -9999
+text_box_id = layer_sequence_create("GUI", camera_get_view_x(view_camera[0]) + global.CameraWidth / 2, camera_get_view_y(view_camera[0]) + global.CameraHeight / 2, seq_dialogueStart);
 
 textbox_width = 1165;
 textbox_height = 295;
-border = 45;
+border = 25;
 line_sep = 70;
 line_width = textbox_width - border * 2;
 textbox_x_centre = 44;
-textbox_sprite = spr_textbox_0;
 sprites[0, 0] = "";
 
 page_qty = 0;
