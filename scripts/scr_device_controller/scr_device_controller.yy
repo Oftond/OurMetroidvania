@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scr_device_controller",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_device_controller",
+  "parent":{
+    "name":"device",
+    "path":"folders/Scripts/device.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
