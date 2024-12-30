@@ -1,6 +1,4 @@
-var _interaction = keyboard_check_pressed(vk_up);
-
-if (_interaction)
+if (InputPressed(Input.up) || InputStickVerticalPressed() <= -0.1)
 {
 	instance_destroy(other)
 	if (other.type_item == TYPESITEMS.AMULET)

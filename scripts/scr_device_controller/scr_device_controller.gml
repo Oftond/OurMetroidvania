@@ -13,10 +13,17 @@ enum Input
 	up,
 	left,
 	right,
+	jump,
+	dash,
+	attack,
+	spell_1,
+	spell_2,
+	spell_3,
 	inventory,
 	run,
-	menu,
-	fullscreen
+	fullscreen,
+	next_page,
+	previous_page
 }
 
 enum Devices
@@ -32,25 +39,39 @@ enum Gamepades
 }
 
 #region input_binds
-InputBind(global.keyboard, Input.accept, vk_space);
+InputBind(global.keyboard, Input.accept, vk_enter);
+InputBind(global.keyboard, Input.back, vk_shift);
 InputBind(global.keyboard, Input.down, vk_down);
 InputBind(global.keyboard, Input.up, vk_up);
 InputBind(global.keyboard, Input.right, vk_right);
 InputBind(global.keyboard, Input.left, vk_left);
-InputBind(global.keyboard, Input.inventory, "Z");
-InputBind(global.keyboard, Input.back, vk_shift);
+InputBind(global.keyboard, Input.jump, "Z");
+InputBind(global.keyboard, Input.dash, "C");
+InputBind(global.keyboard, Input.attack, "X");
+InputBind(global.keyboard, Input.spell_1, "A");
+InputBind(global.keyboard, Input.spell_2, "S");
+InputBind(global.keyboard, Input.spell_3, "D");
+InputBind(global.keyboard, Input.inventory, vk_tab);
 InputBind(global.keyboard, Input.fullscreen, vk_f5);
-InputBind(global.keyboard, Input.menu, vk_escape);
+InputBind(global.keyboard, Input.next_page, "E");
+InputBind(global.keyboard, Input.previous_page, "Q");
 
 InputBind(global.gamepad, Input.accept, gp_face1);
 InputBind(global.gamepad, Input.down, gp_padd);
 InputBind(global.gamepad, Input.up, gp_padu);
 InputBind(global.gamepad, Input.right, gp_padr);
 InputBind(global.gamepad, Input.left, gp_padl);
-InputBind(global.gamepad, Input.inventory, gp_face4);
+InputBind(global.gamepad, Input.jump, gp_face1);
+InputBind(global.gamepad, Input.dash, gp_shoulderrb);
+InputBind(global.gamepad, Input.attack, gp_face3);
+InputBind(global.gamepad, Input.spell_1, gp_shoulderr);
+InputBind(global.gamepad, Input.spell_2, gp_shoulderl);
+InputBind(global.gamepad, Input.spell_3, gp_shoulderlb);
+InputBind(global.gamepad, Input.inventory, gp_start);
 InputBind(global.gamepad, Input.back, gp_face2);
 InputBind(global.gamepad, Input.fullscreen, vk_f5);
-InputBind(global.gamepad, Input.menu, gp_start);
+InputBind(global.gamepad, Input.next_page, gp_shoulderr);
+InputBind(global.gamepad, Input.previous_page, gp_shoulderl);
 #endregion
 
 function InputBind(_device, _action, _key)

@@ -1,12 +1,4 @@
-var _key_right = keyboard_check_pressed(vk_right);
-var _key_left = keyboard_check_pressed(vk_left);
-var _key_up = keyboard_check_pressed(vk_up);
-var _key_down = keyboard_check_pressed(vk_down);
-var _accept = keyboard_check_pressed(vk_enter);
-var _next_page = keyboard_check_pressed(ord("E"));
-var _prev_page = keyboard_check_pressed(ord("Q"));
-
-if (_next_page && !instance_exists(obj_inventory_dark))
+if (InputPressed(Input.next_page) && !instance_exists(obj_inventory_dark))
 {
 	selected_index = 0;
 	page++;
@@ -17,7 +9,7 @@ if (_next_page && !instance_exists(obj_inventory_dark))
 	}
 }
 
-if (_prev_page && !instance_exists(obj_inventory_dark))
+if (InputPressed(Input.previous_page) && !instance_exists(obj_inventory_dark))
 {
 	selected_index = 0;
 	page--;
@@ -37,13 +29,13 @@ if (page < 0)
 switch(page)
 {
 	case 0:
-		if (_key_right)
+		if (InputPressed(Input.right))
 			selected_index = (selected_index + 1) mod obj_inventory.count_equipment;
-		if (_key_left)
+		if (InputPressed(Input.left))
 			selected_index = (selected_index - 1 + (obj_inventory.count_equipment)) mod obj_inventory.count_equipment
-		if (_key_up)
+		if (InputPressed(Input.up))
 			selected_index = (selected_index - obj_inventory.max_in_row + (obj_inventory.count_equipment)) mod obj_inventory.count_equipment
-		if (_key_down)
+		if (InputPressed(Input.down))
 			selected_index = (selected_index + obj_inventory.max_in_row) mod obj_inventory.count_equipment
 	
 		choice_amulet = obj_player.inventory.amulets[selected_index];
@@ -59,20 +51,20 @@ switch(page)
 			distance_y = sprite_get_height(spr_inventory_player_equip);
 		}
 
-		if (_accept && choice_amulet != undefined)
+		if (InputPressed(Input.accept) && choice_amulet != undefined)
 		{
 			obj_player.inventory.equip_emulet(selected_index);
 		}
 	break;
 	
 	case 1:
-		if (_key_right)
+		if (InputPressed(Input.right))
 			selected_index--;
-		if (_key_left)
+		if (InputPressed(Input.left))
 			selected_index++;
-		if (_key_up)
+		if (InputPressed(Input.up))
 			selected_index++;
-		if (_key_down)
+		if (InputPressed(Input.down))
 			selected_index--;
 		
 		if (selected_index < 0)
@@ -87,7 +79,7 @@ switch(page)
 		distance_x = sprite_get_width(spr_spellIcon_holder) / 2;
 		distance_y = sprite_get_height(spr_spellIcon_holder) / 2;
 
-		if (_accept && choice_spell != undefined)
+		if (InputPressed(Input.accept) && choice_spell != undefined)
 		{
 			obj_player.spells.equip_spell(selected_index);
 		}

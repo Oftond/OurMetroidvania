@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"scr_collision_check",
+  "%Name":"scr_locale_system",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"scr_collision_check",
+  "name":"scr_locale_system",
   "parent":{
     "name":"Scripts",
     "path":"folders/Scripts.yy",

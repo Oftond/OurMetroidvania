@@ -15,15 +15,7 @@ if (timer_to_dash > 0)
 else if (timer_to_dash == 0)
 	is_dashing = false;
 
-var _dir = keyboard_check(vk_right) - keyboard_check(vk_left);
-var _jump_key_pressed = keyboard_check_pressed(ord("Z"));
-var _jump_key_hold = keyboard_check(ord("Z"));
-var _attack = keyboard_check_pressed(ord("X"));
-var _dash = keyboard_check_pressed(ord("C"));
-var _open_inventory = keyboard_check_pressed(vk_tab)
-var _spell_a = keyboard_check_pressed(ord("A"));
-var _spell_b = keyboard_check_pressed(ord("S"));
-var _spell_c = keyboard_check_pressed(ord("D"));
+var _dir = (InputHeld(Input.right) - InputHeld(Input.left)) + InputStickHorizontalHeld();
 is_graunded = place_meeting(x, y + 1, obj_game_manager.collision_wall) || place_meeting(x, y + 1, obj_obstacles);
 if (do_climbing)
 	on_wall = place_meeting(x - 1, y, obj_game_manager.collision_wall) - place_meeting(x + 1, y, obj_game_manager.collision_wall);
@@ -32,7 +24,7 @@ else
 	
 move_locked_time = max(move_locked_time - 1, 0);
 
-if (_open_inventory && !is_dashing && is_graunded)
+if (InputPressed(Input.inventory) && !is_dashing && is_graunded)
 {
 	if (!inventory_is_open && inventory_id == undefined)
 	{
@@ -63,7 +55,7 @@ if (!inventory_is_open)
 	
 	if (!is_knockback)
 	{
-		if (_spell_a && state != STATES.ATTACK && state != STATES.CAST_SPELL)
+		if (InputPressed(Input.spell_1) && state != STATES.ATTACK && state != STATES.CAST_SPELL)
 		{
 			if (spells.equip_spells[0] != undefined)
 			{
@@ -71,7 +63,7 @@ if (!inventory_is_open)
 				current_spel_cast = spells.equip_spells[0];
 			}
 		}
-		else if (_spell_b && state != STATES.ATTACK && state != STATES.CAST_SPELL) 
+		else if (InputPressed(Input.spell_2) && state != STATES.ATTACK && state != STATES.CAST_SPELL) 
 		{
 			if (spells.equip_spells[1] != undefined)
 			{
@@ -79,7 +71,7 @@ if (!inventory_is_open)
 				current_spel_cast = spells.equip_spells[1];
 			}
 		}
-		else if (_spell_c && state != STATES.ATTACK && state != STATES.CAST_SPELL)
+		else if (InputPressed(Input.spell_3) && state != STATES.ATTACK && state != STATES.CAST_SPELL)
 		{
 			if (spells.equip_spells[2] != undefined)
 			{
@@ -88,7 +80,7 @@ if (!inventory_is_open)
 			}
 		}
 		
-		if (_dash && timer_to_dash <= 0 && !is_dashing && can_dash && do_dash)
+		if (InputPressed(Input.dash) && timer_to_dash <= 0 && !is_dashing && can_dash && do_dash)
 		{
 			timer_to_dash = time_dash;
 			is_dashing = true;
@@ -103,12 +95,12 @@ if (!inventory_is_open)
 				move_x = (dash_spd * sign(image_xscale));
 		}
 		
-		if (_attack && wait_to_attack <= 0)
+		if (InputPressed(Input.attack) && wait_to_attack <= 0)
 		{
 			if (image_index >= image_number - 3 && combo > 0 && combo < max_combo && !do_attack)
 			{
 				combo = clamp(combo + 1, 1, max_combo);
-				do_attack = _attack;
+				do_attack = InputPressed(Input.attack);
 			}
 			else if (combo == 0)
 				combo = clamp(combo + 1, 1, max_combo);
@@ -140,7 +132,7 @@ if (!inventory_is_open)
 				image_xscale = sign(_dir);
 			move_x = _dir * move_spd;
 		
-			if (_jump_key_pressed && current_jumps < max_jumps)
+			if (InputPressed(Input.jump) && current_jumps < max_jumps)
 			{
 				current_jumps++;
 				jump_timer = jump_hold_time;
@@ -158,7 +150,7 @@ if (!inventory_is_open)
 			}
 		}
 	
-		if (!_jump_key_hold)
+		if (!InputHeld(Input.jump))
 			jump_timer = 0;
 		
 		if (jump_timer > 0)

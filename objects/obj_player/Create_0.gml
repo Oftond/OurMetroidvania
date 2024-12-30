@@ -1,8 +1,8 @@
 event_inherited();
 
-do_dash = false;
-do_climbing = false;
-max_jumps = 1;
+do_dash = true;
+do_climbing = true;
+max_jumps = 2;
 
 grav = 1;
 current_jumps = 0;
@@ -101,7 +101,6 @@ get_mana = function(_mana)
 increase_maxHp = function(_hp)
 {
 	max_hp += _hp;
-	current_hp += _hp;
 }
 
 decrease_maxHp = function(_hp)
