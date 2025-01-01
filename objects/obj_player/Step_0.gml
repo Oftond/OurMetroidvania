@@ -244,5 +244,19 @@ if (!inventory_is_open)
 	x += move_x;
 	y += move_y;
 }
+else if (InputPressed(Input.back) && inventory_id != undefined)
+{
+	if (layer_sequence_is_finished(inventory_id))
+	{
+		if (layer_sequence_is_finished(inventory_id))
+		inventory_is_open = false;
+	
+		if (layer_sequence_get_headdir(inventory_id) != seqdir_left)
+		{
+			layer_sequence_headdir(inventory_id, seqdir_left);
+			layer_sequence_play(inventory_id)
+		}
+	}
+}
 
 event_inherited();

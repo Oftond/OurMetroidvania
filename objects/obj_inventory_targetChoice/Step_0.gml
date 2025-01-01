@@ -29,7 +29,7 @@ if (page < 0)
 switch(page)
 {
 	case 0:
-		if (InputPressed(Input.right))
+		if (InputPressed(Input.right) || InputStickHorizontalPressed() > 0.2)
 			selected_index = (selected_index + 1) mod obj_inventory.count_equipment;
 		if (InputPressed(Input.left))
 			selected_index = (selected_index - 1 + (obj_inventory.count_equipment)) mod obj_inventory.count_equipment

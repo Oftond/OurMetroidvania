@@ -1,5 +1,6 @@
 global.keyboard = ds_map_create();
 global.gamepad = ds_map_create();
+global.hints = ds_map_create();
 global.gamepad_name = noone;
 
 global.devices = [new DeviceKeyboard(), new DeviceGamepad()];
@@ -57,6 +58,7 @@ InputBind(global.keyboard, Input.next_page, "E");
 InputBind(global.keyboard, Input.previous_page, "Q");
 
 InputBind(global.gamepad, Input.accept, gp_face1);
+InputBind(global.gamepad, Input.back, gp_face2);
 InputBind(global.gamepad, Input.down, gp_padd);
 InputBind(global.gamepad, Input.up, gp_padu);
 InputBind(global.gamepad, Input.right, gp_padr);
@@ -68,10 +70,13 @@ InputBind(global.gamepad, Input.spell_1, gp_shoulderr);
 InputBind(global.gamepad, Input.spell_2, gp_shoulderl);
 InputBind(global.gamepad, Input.spell_3, gp_shoulderlb);
 InputBind(global.gamepad, Input.inventory, gp_start);
-InputBind(global.gamepad, Input.back, gp_face2);
 InputBind(global.gamepad, Input.fullscreen, vk_f5);
 InputBind(global.gamepad, Input.next_page, gp_shoulderr);
 InputBind(global.gamepad, Input.previous_page, gp_shoulderl);
+#endregion
+
+#region hints_binds
+
 #endregion
 
 function InputBind(_device, _action, _key)

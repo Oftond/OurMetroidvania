@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":4,
   "parent":{
-    "name":"Input keys",
-    "path":"folders/Sprites/Inventory/Input keys.yy",
+    "name":"Keyboard",
+    "path":"folders/Sprites/Inventory/Input keys/Keyboard.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

@@ -1,4 +1,4 @@
-if (InputPressed(Input.up) || InputStickVerticalPressed() <= -0.1)
+if (InputPressed(Input.up) || InputStickVerticalPressed() <= -0.2)
 {
 	instance_destroy(other)
 	if (other.type_item == TYPESITEMS.AMULET)
