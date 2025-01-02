@@ -1,0 +1,1 @@
+text_box_id = obj_textbox.text_box_id;

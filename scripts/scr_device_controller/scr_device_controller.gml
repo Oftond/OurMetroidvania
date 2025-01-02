@@ -1,10 +1,11 @@
 global.keyboard = ds_map_create();
 global.gamepad = ds_map_create();
-global.hints = ds_map_create();
 global.gamepad_name = noone;
 
 global.devices = [new DeviceKeyboard(), new DeviceGamepad()];
 global.gamepadstick = new GamepadLeftStick();
+
+#macro ValueGamepadPressed 0.5
 
 enum Input
 {
@@ -24,7 +25,8 @@ enum Input
 	run,
 	fullscreen,
 	next_page,
-	previous_page
+	previous_page,
+	move
 }
 
 enum Devices
@@ -73,10 +75,6 @@ InputBind(global.gamepad, Input.inventory, gp_start);
 InputBind(global.gamepad, Input.fullscreen, vk_f5);
 InputBind(global.gamepad, Input.next_page, gp_shoulderr);
 InputBind(global.gamepad, Input.previous_page, gp_shoulderl);
-#endregion
-
-#region hints_binds
-
 #endregion
 
 function InputBind(_device, _action, _key)
@@ -199,14 +197,17 @@ function GamepadGetType()
 	var gamepad_name = GamepadGetName();
 	if (string_count("ps4", gamepad_name) || string_count("ps5", gamepad_name) || string_count("dualshock", gamepad_name) || string_count("dualsense", gamepad_name))
 	{
+		SetCurrentHints(false, true);
 		return Gamepades.Sony;
 	} 
 	else if (string_count("xbox", gamepad_name))
 	{
+		SetCurrentHints(false, true);
 		return Gamepades.Xbox;
 	}
 	else
 	{
+		SetCurrentHints(false, true);
 		return Gamepades.Xbox;
 	}
 }

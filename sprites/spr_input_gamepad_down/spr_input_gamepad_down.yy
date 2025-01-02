@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":4,
   "parent":{
-    "name":"Sony",
-    "path":"folders/Sprites/Inventory/Input keys/Gamepad/Sony.yy",
+    "name":"Gamepad",
+    "path":"folders/Sprites/Inventory/Input keys/Gamepad.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

@@ -5,34 +5,30 @@ draw_set_valign(fa_middle);
 draw_set_color(c_white)
 
 if (obj_inventory_targetChoice.page == 0)
-	draw_text(x, bbox_top + 80, "ЭКИПИРОВКА");
+	draw_text(x, bbox_top + 80, "экипировка");
 else if (obj_inventory_targetChoice.page == 1)
-	draw_text(x, bbox_top + 80, "ЗАКЛИНАНИЯ");
+	draw_text(x, bbox_top + 80, "заклинания");
 else if (obj_inventory_targetChoice.page == 2)
-	draw_text(x, bbox_top + 80, "КАРТА");
+	draw_text(x, bbox_top + 80, "карта");
 
 var _offset_x_tips = 450;
+var _move_icon = GetHint(Input.move);
+var _offset = sprite_get_width(_move_icon);
 if (obj_inventory_targetChoice.page < obj_inventory_targetChoice.max_pages)
 {
-	draw_sprite(spr_input_keyboard_left, 0, x - 10 - sprite_get_width(spr_input_keyboard_down) - _offset_x_tips, bbox_bottom - 80);
-	draw_sprite(spr_input_keyboard_right, 0, x + 10 + sprite_get_width(spr_input_keyboard_down) - _offset_x_tips, bbox_bottom - 80);
-	draw_sprite(spr_input_keyboard_down, 0, x - _offset_x_tips, bbox_bottom - 80);
-	draw_sprite(spr_input_keyboard_up, 0, x - _offset_x_tips, bbox_bottom - 90 - sprite_get_width(spr_input_keyboard_down));
 	draw_set_font(global.Tips);
 	draw_set_halign(fa_left);
 	draw_set_valign(fa_bottom);
-	draw_text(x + 20 + (sprite_get_width(spr_input_keyboard_down) * 2) - _offset_x_tips, bbox_bottom - 80, "- ПЕРЕМЕЩЕНИЕ");
+	draw_text(x + 20 + (_offset * 2) - _offset_x_tips, bbox_bottom - 80, "перемещение");
+	draw_sprite(_move_icon, 0, x - 100 - (_offset * 2), bbox_bottom - 80);
 }
 else
 {
-	draw_sprite(spr_input_keyboard_left, 0, x - 10 - sprite_get_width(spr_input_keyboard_down), bbox_bottom - 100);
-	draw_sprite(spr_input_keyboard_right, 0, x + 10 + sprite_get_width(spr_input_keyboard_down), bbox_bottom - 100);
-	draw_sprite(spr_input_keyboard_down, 0, x, bbox_bottom - 100);
-	draw_sprite(spr_input_keyboard_up, 0, x, bbox_bottom - 110 - sprite_get_width(spr_input_keyboard_down));
 	draw_set_font(global.Tips);
 	draw_set_halign(fa_center);
 	draw_set_valign(fa_middle);
-	draw_text(x, bbox_bottom - 50, "ПЕРЕМЕЩЕНИЕ");
+	draw_text(x, bbox_bottom - 50, "перемещение");
+	draw_sprite(_move_icon, 0, x, bbox_bottom - 120);
 }
 
 if (obj_inventory_targetChoice.page == 0)
@@ -119,8 +115,8 @@ else
 
 draw_sprite(spr_next_page, 0, bbox_right - 100, bbox_top + 70);
 draw_sprite(spr_previous_page, 0, bbox_left + 100, bbox_top + 70);
-draw_sprite(spr_input_keyboard_q, 0, bbox_left + 170, bbox_top + 70);
-draw_sprite(spr_input_keyboard_e, 0, bbox_right - 170, bbox_top + 70);
+draw_sprite(GetHint(Input.previous_page), 0, bbox_left + 170, bbox_top + 70);
+draw_sprite(GetHint(Input.next_page), 0, bbox_right - 170, bbox_top + 70);
 
 draw_set_font(global.SubHeadings);
 draw_set_halign(fa_right);

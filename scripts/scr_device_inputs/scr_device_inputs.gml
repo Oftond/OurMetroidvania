@@ -1,6 +1,6 @@
 function InputPressed(_action)
 {
-	gamepad_set_button_threshold(GamepadGetSlot(), 0.1);
+	gamepad_set_button_threshold(GamepadGetSlot(), 0.6);
 	var _key_keyboard = ds_map_find_value(global.keyboard, _action);
 	var _key_gamepad = ds_map_find_value(global.gamepad, _action);
 	var _result_keyboard = global.devices[Devices.keyboard].CheckPressed(_key_keyboard);
@@ -8,6 +8,7 @@ function InputPressed(_action)
 	
 	if (_result_keyboard || _result_gamepad)
 	{
+		SetCurrentHints(_result_keyboard, _result_gamepad);
 		return true;
 	}
 	else

@@ -29,13 +29,13 @@ if (page < 0)
 switch(page)
 {
 	case 0:
-		if (InputPressed(Input.right) || InputStickHorizontalPressed() > 0.2)
+		if (InputPressed(Input.right) || InputStickHorizontalPressed() >= ValueGamepadPressed)
 			selected_index = (selected_index + 1) mod obj_inventory.count_equipment;
-		if (InputPressed(Input.left))
+		if (InputPressed(Input.left) || InputStickHorizontalPressed() <= -ValueGamepadPressed)
 			selected_index = (selected_index - 1 + (obj_inventory.count_equipment)) mod obj_inventory.count_equipment
-		if (InputPressed(Input.up))
+		if (InputPressed(Input.up) || InputStickVerticalPressed() <= -ValueGamepadPressed)
 			selected_index = (selected_index - obj_inventory.max_in_row + (obj_inventory.count_equipment)) mod obj_inventory.count_equipment
-		if (InputPressed(Input.down))
+		if (InputPressed(Input.down) || InputStickVerticalPressed() >= ValueGamepadPressed)
 			selected_index = (selected_index + obj_inventory.max_in_row) mod obj_inventory.count_equipment
 	
 		choice_amulet = obj_player.inventory.amulets[selected_index];
@@ -58,13 +58,13 @@ switch(page)
 	break;
 	
 	case 1:
-		if (InputPressed(Input.right))
+		if (InputPressed(Input.right) || InputStickHorizontalPressed() >= ValueGamepadPressed)
 			selected_index--;
-		if (InputPressed(Input.left))
+		if (InputPressed(Input.left) || InputStickHorizontalPressed() <= -ValueGamepadPressed)
 			selected_index++;
-		if (InputPressed(Input.up))
+		if (InputPressed(Input.up) || InputStickVerticalPressed() <= -ValueGamepadPressed)
 			selected_index++;
-		if (InputPressed(Input.down))
+		if (InputPressed(Input.down) || InputStickVerticalPressed() >= ValueGamepadPressed)
 			selected_index--;
 		
 		if (selected_index < 0)

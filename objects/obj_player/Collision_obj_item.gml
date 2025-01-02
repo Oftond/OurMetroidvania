@@ -1,4 +1,4 @@
-if (InputPressed(Input.up) || InputStickVerticalPressed() <= -0.2)
+if (InputPressed(Input.up) || InputStickVerticalPressed() <= -ValueGamepadPressed)
 {
 	instance_destroy(other)
 	if (other.type_item == TYPESITEMS.AMULET)

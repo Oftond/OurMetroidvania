@@ -1,5 +1,4 @@
 event_inherited();
-
 do_dash = true;
 do_climbing = true;
 max_jumps = 2;
