@@ -1,4 +1,11 @@
 event_inherited();
+
+do_dash = false;
+do_climbing = false;
+max_jumps = 1;
+
+grav = 1;
+current_jumps = 0;
 inventory_is_open = false;
 inventory_id = undefined;
 is_dashing = false;
@@ -42,7 +49,6 @@ sword =
 		{
 			damage++;
 			current_level++;
-			self.damage = damage;
 			return true;
 		}
 		return false;
@@ -60,9 +66,9 @@ change_state = function(_state)
 get_damage = function(_enemy)
 {
 	var _x_sign = sign(x - _enemy.x);
-	move_x = _x_sign * 15;
-	move_y = -jump_spd * 2;
-	current_hp -= _enemy.damage;
+	move_x = _x_sign * 12;
+	move_y = -jump_spd;
+	current_hp -= _enemy.base_damage;
 	flashing = max_flashing;
 	is_knockback = true;
 	state = STATES.HIT;
@@ -72,7 +78,7 @@ get_damage = function(_enemy)
 
 attack = function(_enemy)
 {
-	_enemy.get_damage(sword.damage + get_bonus_damage());
+	_enemy.GetDamage(sword.damage + get_bonus_damage());
 }
 
 get_bonus_damage = function()
@@ -88,6 +94,8 @@ get_moneys = function(_moneys)
 get_mana = function(_mana)
 {
 	current_mana += _mana;
+	if (current_mana > max_mana)
+		current_mana = max_mana;
 }
 
 increase_maxHp = function(_hp)

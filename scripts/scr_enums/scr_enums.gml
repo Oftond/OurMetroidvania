@@ -1,3 +1,19 @@
+enum STATE
+{
+	move,
+	attack,
+	death,
+	idle,
+	hit,
+	apear,
+	defence,
+	jump,
+	fall,
+	heal,
+	dash,
+	slide
+}
+
 enum STATES
 {
 	IDLE,
@@ -18,8 +34,15 @@ enum TYPESITEMS
 {
 	ITEM,
 	AMULET,
+	SPELL,
 	CELL,
 	HEALTH,
+	MANA
+}
+
+enum LOOTTYPES
+{
+	COIN,
 	MANA
 }
 

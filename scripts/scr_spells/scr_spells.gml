@@ -83,6 +83,7 @@ function FireBall() : ASpell() constructor
 		{
 			with (instance_create_depth(_player.bbox_right, _player.y - 50, -99, obj_spell))
 			{
+				image_xscale = _player.image_xscale;
 				damage = other.damage;
 				sprite_destroy = other.sprite_spell_destroy;
 				sprite_index = other.sprite_spell;

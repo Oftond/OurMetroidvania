@@ -45,7 +45,7 @@ function AmuletHeavyLunge() : AAmulet() constructor
 	name = "Тяжелый выпад";
 	description = "Амулет увеличит ваше максимальное здоровье.";
 	sprite = spr_amulet_heavy_lunge;
-	hp_bonus = 5;
+	hp_bonus = 2;
 	
 	property = function(_player)
 	{

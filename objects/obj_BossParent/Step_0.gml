@@ -1,0 +1,49 @@
+if(current_hp <= 0)
+{
+	instance_destroy(self)
+}
+if (!playerDetected)
+{
+	event_inherited();
+}
+else
+{	
+	if(passed>=maxPass)
+	{
+		passed=0;
+		shouldAttack=true;
+		chooseSelected=false;
+	}
+	move_x=dir*move_speed;
+	if(attackDelay<=0&&!chooseSelected)
+	{
+		battleWithPlayer();
+	}
+	if(attackDelay>0)
+		attackDelay--;
+	var locate=sign(x-obj_player.x);
+	if(locate!=0)
+	{
+		image_xscale=-locate;
+	}
+	if(!want_to_go)
+		move_x=0;
+	if(!want_to_jump)
+		move_y=0var sub_pixel=0.5;
+	
+
+	if (place_meeting(x+move_x,y,obj_game_manager.collision_wall))
+	{
+		var pixel_check=sub_pixel* sign(move_x);
+		while(!place_meeting(x+pixel_check,y,obj_game_manager.collision_wall))
+			x+=pixel_check
+		move_x=0;
+		dir*=-1;
+	}
+	y+=move_y;
+	x+=move_x;
+	if(move_x!=0)
+		passed+=move_x;
+	
+}
+passed+=abs(move_x);

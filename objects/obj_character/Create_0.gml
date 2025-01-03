@@ -1,11 +1,8 @@
 max_hp = 3
 current_hp = max_hp;
 move_spd = 8;
-jump_spd = 12;
-grav = 1;
-max_jumps = 2;
-current_jumps = 0;
-jump_hold_time = 12;
+jump_spd = 13;
+jump_hold_time = 13;
 jump_timer = 0;
 move_x = 0;
 move_y = 0;

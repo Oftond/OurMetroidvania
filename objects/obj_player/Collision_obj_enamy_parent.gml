@@ -1,6 +1,6 @@
 if (!inventory_is_open)
 {
-	if (flashing > 0)
+	if (flashing > 0 || other.is_death)
 		exit;
 	
 	get_damage(other);

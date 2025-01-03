@@ -25,11 +25,51 @@ level_3 =
 	y : 100
 }
 
+level_4 =
+{
+	name : room_get_name(rm_forest),
+	width : 0,
+	height : 0,
+	x : -500,
+	y : -300
+}
+
+level_5 =
+{
+	name : room_get_name(rm_forest2),
+	width : 0,
+	height : 0,
+	x : 500,
+	y : 500
+}
+
+level_6 =
+{
+	name : room_get_name(rm_dungeon),
+	width : 0,
+	height : 0,
+	x : 900,
+	y : 400
+}
+
+level_7 =
+{
+	name : room_get_name(rm_first_boss),
+	width : 0,
+	height : 0,
+	x : 400,
+	y : 700
+}
+
 global.WorldMap = ds_map_create();
 
 ds_map_add(global.WorldMap, level_1.name, level_1);
 ds_map_add(global.WorldMap, level_2.name, level_2);
 ds_map_add(global.WorldMap, level_3.name, level_3);
+ds_map_add(global.WorldMap, level_4.name, level_4);
+ds_map_add(global.WorldMap, level_5.name, level_5);
+ds_map_add(global.WorldMap, level_6.name, level_6);
+ds_map_add(global.WorldMap, level_7.name, level_7);
 
 function minimap_draw()
 {

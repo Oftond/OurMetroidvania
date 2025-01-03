@@ -10,8 +10,8 @@
   "name":"obj_character",
   "overriddenProperties":[],
   "parent":{
-    "name":"Characters",
-    "path":"folders/Objects/Characters.yy",
+    "name":"Parants objects",
+    "path":"folders/Objects/Characters/Parants objects.yy",
   },
   "parentObjectId":null,
   "persistent":false,
