@@ -57,3 +57,21 @@ function AmuletHeavyLunge() : AAmulet() constructor
 		_player.decrease_maxHp(hp_bonus);
 	}
 }
+
+function AmuletTripleJump() : AAmulet() constructor
+{
+	name = "Тройной прыжок";
+	description = "Этот амулет позволит вам прагнуть в воздухе два раза, прежде чем упасть на землю.";
+	sprite = spr_amulet_tripleJump;
+	jump_bonus = 1;
+	
+	property = function(_player)
+	{
+		_player.max_jumps += jump_bonus;
+	}
+	
+	disable_property = function(_player)
+	{
+		_player.max_jumps -= jump_bonus;
+	}
+}

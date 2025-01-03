@@ -196,20 +196,11 @@ function GamepadGetType()
 {
 	var gamepad_name = GamepadGetName();
 	if (string_count("ps4", gamepad_name) || string_count("ps5", gamepad_name) || string_count("dualshock", gamepad_name) || string_count("dualsense", gamepad_name))
-	{
-		SetCurrentHints(false, true);
 		return Gamepades.Sony;
-	} 
 	else if (string_count("xbox", gamepad_name))
-	{
-		SetCurrentHints(false, true);
 		return Gamepades.Xbox;
-	}
 	else
-	{
-		SetCurrentHints(false, true);
 		return Gamepades.Xbox;
-	}
 }
 
 function GetAnyGampadKey()

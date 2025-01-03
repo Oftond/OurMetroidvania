@@ -1,6 +1,6 @@
 event_inherited();
-do_dash = true;
-do_climbing = true;
+do_dash = false;
+do_climbing = false;
 max_jumps = 2;
 
 grav = 1;
@@ -32,6 +32,8 @@ sprite_attack_3 = spr_player_attack_3;
 current_spel_cast = undefined;
 spell_delay = 0;
 max_spell_delay = 30;
+
+max_spd_grav = 20;
 
 inventory = new Inventory(self);
 

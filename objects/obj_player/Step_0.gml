@@ -238,8 +238,8 @@ if (!inventory_is_open)
 		jump_timer = 0;
 	}
 	
-	if (move_y > 15)
-		move_y = 15;
+	if (move_y > max_spd_grav)
+		move_y = max_spd_grav;
 
 	x += move_x;
 	y += move_y;

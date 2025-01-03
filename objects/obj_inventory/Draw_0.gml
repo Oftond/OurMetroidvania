@@ -18,8 +18,8 @@ if (obj_inventory_targetChoice.page < obj_inventory_targetChoice.max_pages)
 {
 	draw_set_font(global.Tips);
 	draw_set_halign(fa_left);
-	draw_set_valign(fa_bottom);
-	draw_text(x + 20 + (_offset * 2) - _offset_x_tips, bbox_bottom - 80, "перемещение");
+	draw_set_valign(fa_middle);
+	draw_text(x + 30 + (_offset * 2) - _offset_x_tips, bbox_bottom - 80, "перемещение");
 	draw_sprite(_move_icon, 0, x - 100 - (_offset * 2), bbox_bottom - 80);
 }
 else
