@@ -1,0 +1,1 @@
+global.SaveSystemManager.Save();

@@ -1,3 +1,3 @@
-loot=1;
+loot = 20;
 
 type = LOOTTYPES.MANA;

@@ -39,4 +39,4 @@ jump=spr_Mushroom2_idle;
 fall=spr_Mushroom2_idle;
 attack_mask = spr_Mushroom2_attack_mask;
 
-Attacks=[{name:"hit",damage:1,animation:attack, distance_to_attack:(sprite_width / 2) + 20, attack_hitbox:attack_mask, attack_method:HitAttack}];
+Attacks=[{name:"hit",damage:30,animation:attack, distance_to_attack:(sprite_width / 2) + 20, attack_hitbox:attack_mask, attack_method:HitAttack}];

@@ -1,8 +1,17 @@
 event_inherited();
+
+max_hp = 250;
+current_hp = max_hp;
+max_mana = 175;
+current_mana = max_mana;
+moneys = 0;
+
 do_dash = false;
 do_climbing = false;
-max_jumps = 2;
+max_jumps = 1;
 
+min_increase_hp = 5;
+min_increase_mana = 5;
 grav = 1;
 current_jumps = 0;
 inventory_is_open = false;
@@ -21,10 +30,7 @@ move_wall_spd = 6;
 move_locked_max_time = 10;
 move_locked_time = 0;
 on_wall = 0;
-moneys = 0;
-max_mana = 4;
-current_mana = max_mana;
-spells = new Spells(self);
+spells = new Spells();
 sprite_idle = spr_player_idle;
 sprite_attack_1 = spr_player_attack_1;
 sprite_attack_2 = spr_player_attack_2;
@@ -32,6 +38,7 @@ sprite_attack_3 = spr_player_attack_3;
 current_spel_cast = undefined;
 spell_delay = 0;
 max_spell_delay = 30;
+bar_follow_time = 15;
 
 max_spd_grav = 20;
 
@@ -75,6 +82,7 @@ get_damage = function(_enemy)
 	state = STATES.HIT;
 	image_index = 0;
 	alarm[0] = time_to_knockback;
+	obj_show_status.wait_health_timer = bar_follow_time;
 }
 
 attack = function(_enemy)
@@ -92,6 +100,15 @@ get_moneys = function(_moneys)
 	moneys += _moneys;
 }
 
+heal = function(_hp)
+{
+	if (_hp <= 0)
+		_hp = 1;
+	current_hp += _hp;
+	if (current_hp > max_hp)
+		current_hp = max_hp;
+}
+
 get_mana = function(_mana)
 {
 	current_mana += _mana;
@@ -99,8 +116,22 @@ get_mana = function(_mana)
 		current_mana = max_mana;
 }
 
+spend_mana = function(_mana)
+{
+	if (current_mana >= _mana)
+	{
+		current_mana -= _mana;
+		obj_show_status.wait_mana_timer = bar_follow_time;
+		return true;
+	}
+	else
+		return false;
+}
+
 increase_maxHp = function(_hp)
 {
+	if (_hp < min_increase_hp)
+		_hp = min_increase_hp;
 	max_hp += _hp;
 }
 
@@ -113,6 +144,8 @@ decrease_maxHp = function(_hp)
 
 increase_maxMana = function(_mana)
 {
+	if (_mana < min_increase_mana)
+		_mana = min_increase_mana;
 	max_mana += _mana;
 }
 

@@ -7,24 +7,6 @@ level_1 =
 	y : -20
 }
 
-level_2 =
-{
-	name : room_get_name(rm_level_2),
-	width : 0,
-	height : 0,
-	x : -50,
-	y : 0
-}
-
-level_3 =
-{
-	name : room_get_name(rm_level_3),
-	width : 0,
-	height : 0,
-	x : 100,
-	y : 100
-}
-
 level_4 =
 {
 	name : room_get_name(rm_forest),
@@ -64,8 +46,6 @@ level_7 =
 global.WorldMap = ds_map_create();
 
 ds_map_add(global.WorldMap, level_1.name, level_1);
-ds_map_add(global.WorldMap, level_2.name, level_2);
-ds_map_add(global.WorldMap, level_3.name, level_3);
 ds_map_add(global.WorldMap, level_4.name, level_4);
 ds_map_add(global.WorldMap, level_5.name, level_5);
 ds_map_add(global.WorldMap, level_6.name, level_6);

@@ -1,2 +1,2 @@
-item = new AmuletTripleJump();
-type_item = TYPESITEMS.AMULET;
+item = new WindTornado();
+type_item = TYPESITEMS.SPELL;

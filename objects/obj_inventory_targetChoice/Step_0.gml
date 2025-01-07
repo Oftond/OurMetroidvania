@@ -80,9 +80,7 @@ switch(page)
 		distance_y = sprite_get_height(spr_spellIcon_holder) / 2;
 
 		if (InputPressed(Input.accept) && choice_spell != undefined)
-		{
 			obj_player.spells.equip_spell(selected_index);
-		}
 	break;
 	
 	case 2:
