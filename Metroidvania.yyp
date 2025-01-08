@@ -181,6 +181,7 @@
     {"id":{"name":"obj_textBox_border","path":"objects/obj_textBox_border/obj_textBox_border.yy",},},
     {"id":{"name":"obj_textbox","path":"objects/obj_textbox/obj_textbox.yy",},},
     {"id":{"name":"obj_Toad","path":"objects/obj_Toad/obj_Toad.yy",},},
+    {"id":{"name":"obj_warp","path":"objects/obj_warp/obj_warp.yy",},},
     {"id":{"name":"obj_woll_1","path":"objects/obj_woll_1/obj_woll_1.yy",},},
     {"id":{"name":"obj_woll_2","path":"objects/obj_woll_2/obj_woll_2.yy",},},
     {"id":{"name":"obj_woll","path":"objects/obj_woll/obj_woll.yy",},},

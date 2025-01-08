@@ -70,9 +70,12 @@ function GameManager() : SaveSystem() constructor
 		{
 			player_max_hp : obj_player.max_hp,
 			player_current_hp : obj_player.current_hp,
+			player_max_mana : obj_player.max_mana,
+			player_current_mana : obj_player.current_mana,
 			player_spells : obj_player.spells,
 			player_x : obj_player.x,
-			player_y : obj_player.y
+			player_y : obj_player.y,
+			room_current : room
 		}
 		
 		return json_stringify(_player_struct);
@@ -84,14 +87,17 @@ function GameManager() : SaveSystem() constructor
 	{
 		if (_data == "")
 		{
-			instance_create_layer(352, 836, "Player", obj_player);
+			instance_create_layer(3560, 836, "Player", obj_player);
 			return;
 		}
 		var _player_struct = json_parse(_data);
+		room_goto(_player_struct.room_current);
 		instance_destroy(obj_player);
 		instance_create_layer(_player_struct.player_x, _player_struct.player_y, "Player", obj_player);
 		obj_player.max_hp = _player_struct.player_max_hp;
 		obj_player.current_hp = _player_struct.player_current_hp;
+		obj_player.max_mana = _player_struct.player_max_mana;
+		obj_player.current_mana = _player_struct.player_current_mana;
 		FindSpells(_player_struct.player_spells.spells, _player_struct.player_spells.equip_spells);
 		obj_player.spells.equip_spells = _player_struct.player_spells.equip_spells;
 		obj_player.spells.spells = _player_struct.player_spells.spells;
