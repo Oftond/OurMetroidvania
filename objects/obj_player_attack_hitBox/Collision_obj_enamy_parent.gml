@@ -11,4 +11,6 @@ if (!obj_player.inventory_is_open  && obj_player.state != STATES.HIT && !obj_pla
 {
 	obj_player.attack(other);
 	other.flashing = 10;
+	if (!instance_exists(obj_player_hit_impact_effect))
+		instance_create_layer(x + (68 * sign(image_xscale)), y - 50, "Effects", obj_player_hit_impact_effect);
 }

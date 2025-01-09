@@ -10,8 +10,8 @@
   "name":"obj_chest",
   "overriddenProperties":[],
   "parent":{
-    "name":"World",
-    "path":"folders/Objects/World.yy",
+    "name":"Environment",
+    "path":"folders/Objects/World/Environment.yy",
   },
   "parentObjectId":{
     "name":"obj_obstacles",

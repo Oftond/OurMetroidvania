@@ -1,16 +1,15 @@
 {
   "$GMObject":"",
-  "%Name":"obj_item",
+  "%Name":"obj_player_hit_impact_effect",
   "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":7,"eventType":7,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_item",
+  "name":"obj_player_hit_impact_effect",
   "overriddenProperties":[],
   "parent":{
-    "name":"Environment",
-    "path":"folders/Objects/World/Environment.yy",
+    "name":"Player",
+    "path":"folders/Objects/Characters/Player.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -31,8 +30,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_item",
-    "path":"sprites/spr_item/spr_item.yy",
+    "name":"spr_player_hit_impact_effect",
+    "path":"sprites/spr_player_hit_impact_effect/spr_player_hit_impact_effect.yy",
   },
   "spriteMaskId":null,
   "visible":true,

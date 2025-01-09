@@ -10,8 +10,8 @@
   "name":"obj_warp",
   "overriddenProperties":[],
   "parent":{
-    "name":"World",
-    "path":"folders/Objects/World.yy",
+    "name":"Other",
+    "path":"folders/Objects/World/Other.yy",
   },
   "parentObjectId":null,
   "persistent":true,
