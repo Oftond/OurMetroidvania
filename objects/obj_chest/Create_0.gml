@@ -17,6 +17,4 @@ give_item = function()
 mask_index = sprite_index;
 
 with (instance_create_layer(x, y, "Environment", obj_chest_roof))
-{
 	chest = other;
-}
