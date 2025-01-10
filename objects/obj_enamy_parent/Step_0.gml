@@ -1,3 +1,5 @@
+if (global.IsPause)
+	exit;
 if (flashing > 0 && !is_death)
 {
 	flashing--;

@@ -1,3 +1,5 @@
+global.IsPause = true;
+obj_player.change_state(STATES.IDLE);
 count_equip = obj_player.inventory.max_cells_amulets;
 count_equipment = obj_player.inventory.max_number_amulets;
 distance = 20;

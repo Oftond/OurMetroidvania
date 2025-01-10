@@ -52,6 +52,7 @@ enum LANGUAGES
 	ENG
 }
 
+global.IsPause = false;
 global.Headings = fnt_headings;
 global.SubHeadings = fnt_subheadings;
 global.Description = fnt_description;

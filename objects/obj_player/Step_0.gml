@@ -48,7 +48,7 @@ if (InputPressed(Input.inventory) && !is_dashing && is_graunded)
 	}
 }
 
-if (!inventory_is_open)
+if (!global.IsPause)
 {
 	if (spell_delay > 0)
 		spell_delay--;

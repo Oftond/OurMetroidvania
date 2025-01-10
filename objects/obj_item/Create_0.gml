@@ -6,4 +6,6 @@ curve = curv_item_drop;
 curvPosition = 0;
 curvSpeed = 0.02;
 
+chest = undefined;
+
 depth = obj_player.depth;

@@ -182,9 +182,21 @@ function SaveRoom()
 		}
 		_room_struct.chests[i] = _chest_struct;
 	}
-		
+	
 	for (var i = 0; i < _room_struct.itemNumber; i++)
-		_room_struct.items[i] = instance_find(obj_item, i);
+	{
+		var _item = instance_find(obj_item, i);
+		var _item_struct =
+		{
+			item_type_item : _item.type_item,
+			item_item : _item.item,
+			item_depth : _item.depth,
+			item_chest : _item.chest,
+			x_pos : _item.chest.x - 5,
+			y_pos : _item.chest.y
+		}
+		_room_struct.items[i] = _item_struct;
+	}
 	
 	var _room_name = room_get_name(_room_struct.saveRoom);
 	ds_map_set(global.VisitedRooms, _room_name, _room_struct);
@@ -214,6 +226,18 @@ function LoadRoom()
 			item_is_given = _room_load.chests[i].chest_item_is_given;
 			image_index = _room_load.chests[i].chest_image_index;
 			image_speed = _room_load.chests[i].chest_image_speed;
+		}
+	}
+	
+	for (var i = 0; i < _room_load.itemNumber; i++)
+	{
+		with (instance_create_layer(_room_load.items[i].x_pos, _room_load.items[i].y_pos, "Environment", obj_item))
+		{
+			type_item = _room_load.items[i].item_type_item;
+			item = _room_load.items[i].item_item;
+			depth = _room_load.items[i].item_depth;
+			chest = _room_load.items[i].item_chest;
+			curvPosition = 1;
 		}
 	}
 }

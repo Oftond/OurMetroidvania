@@ -11,6 +11,7 @@ give_item = function()
 	{
 		type_item = other.type_item;
 		item = other.item;
+		chest = other;
 	}
 }
 
