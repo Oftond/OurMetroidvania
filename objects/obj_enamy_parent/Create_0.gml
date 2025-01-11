@@ -1,7 +1,7 @@
 event_inherited();
 
 detection = 200;
-base_damage = 1;
+base_damage = 30;
 
 //Количество выпадаемыхс врага монет
 count_coin_drop = 1;
@@ -172,7 +172,7 @@ Move = function()
 //сможет попасть по игроку данной атакой, attack_hitbox - хитбокс
 //удара для данной атаки, attack_method - метод, выполняющий всю
 //логику атаки данной атакой
-Attacks=[{name:"hit",damage:2,animation:attack, distance_to_attack:sprite_width, attack_hitbox:attack_mask, attack_method:HitAttack}];
+Attacks=[{name:"hit",damage:10,animation:attack, distance_to_attack:sprite_width, attack_hitbox:attack_mask, attack_method:HitAttack}];
 
 //Все для передвижения врага
 Moves=[{name:"walk",animation:move,move_method:Move}];
@@ -192,7 +192,6 @@ battleWithPlayer = function()
 		var attackChoice = irandom(array_length(Attacks) - 1);
 		current_attack = Attacks[attackChoice];
 		attack=current_attack.animation;
-		base_damage=current_attack.damage;
 		want_to_go=false;
 		current_attack.attack_method();
 	}

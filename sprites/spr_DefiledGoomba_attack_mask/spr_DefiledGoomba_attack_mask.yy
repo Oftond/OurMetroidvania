@@ -3,7 +3,7 @@
   "%Name":"spr_DefiledGoomba_attack_mask",
   "bboxMode":0,
   "bbox_bottom":127,
-  "bbox_left":16,
+  "bbox_left":0,
   "bbox_right":109,
   "bbox_top":0,
   "collisionKind":4,

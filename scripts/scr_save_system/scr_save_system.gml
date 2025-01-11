@@ -1,4 +1,11 @@
 global.VisitedRooms = ds_map_create();
+global.AllSpells =
+[
+	new FireBall(),
+	new FireBorn(),
+	new WindTornado(),
+	new Heal()
+];
 
 function FileManager() constructor
 {
@@ -76,11 +83,27 @@ function GameManager() : SaveSystem() constructor
 			player_current_hp : obj_player.current_hp,
 			player_max_mana : obj_player.max_mana,
 			player_current_mana : obj_player.current_mana,
-			player_spells : obj_player.spells,
+			player_spells : [],
 			player_x : obj_player.x,
 			player_y : obj_player.y,
 			room_current : room,
-			visited_rooms : _rooms_arr
+			visited_rooms : _rooms_arr,
+			player_x_checkpoint : obj_player.x_checkpoint,
+			player_y_checkpoint : obj_player.y_checkpoint,
+			player_room_to_respawn : obj_player.room_to_respawn
+		}
+		
+		for (var i = 0; i < obj_player.spells.max_number_spells; i++)
+		{
+			if (obj_player.spells.spells[i] = undefined)
+				break;
+
+			var _spell_struct =
+			{
+				name : obj_player.spells.spells[i].name,
+				is_equipped : obj_player.spells.spells[i].is_equipped
+			}
+			array_push(_player_struct.player_spells, _spell_struct);
 		}
 		
 		return json_stringify(_player_struct);
@@ -96,60 +119,51 @@ function GameManager() : SaveSystem() constructor
 			instance_create_layer(3560, 836, "Player", obj_player);
 			return;
 		}
+		
 		var _player_struct = json_parse(_data);
+		
+		
 		room_goto(_player_struct.room_current);
+		
 		var _rooms_arr = _player_struct.visited_rooms;
+		
 		for (var i = 0; i < array_length(_rooms_arr); i++)
 			ds_map_add(global.VisitedRooms, room_get_name(_rooms_arr[i].saveRoom), _rooms_arr[i]);
+		
 		if (instance_exists(obj_player))
 			instance_destroy(obj_player);
+			
 		instance_create_layer(_player_struct.player_x, _player_struct.player_y, "Player", obj_player);
+		
 		obj_player.max_hp = _player_struct.player_max_hp;
 		obj_player.current_hp = _player_struct.player_current_hp;
 		obj_player.max_mana = _player_struct.player_max_mana;
 		obj_player.current_mana = _player_struct.player_current_mana;
-		FindSpells(_player_struct.player_spells.spells, _player_struct.player_spells.equip_spells);
-		obj_player.spells.equip_spells = _player_struct.player_spells.equip_spells;
-		obj_player.spells.spells = _player_struct.player_spells.spells;
-	}
-}
-
-function FindSpells(_spells, _equip_spells)
-{
-	var _all_spells =
-	[
-		new FireBall(),
-		new FireBorn(),
-		new WindTornado(),
-		new Heal()
-	];
-	
-	for (var  i = 0; i < array_length(_equip_spells); i++)
-	{
-		if (_equip_spells[i] == undefined)
-			continue;
-		for (var  j = 0; j < array_length(_all_spells); j++)
+		obj_player.x_checkpoint = _player_struct.player_x_checkpoint;
+		obj_player.y_checkpoint = _player_struct.player_y_checkpoint;
+		obj_player.room_to_respawn = _player_struct.player_room_to_respawn;
+		
+		for (var i = 0; i < array_length(_player_struct.player_spells); i++)
 		{
-			if (_equip_spells[i].name == _all_spells[j].name)
+			for (var  j = 0; j < array_length(global.AllSpells); j++)
 			{
-				_all_spells[j].is_equipped = _equip_spells[i].is_equipped;
-				_equip_spells[i] = _all_spells[j];
-				break;
+				if (_player_struct.player_spells[i].name == global.AllSpells[j].name)
+				{
+					obj_player.spells.add_spell(variable_clone(global.AllSpells[j]));
+					if (_player_struct.player_spells[i].is_equipped)
+						obj_player.spells.equip_spell(i);
+					break;
+				}
 			}
 		}
-	}
-	
-	for (var  i = 0; i < array_length(_spells); i++)
-	{
-		if (_spells[i] == undefined)
-			return;
-		for (var  j = 0; j < array_length(_all_spells); j++)
+
+		if (obj_player.current_hp <= 0)
 		{
-			if (_spells[i].name == _all_spells[j].name)
-			{
-				_spells[i] = _all_spells[j];
-				break;
-			}
+			room_goto(_player_struct.player_room_to_respawn);
+			obj_player.x = _player_struct.player_x_checkpoint;
+			obj_player.y = _player_struct.player_y_checkpoint;
+			obj_player.heal(obj_player.max_hp);
+			obj_player.get_mana(obj_player.max_mana);
 		}
 	}
 }
@@ -240,4 +254,9 @@ function LoadRoom()
 			curvPosition = 1;
 		}
 	}
+}
+
+function RespawnPlayer()
+{
+	
 }

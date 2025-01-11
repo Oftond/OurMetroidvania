@@ -7,10 +7,11 @@
   "inheritLayers":false,
   "instanceCreationOrder":[
     {"name":"inst_2556A62F","path":"rooms/rm_forest/rm_forest.yy",},
-    {"name":"inst_3D2F9244","path":"rooms/rm_forest/rm_forest.yy",},
-    {"name":"inst_5A0D23BC","path":"rooms/rm_forest/rm_forest.yy",},
     {"name":"inst_4FBB1964","path":"rooms/rm_forest/rm_forest.yy",},
     {"name":"inst_6EDA132C","path":"rooms/rm_forest/rm_forest.yy",},
+    {"name":"inst_734B9125","path":"rooms/rm_forest/rm_forest.yy",},
+    {"name":"inst_5A0D23BC","path":"rooms/rm_forest/rm_forest.yy",},
+    {"name":"inst_3D2F9244","path":"rooms/rm_forest/rm_forest.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -32,6 +33,7 @@
         ],"TileDataFormat":1,},"tilesetId":{"name":"TileSet4","path":"tilesets/TileSet4/TileSet4.yy",},"userdefinedDepth":false,"visible":true,"x":0,"y":0,},
     {"$GMRInstanceLayer":"","%Name":"Environment","depth":600,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"$GMRInstance":"v1","%Name":"inst_6EDA132C","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_6EDA132C","objectId":{"name":"obj_chest","path":"objects/obj_chest/obj_chest.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":3299.0,"y":754.0,},
+        {"$GMRInstance":"v1","%Name":"inst_734B9125","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_734B9125","objectId":{"name":"obj_obelisk_checkpoint","path":"objects/obj_obelisk_checkpoint/obj_obelisk_checkpoint.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1319.0,"y":645.0,},
       ],"layers":[],"name":"Environment","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRInstanceLayer":"","%Name":"Player","depth":700,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[],"layers":[],"name":"Player","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRTileLayer":"","%Name":"BushesTiles","depth":800,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"BushesTiles","properties":[],"resourceType":"GMRTileLayer","resourceVersion":"2.0","tiles":{"SerialiseHeight":17,"SerialiseWidth":60,"TileCompressedData":[

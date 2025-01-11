@@ -1,3 +1,6 @@
+if (instance_number(obj_game_manager) > 1)
+	instance_destroy();
+
 collision_wall = undefined;
 
 global.CameraWidth = camera_get_view_width(view_camera[0]);

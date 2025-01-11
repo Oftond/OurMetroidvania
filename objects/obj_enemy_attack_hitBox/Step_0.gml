@@ -1,3 +1,6 @@
+x = this_enemy.x;
+y = this_enemy.y;
+
 if (this_enemy.is_death)
 	instance_destroy(self);
 

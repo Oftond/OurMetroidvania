@@ -12,7 +12,7 @@ switch (state)
 			sprite_index=other.current_attack.attack_hitbox;
 			image_index=other.image_index;
 			image_xscale = other.image_xscale;
-			base_damage = other.base_damage;
+			base_damage = other.current_attack.damage;
 			this_enemy = other;
 		}
 	}

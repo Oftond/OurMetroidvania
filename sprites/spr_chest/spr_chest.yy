@@ -31,8 +31,8 @@
   "nineSlice":null,
   "origin":4,
   "parent":{
-    "name":"World",
-    "path":"folders/Sprites/World.yy",
+    "name":"Environment",
+    "path":"folders/Sprites/World/Environment.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

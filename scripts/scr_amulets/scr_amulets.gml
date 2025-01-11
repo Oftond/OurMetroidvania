@@ -75,3 +75,22 @@ function AmuletTripleJump() : AAmulet() constructor
 		_player.max_jumps -= jump_bonus;
 	}
 }
+
+function AmuletResistence() : AAmulet() constructor
+{
+	name = "Слабое сопротивление урону";
+	description = "Этот амулет уменьшает весь входящий по вам урон на 10%.";
+	sprite = spr_amulet_resistence;
+	resistance_bonus = 10;
+	
+	property = function(_player)
+	{
+		_player.resistance_percent += resistance_bonus;
+	}
+	
+	disable_property = function(_player)
+	{
+		if (_player.resistance_percent - resistance_bonus >= 0)
+			_player.resistance_percent -= resistance_bonus;
+	}
+}

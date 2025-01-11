@@ -1,5 +1,12 @@
+if (instance_number(obj_player) > 1)
+	instance_destroy();
 event_inherited();
 
+x_checkpoint = 275;
+y_checkpoint = 836;
+room_to_respawn = rm_forest;
+
+resistance_percent = 0;
 max_hp = 250;
 current_hp = max_hp;
 max_mana = 175;
@@ -73,10 +80,13 @@ change_state = function(_state)
 
 get_damage = function(_enemy)
 {
+	var _total_damage = resistance_percent <= 0 ? _enemy.base_damage : _enemy.base_damage - (round((_enemy.base_damage / 100) * resistance_percent));
 	var _x_sign = sign(x - _enemy.x);
 	move_x = _x_sign * 12;
 	move_y = -jump_spd;
-	current_hp -= _enemy.base_damage;
+	current_hp -= _total_damage;
+	if (current_hp < 0)
+		current_hp = 0;
 	flashing = max_flashing;
 	is_knockback = true;
 	state = STATES.HIT;

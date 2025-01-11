@@ -1,6 +1,5 @@
 //Враг готов
 event_inherited();
-
 max_hp = 8;
 current_hp = max_hp;
 
@@ -116,4 +115,4 @@ Rise = function()
 	y += move_y;
 }
 
-Attacks=[{name:"hit",damage:17,animation:attack, distance_to_attack:(sprite_width / 2) - 25, attack_hitbox:attack_mask, attack_method:HitAttack}];
+Attacks=[{name:"hit",damage:80,animation:attack, distance_to_attack:(sprite_width / 2) - 25, attack_hitbox:attack_mask, attack_method:HitAttack}];
