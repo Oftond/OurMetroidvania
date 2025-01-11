@@ -6,6 +6,14 @@ global.AllSpells =
 	new WindTornado(),
 	new Heal()
 ];
+global.AllAmulets =
+[
+	new AmuletFlashing(),
+	new AmuletPowerOfGod(),
+	new AmuletHeavyLunge(),
+	new AmuletTripleJump(),
+	new AmuletResistence()
+];
 
 function FileManager() constructor
 {
@@ -84,6 +92,7 @@ function GameManager() : SaveSystem() constructor
 			player_max_mana : obj_player.max_mana,
 			player_current_mana : obj_player.current_mana,
 			player_spells : [],
+			player_amulets : [],
 			player_x : obj_player.x,
 			player_y : obj_player.y,
 			room_current : room,
@@ -102,8 +111,23 @@ function GameManager() : SaveSystem() constructor
 			{
 				name : obj_player.spells.spells[i].name,
 				is_equipped : obj_player.spells.spells[i].is_equipped
-			}
+			};
+			
 			array_push(_player_struct.player_spells, _spell_struct);
+		}
+		
+		for (var i = 0; i < obj_player.inventory.max_number_amulets; i++)
+		{
+			if (obj_player.inventory.amulets[i] = undefined)
+				break;
+				
+			var _amulet_struct =
+			{
+				name : obj_player.inventory.amulets[i].name,
+				is_equipped : obj_player.inventory.amulets[i].is_equipped
+			};
+			
+			array_push(_player_struct.player_amulets, _amulet_struct);
 		}
 		
 		return json_stringify(_player_struct);
@@ -156,6 +180,20 @@ function GameManager() : SaveSystem() constructor
 				}
 			}
 		}
+		
+		for (var i = 0; i < array_length(_player_struct.player_amulets); i++)
+		{
+			for (var  j = 0; j < array_length(global.AllAmulets); j++)
+			{
+				if (_player_struct.player_amulets[i].name == global.AllAmulets[j].name)
+				{
+					obj_player.inventory.add_amulet(variable_clone(global.AllAmulets[j]));
+					if (_player_struct.player_amulets[i].is_equipped)
+						obj_player.inventory.equip_emulet(i);
+					break;
+				}
+			}
+		}
 
 		if (obj_player.current_hp <= 0)
 		{
@@ -182,18 +220,20 @@ function SaveRoom()
 	for (var i = 0; i < _room_struct.chestNumber; i++)
 	{
 		var _chest = instance_find(obj_chest, i);
+		
 		var _chest_struct =
 		{
 			chest_is_open : _chest.is_open,
 			chest_image_index : _chest.image_index,
 			chest_image_speed : _chest.image_speed,
-			chest_item : _chest.item,
 			chest_item_is_given : _chest.item_is_given,
 			chest_type_item : _chest.type_item,
+			chest_item_name : _chest.item.name,
 			chest_mask_index : _chest.mask_index,
 			x_pos : _chest.x,
 			y_pos : _chest.y
 		}
+		
 		_room_struct.chests[i] = _chest_struct;
 	}
 	
@@ -234,7 +274,26 @@ function LoadRoom()
 		{
 			mask_index = _room_load.chests[i].chest_mask_index;
 			type_item = _room_load.chests[i].chest_type_item;
-			item = _room_load.chests[i].chest_item;
+			if (type_item == TYPESITEMS.SPELL)
+			{
+				for (var  j = 0; j < array_length(global.AllSpells); j++)
+				{
+					if (_room_load.chests[i].chest_item_name == global.AllSpells[j].name)
+					{
+						item = variable_clone(global.AllSpells[j]);
+					}
+				}
+			}
+			else if (type_item == TYPESITEMS.AMULET)
+			{
+				for (var  j = 0; j < array_length(global.AllAmulets); j++)
+				{
+					if (_room_load.chests[i].chest_item_name == global.AllAmulets[j].name)
+					{
+						item = variable_clone(global.AllAmulets[j]);
+					}
+				}
+			}
 			image_speed = _room_load.chests[i].chest_image_speed;
 			is_open = _room_load.chests[i].chest_is_open;
 			item_is_given = _room_load.chests[i].chest_item_is_given;

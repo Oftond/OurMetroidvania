@@ -1,8 +1,5 @@
-function AAmulet() constructor
+function AAmulet() : IItem() constructor
 {
-	name = "";
-	description = "";
-	sprite = undefined;
 	is_equipped = false;
 	
 	property = function(_player) { }
@@ -19,15 +16,15 @@ function AmuletFlashing() : AAmulet() constructor
 {
 	name = "Амулет причастия";
 	description = "Этот амулет увеличит ваше время неуязвимости после получения урона.";
-	sprite = spr_amulet_flashing;
+	icon = spr_amulet_flashing;
 }
 
 function AmuletPowerOfGod() : AAmulet() constructor
 {
 	name = "Амулет божественной силы";
-	description = "Амулет, увеличивающий вашу силу урона мечом.";
-	sprite = spr_amulet_powerOfGod;
-	damage_bonus = 5;
+	damage_bonus = 2;
+	description = $"Амулет, увеличивающий вашу силу урона мечом на {damage_bonus}.";
+	icon = spr_amulet_powerOfGod;
 	
 	property = function(_player)
 	{
@@ -44,7 +41,7 @@ function AmuletHeavyLunge() : AAmulet() constructor
 {
 	name = "Тяжелый выпад";
 	description = "Амулет увеличит ваше максимальное здоровье.";
-	sprite = spr_amulet_heavy_lunge;
+	icon = spr_amulet_heavy_lunge;
 	hp_bonus = 20;
 	
 	property = function(_player)
@@ -62,7 +59,7 @@ function AmuletTripleJump() : AAmulet() constructor
 {
 	name = "Тройной прыжок";
 	description = "Этот амулет позволит вам прагнуть в воздухе два раза, прежде чем упасть на землю.";
-	sprite = spr_amulet_tripleJump;
+	icon = spr_amulet_tripleJump;
 	jump_bonus = 1;
 	
 	property = function(_player)
@@ -79,9 +76,9 @@ function AmuletTripleJump() : AAmulet() constructor
 function AmuletResistence() : AAmulet() constructor
 {
 	name = "Слабое сопротивление урону";
-	description = "Этот амулет уменьшает весь входящий по вам урон на 10%.";
-	sprite = spr_amulet_resistence;
-	resistance_bonus = 10;
+	resistance_bonus = 15;
+	description = $"Этот амулет уменьшает весь входящий по вам урон на {resistance_bonus}%.";
+	icon = spr_amulet_resistence;
 	
 	property = function(_player)
 	{

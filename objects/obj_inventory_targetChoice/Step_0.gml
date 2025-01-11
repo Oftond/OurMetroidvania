@@ -42,8 +42,8 @@ switch(page)
 
 		if (choice_amulet != undefined)
 		{
-			distance_x = sprite_get_height(choice_amulet.sprite) - 50;
-			distance_y = sprite_get_width(choice_amulet.sprite) - 50;
+			distance_x = sprite_get_height(choice_amulet.icon) - 50;
+			distance_y = sprite_get_width(choice_amulet.icon) - 50;
 		}
 		else
 		{

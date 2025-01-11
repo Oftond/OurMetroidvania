@@ -1,2 +1,2 @@
-item = new WindTornado();
-type_item = TYPESITEMS.SPELL;
+item = new AmuletHeavyLunge();
+type_item = TYPESITEMS.AMULET;

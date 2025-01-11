@@ -1,2 +1,2 @@
-item = new FireBall();
-type_item = TYPESITEMS.SPELL;
+item = new AmuletPowerOfGod();
+type_item = TYPESITEMS.AMULET;

@@ -1,2 +1,2 @@
-item = new Heal();
-type_item = TYPESITEMS.SPELL;
+item = new AmuletTripleJump();
+type_item = TYPESITEMS.AMULET;

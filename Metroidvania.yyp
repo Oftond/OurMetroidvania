@@ -301,6 +301,7 @@
     {"id":{"name":"scr_dialogue_system","path":"scripts/scr_dialogue_system/scr_dialogue_system.yy",},},
     {"id":{"name":"scr_enums","path":"scripts/scr_enums/scr_enums.yy",},},
     {"id":{"name":"scr_inventory","path":"scripts/scr_inventory/scr_inventory.yy",},},
+    {"id":{"name":"scr_items","path":"scripts/scr_items/scr_items.yy",},},
     {"id":{"name":"scr_locale_system","path":"scripts/scr_locale_system/scr_locale_system.yy",},},
     {"id":{"name":"scr_minimap_draw","path":"scripts/scr_minimap_draw/scr_minimap_draw.yy",},},
     {"id":{"name":"scr_save_system","path":"scripts/scr_save_system/scr_save_system.yy",},},

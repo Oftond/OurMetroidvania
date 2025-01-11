@@ -2,7 +2,7 @@ draw_self();
 draw_set_font(global.Headings);
 draw_set_halign(fa_center);
 draw_set_valign(fa_middle);
-draw_set_color(c_white)
+draw_set_color(c_white);
 
 if (obj_inventory_targetChoice.page == 0)
 	draw_text(x, bbox_top + 80, "экипировка");
@@ -40,7 +40,7 @@ if (obj_inventory_targetChoice.page == 0)
 		var _amulet_equip = obj_player.inventory.equip_amulets[i];
 		if (_amulet_equip != undefined)
 		{
-			draw_sprite(_amulet_equip.sprite, 0, _x_pos, _y_pos);
+			draw_sprite(_amulet_equip.icon, 0, _x_pos, _y_pos);
 		}
 		else
 			draw_sprite(spr_inventory_player_equip, 0, _x_pos, _y_pos);
@@ -56,9 +56,9 @@ if (obj_inventory_targetChoice.page == 0)
 			var _amulet_choice = obj_player.inventory.amulets[_index_amulet];
 			if (_amulet_choice != undefined)
 				if (!_amulet_choice.is_equipped)
-					draw_sprite(_amulet_choice.sprite, 0, _x_pos, _y_pos);
+					draw_sprite(_amulet_choice.icon, 0, _x_pos, _y_pos);
 				else
-					draw_sprite_ext(_amulet_choice.sprite, 0, _x_pos, _y_pos, 1, 1, 0, c_white, 0.4);
+					draw_sprite_ext(_amulet_choice.icon, 0, _x_pos, _y_pos, 1, 1, 0, c_white, 0.4);
 			else
 				draw_sprite(spr_inventory_player_equip, 0, _x_pos, _y_pos);
 			_index_amulet++;
