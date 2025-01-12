@@ -20,8 +20,9 @@ function FileManager() constructor
 	WriteToFile = function(_content, _fileName, _fileEnding = ".json")
 	{
 		var _file = $"{_fileName}{_fileEnding}";
-		var _buffer = buffer_create(string_byte_length(_content) + 1, buffer_fixed, 1);
-		buffer_write(_buffer, buffer_string, _content);
+		var _content_encode = base64_encode(_content);
+		var _buffer = buffer_create(string_byte_length(_content_encode) + 1, buffer_fixed, 1);
+		buffer_write(_buffer, buffer_string, _content_encode);
 		buffer_save(_buffer, _file);
 		buffer_delete(_buffer);
 	}
@@ -33,9 +34,10 @@ function FileManager() constructor
 			return "";
 		var _buffer = buffer_load(_file);
 		var _content = buffer_read(_buffer, buffer_string);
+		var _content_result = base64_decode(_content);
 		
 		buffer_delete(_buffer);
-		return _content;
+		return _content_result;
 	}
 	
 	DeleteFile = function(_fileName, _fileEnding = ".json")
