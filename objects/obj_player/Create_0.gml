@@ -13,9 +13,9 @@ max_mana = 175;
 current_mana = max_mana;
 moneys = 0;
 
-do_dash = false;
-do_climbing = false;
-max_jumps = 1;
+do_dash = true;
+do_climbing = true;
+max_jumps = 2;
 
 min_increase_hp = 5;
 min_increase_mana = 5;

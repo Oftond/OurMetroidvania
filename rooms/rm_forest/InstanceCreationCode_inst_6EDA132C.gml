@@ -1,2 +1,2 @@
-item = new AmuletHeavyLunge();
-type_item = TYPESITEMS.AMULET;
+item = new FireBall();
+type_item = TYPESITEMS.SPELL;

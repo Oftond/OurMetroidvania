@@ -1,2 +1,2 @@
-item = new AmuletResistence();
-type_item = TYPESITEMS.AMULET;
+item = new Heal();
+type_item = TYPESITEMS.SPELL;

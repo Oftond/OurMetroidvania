@@ -1,3 +1,4 @@
+
 global.VisitedRooms = ds_map_create();
 global.AllSpells =
 [

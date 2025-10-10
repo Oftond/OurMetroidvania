@@ -1,5 +1,5 @@
 {
-  "$GMProject":"",
+  "$GMProject":"v1",
   "%Name":"Metroidvania",
   "AudioGroups":[
     {"$GMAudioGroup":"","%Name":"audiogroup_default","name":"audiogroup_default","resourceType":"GMAudioGroup","resourceVersion":"2.0","targets":-1,},
@@ -110,6 +110,7 @@
     {"$GMFolder":"","%Name":"Maps surface","folderPath":"folders/Tile Sets/Maps surface.yy","name":"Maps surface","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Timelines","folderPath":"folders/Timelines.yy","name":"Timelines","resourceType":"GMFolder","resourceVersion":"2.0",},
   ],
+  "ForcedPrefabProjectReferences":[],
   "IncludedFiles":[
     {"$GMIncludedFile":"","%Name":"locale_en.json","CopyToMask":-1,"filePath":"datafiles","name":"locale_en.json","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"locale_ru.json","CopyToMask":-1,"filePath":"datafiles","name":"locale_ru.json","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
@@ -119,7 +120,7 @@
     {"name":"Sparkle","path":"particlelib/Sparkle/Sparkle.yy",},
   ],
   "MetaData":{
-    "IDEVersion":"2024.11.0.179",
+    "IDEVersion":"2024.13.1.193",
   },
   "name":"Metroidvania",
   "resources":[
